@@ -1,0 +1,30 @@
+{
+ "episodes": 100,
+ "success": 100,
+ "success_rate": 1.0,
+ "stage_reached": {
+  "reach": 100,
+  "grasp": 100,
+  "lift": 100,
+  "over_plate": 100,
+  "success": 100
+ },
+ "infractions_per_episode": {
+  "table_hits": 0.0,
+  "drops": 0.0,
+  "workspace_exits": 0.0
+ },
+ "steps_to_success": {
+  "median": 65.5,
+  "p90": 84.0,
+  "max": 91
+ },
+ "failures": {},
+ "timeouts_expert_could_finish": 0,
+ "timeouts_stuck": 0,
+ "disturb": null,
+ "name": "keigrasp-r1_eval",
+ "policy": "keigrasp:r1",
+ "split": "eval",
+ "mujoco": "3.17.0"
+}

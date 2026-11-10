@@ -1,0 +1,45 @@
+[project]
+name = "keiarm"
+version = "0.0.1"
+description = "Lightweight closed-loop manipulation environment for the SO-101 arm (MuJoCo physics, everything else home-made)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "mujoco==3.17.0",
+    "mink>=1.4.0",
+    "numpy",
+    "imageio[ffmpeg]",
+]
+
+[dependency-groups]
+dev = [
+    "matplotlib>=3.11.2",
+    "onnx>=1.23.2",
+    "onnxruntime>=1.31.1",
+    "onnxscript>=0.7.2",
+    "playwright>=1.65.0",
+    "pytest",
+    "ruff",
+]
+train = [
+    "torch>=2.15.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["keiarm", "keigrasp"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.uv]
+# `uv sync` installs everything; CI and the Pages build skip the multi-GB training stack
+# with `--no-group train` (the simulator, expert and exporter do not need torch).
+default-groups = ["dev", "train"]

@@ -1,0 +1,22 @@
+{
+  "name": "keiarm-web",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node tools/replay_node.mjs",
+    "predev": "node tools/copy_ort.mjs",
+    "prebuild": "node tools/copy_ort.mjs",
+    "postbuild": "node tools/prune_dist.mjs"
+  },
+  "dependencies": {
+    "@mujoco/mujoco": "3.17.0",
+    "onnxruntime-web": "^1.31.1",
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  }
+}

@@ -1,0 +1,34 @@
+{
+ "episodes": 100,
+ "success": 61,
+ "success_rate": 0.61,
+ "stage_reached": {
+  "reach": 100,
+  "grasp": 71,
+  "lift": 70,
+  "over_plate": 67,
+  "success": 61
+ },
+ "infractions_per_episode": {
+  "table_hits": 0.56,
+  "drops": 0.0,
+  "workspace_exits": 0.0
+ },
+ "steps_to_success": {
+  "median": 224.0,
+  "p90": 482.0,
+  "max": 598
+ },
+ "failures": {
+  "approach_failed": 29,
+  "grasp_failed": 1,
+  "transit_timeout": 3,
+  "place_failed": 6
+ },
+ "timeouts_expert_could_finish": 39,
+ "timeouts_stuck": 0,
+ "name": "expert-noisy-0.02_eval",
+ "policy": "expert-noisy:0.02",
+ "split": "eval",
+ "mujoco": "3.17.0"
+}

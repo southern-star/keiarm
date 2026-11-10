@@ -1,0 +1,35 @@
+{
+ "episodes": 300,
+ "success": 204,
+ "success_rate": 0.68,
+ "stage_reached": {
+  "reach": 295,
+  "grasp": 269,
+  "lift": 265,
+  "over_plate": 233,
+  "success": 204
+ },
+ "infractions_per_episode": {
+  "table_hits": 0.0033333333333333335,
+  "drops": 0.42333333333333334,
+  "workspace_exits": 0.0
+ },
+ "steps_to_success": {
+  "median": 134.0,
+  "p90": 304.6000000000003,
+  "max": 587
+ },
+ "failures": {
+  "approach_failed": 31,
+  "grasp_failed": 4,
+  "dropped_in_transit": 32,
+  "place_failed": 29
+ },
+ "timeouts_expert_could_finish": 94,
+ "timeouts_stuck": 2,
+ "disturb": "random",
+ "name": "keigrasp-bc1_eval_disturb",
+ "policy": "keigrasp:bc1",
+ "split": "eval",
+ "mujoco": "3.17.0"
+}

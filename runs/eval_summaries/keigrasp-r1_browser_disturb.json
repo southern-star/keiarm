@@ -1,0 +1,22 @@
+{
+ "name": "keigrasp-r1_browser_disturb",
+ "model": "r1",
+ "episodes": 300,
+ "success": 300,
+ "success_rate": 1.0,
+ "disturb": true,
+ "backend": "wasm",
+ "webgl": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+ "mean_infer_ms": 180.54573888447266,
+ "steps_to_success_median": 113.0,
+ "failed": [],
+ "vs_python": {
+  "run": "keigrasp-r1_eval_disturb",
+  "paired_episodes": 300,
+  "both": 299,
+  "neither": 0,
+  "a_only": 0,
+  "b_only": 1,
+  "p_value": 1.0
+ }
+}

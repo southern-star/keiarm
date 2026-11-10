@@ -1,0 +1,32 @@
+{
+ "episodes": 300,
+ "success": 299,
+ "success_rate": 0.9966666666666667,
+ "stage_reached": {
+  "reach": 300,
+  "grasp": 300,
+  "lift": 299,
+  "over_plate": 299,
+  "success": 299
+ },
+ "infractions_per_episode": {
+  "table_hits": 0.0,
+  "drops": 0.46,
+  "workspace_exits": 0.0033333333333333335
+ },
+ "steps_to_success": {
+  "median": 108.0,
+  "p90": 142.0,
+  "max": 197
+ },
+ "failures": {
+  "out_of_workspace": 1
+ },
+ "timeouts_expert_could_finish": 0,
+ "timeouts_stuck": 1,
+ "disturb": "random",
+ "name": "expert_eval_disturb",
+ "policy": "expert",
+ "split": "eval",
+ "mujoco": "3.17.0"
+}

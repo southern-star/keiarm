@@ -1,0 +1,32 @@
+{
+ "episodes": 300,
+ "success": 299,
+ "success_rate": 0.9966666666666667,
+ "stage_reached": {
+  "reach": 300,
+  "grasp": 300,
+  "lift": 300,
+  "over_plate": 299,
+  "success": 299
+ },
+ "infractions_per_episode": {
+  "table_hits": 0.0,
+  "drops": 0.0033333333333333335,
+  "workspace_exits": 0.0
+ },
+ "steps_to_success": {
+  "median": 113.0,
+  "p90": 146.2,
+  "max": 174
+ },
+ "failures": {
+  "transit_timeout": 1
+ },
+ "timeouts_expert_could_finish": 1,
+ "timeouts_stuck": 0,
+ "disturb": "random",
+ "name": "keigrasp-r1_eval_disturb",
+ "policy": "keigrasp:r1",
+ "split": "eval",
+ "mujoco": "3.17.0"
+}

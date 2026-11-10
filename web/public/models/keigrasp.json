@@ -1,0 +1,18 @@
+{
+ "run": "r1",
+ "parameters": 8931654,
+ "chunk": 30,
+ "cameras": [
+  "cam_front",
+  "wrist_cam"
+ ],
+ "image_height": 120,
+ "image_width": 160,
+ "max_abs_diff_vs_pytorch_rad": 1.96993350982666e-05,
+ "bytes": 35804030,
+ "train_data": [
+  "bc1",
+  "bc1d",
+  "dagger1"
+ ]
+}
