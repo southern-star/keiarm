@@ -322,13 +322,12 @@ BC だけで 100% は良すぎるので、漏れがないか確認した（評�
 - デモ: https://southern-star.github.io/keiarm/（GitHub Actions の `pages` ワークフローで配置。`main` への push で更新される）
 - 公開 URL をヘッドレス Chrome で確認: 4 シーンで最初の配置 4/4、マウスでドラッグした後の置き直し 4/4（`tools/browser_demo_check.py --url ...`）。推論は WASM で 160〜190 ms
 - 転送量（gzip 後）: モデル 33 MB、onnxruntime-web 7.3 MB、MuJoCo WASM 約 2.7 MB、メッシュ 17 MB（STL は圧縮されにくい）
-- `test` ワークフロー: 成功
+- `test` と `pages` のワークフロー: `main` への push で自動起動し、どちらも成功（visibility を変えた直後の 1 回だけ起動せず、手動で起動した）
 
 残っている確認と作業:
 
 1. **実 GPU のブラウザで公開 URL を開く**（WebGPU での推論時間、見た目、ドラッグの操作感）。ここまでの確認は全てソフトウェア描画のヘッドレス Chrome
 2. `docs/design.md` に設計図の原本を置く。LICENSE の著作権者名（`southern-star`）を確認
-3. visibility を変えた直後の push では Actions が起動しなかった（`gh workflow run pages` で手動起動した）。以後の push で自動起動するかは未確認
 
 ### Phase 8: 公開準備
 
