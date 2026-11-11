@@ -300,7 +300,8 @@ BC だけで 100% は良すぎるので、漏れがないか確認した（評�
 - **描画つきの `KeiArmEnv` は使い終わったら必ず `close()` する。** 閉じずに同じプロセスで何百個も作ると、エラーを出さないまま画像が壊れる（Phase 5 の検証スクリプトで、同じ方策の成功率が 197/200 から 185/200 に落ちて気付いた）。`scripts/eval.py` と `scripts/collect.py` は閉じている
 - 160×120 のままで BC が 100/100 に届いたので、解像度を上げる必要は今のところない
 - **`docs/design.md` がまだ無い。** 設計図の原本をここに置くこと
-- コミットはまだ無い。CI は定義しただけで GitHub 上では未実行。画像テストは GL が無い環境ではスキップされる
+- 描画するテストは `gl` フィクスチャを要求する。GL が無い機械では別プロセスの確認結果を見てスキップする（同じプロセスで試すと MuJoCo がインタプリタごと異常終了することがある）
+- CI では `uv run --no-sync` を使う。素の `uv run` は既定グループ（`train` を含む）を入れ直してしまう
 - 160×120 の `cam_front` では立方体が数ピクセル四方にしか写らない。方策の精度が出なければ、構図を寄せるか解像度を上げる（設計図 8.2）
 - 到達範囲の調査は自己衝突と、掴んだ立方体の干渉を見ていない
 - エキスパートは DART σ = 0.02 rad 以上で成功率が大きく落ちる（上の表）。方策の誤差がこの水準だと DAgger の回復ラベルは正しくても、エキスパート自身は同じ状況で苦戦する
@@ -315,12 +316,20 @@ BC だけで 100% は良すぎるので、漏れがないか確認した（評�
 
 ## 次の一手
 
-### Phase 7 の残り: 公開（利用者の確認が要る）
+### Phase 7 の残り: 公開
 
-1. `docs/design.md` に設計図の原本を置く。LICENSE の著作権者名（仮に `southern-star`）を確認
-2. 最初のコミットを作る。**`web/public/models/keigrasp.onnx`（36.7 MB）を git に入れるかを決める。** Pages のワークフローはリポジトリ内にモデルがある前提。入れない場合はリリースの添付か Git LFS にしてワークフローを直す
-3. GitHub にリポジトリを作って push、Settings → Pages → Source を「GitHub Actions」に。`pages.yml` と `test.yml` はどちらも GitHub 上では一度も走っていない
-4. 公開 URL を実 GPU のブラウザで開き、WebGPU での推論時間と、ドラッグからの掴み直しを確認
+2026-11-11 時点の状態:
+
+- リポジトリ: https://github.com/southern-star/keiarm（**private**）。`main` に push 済み（ONNX モデル 35.8 MB を含む）
+- `test` ワークフロー: 成功（Mesa のソフトウェア EGL で描画テストも実行、Node 上の WASM 再生 28/28、web のビルド）。PyTorch を入れないので `tests/test_keigrasp.py` は丸ごとスキップされる
+- `pages` ワークフロー: ビルドは通るが配置で失敗する。**private リポジトリでは現在のプランで GitHub Pages を有効にできない**（API が 422 を返す）
+
+残り:
+
+1. **公開方法を決める（利用者の判断）。** リポジトリを public にすれば Pages が使える。private のままなら別の静的ホスティングに `web/dist` を置く
+2. public にした場合: Settings → Pages → Source を「GitHub Actions」にして `pages` を再実行（`gh api -X POST repos/southern-star/keiarm/pages -f build_type=workflow` → `gh workflow run pages`）
+3. 公開 URL を実 GPU のブラウザで開き、WebGPU での推論時間と、ドラッグからの掴み直しを確認
+4. `docs/design.md` に設計図の原本を置く。LICENSE の著作権者名（`southern-star`）を確認
 
 ### Phase 8: 公開準備
 
