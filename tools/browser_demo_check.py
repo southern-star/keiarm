@@ -6,6 +6,7 @@ Unlike tools/browser_eval.py nothing waits for inference here: the simulation ru
 and plans arrive late by however long inference takes on this machine.
 
 Usage: (cd web && npm run build) && uv run python tools/browser_demo_check.py [--scenes 100000 ...]
+       uv run python tools/browser_demo_check.py --url https://southern-star.github.io/keiarm/
 """
 
 import argparse
@@ -40,9 +41,10 @@ def main() -> None:
     ap.add_argument("--scenes", type=int, nargs="+", help="default: every scene in the build")
     ap.add_argument("--timeout", type=float, default=25.0, help="seconds allowed for each placement")
     ap.add_argument("--shot", type=Path, default=REPO_ROOT / "docs" / "web_demo.png")
+    ap.add_argument("--url", help="check a deployed site instead of the local build, e.g. the GitHub Pages URL")
     args = ap.parse_args()
 
-    server, url = serve(DIST)
+    server, url = (None, args.url.rstrip("/") + "/") if args.url else serve(DIST)
     rows, errors = [], []
     with sync_playwright() as pw:
         browser = pw.chromium.launch(channel="chrome", headless=True,
@@ -50,6 +52,7 @@ def main() -> None:
         page = browser.new_page(viewport={"width": 1100, "height": 700})
         page.on("pageerror", lambda e: errors.append(str(e)))
         page.on("console", lambda m: errors.append(m.text) if m.type == "error" else None)
+        page.set_default_timeout(180_000)  # a deployed site downloads ~60 MB before it is ready
         page.goto(url)
         page.evaluate("() => window.keiarm.ready")
         info = page.evaluate("() => window.keiarm.policyReady()")
@@ -90,7 +93,8 @@ def main() -> None:
             rows.append(row)
             print(row, flush=True)
         browser.close()
-    server.shutdown()
+    if server is not None:
+        server.shutdown()
     n = len(rows)
     print(f"\nreal-time demo: first placement {sum(r['first'] for r in rows)}/{n}, "
           f"re-placement after a mouse drag {sum(r['after_drag'] for r in rows)}/{n}")

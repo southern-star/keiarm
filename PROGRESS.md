@@ -1,10 +1,10 @@
 # PROGRESS
 
-最終更新: 2026-11-11（セッション 1、Phase 7 の公開手前まで）
+最終更新: 2026-11-11（セッション 1、Phase 7 完了）
 
 ## 現在地
 
-**Phase 7（ブラウザ推論）: 公開以外は完了。ブラウザ内の閉ループ評価は 297/300（外乱つき 300/300）。GitHub Pages への配置だけが残っている（リモート作成・コミット・push は利用者の確認待ち）。**
+**Phase 7（ブラウザ推論と公開）: 完了。https://southern-star.github.io/keiarm/ でモデルが立方体を皿に置き、ドラッグで動かしても掴み直す。次は Phase 8（公開準備: README、配信サイズ）。**
 
 | Phase | 内容 | 状態 |
 |---|---|---|
@@ -15,7 +15,7 @@
 | 4 | ブラウザ先行検証（学習より前） | 完了 |
 | 5 | BC（成功率 > 0） | 完了（100/100、300 エピソードでは 297/300） |
 | 6 | DAgger（外乱への頑健化。外乱つき 95% 以上を目標に置き換え） | 完了（1 ラウンドで 299/300） |
-| 7 | ブラウザ推論、GitHub Pages | ブラウザ推論は完了。Pages への配置が未了 |
+| 7 | ブラウザ推論、GitHub Pages | 完了（公開 URL で動作確認済み） |
 | 8 | 公開準備 | 未着手 |
 
 ## Phase 7（2026-11-11）でやったこと
@@ -316,20 +316,19 @@ BC だけで 100% は良すぎるので、漏れがないか確認した（評�
 
 ## 次の一手
 
-### Phase 7 の残り: 公開
+### 公開の状態（2026-11-11）
 
-2026-11-11 時点の状態:
+- リポジトリ: https://github.com/southern-star/keiarm（public）
+- デモ: https://southern-star.github.io/keiarm/（GitHub Actions の `pages` ワークフローで配置。`main` への push で更新される）
+- 公開 URL をヘッドレス Chrome で確認: 4 シーンで最初の配置 4/4、マウスでドラッグした後の置き直し 4/4（`tools/browser_demo_check.py --url ...`）。推論は WASM で 160〜190 ms
+- 転送量（gzip 後）: モデル 33 MB、onnxruntime-web 7.3 MB、MuJoCo WASM 約 2.7 MB、メッシュ 17 MB（STL は圧縮されにくい）
+- `test` ワークフロー: 成功
 
-- リポジトリ: https://github.com/southern-star/keiarm（**private**）。`main` に push 済み（ONNX モデル 35.8 MB を含む）
-- `test` ワークフロー: 成功（Mesa のソフトウェア EGL で描画テストも実行、Node 上の WASM 再生 28/28、web のビルド）。PyTorch を入れないので `tests/test_keigrasp.py` は丸ごとスキップされる
-- `pages` ワークフロー: ビルドは通るが配置で失敗する。**private リポジトリでは現在のプランで GitHub Pages を有効にできない**（API が 422 を返す）
+残っている確認と作業:
 
-残り:
-
-1. **公開方法を決める（利用者の判断）。** リポジトリを public にすれば Pages が使える。private のままなら別の静的ホスティングに `web/dist` を置く
-2. public にした場合: Settings → Pages → Source を「GitHub Actions」にして `pages` を再実行（`gh api -X POST repos/southern-star/keiarm/pages -f build_type=workflow` → `gh workflow run pages`）
-3. 公開 URL を実 GPU のブラウザで開き、WebGPU での推論時間と、ドラッグからの掴み直しを確認
-4. `docs/design.md` に設計図の原本を置く。LICENSE の著作権者名（`southern-star`）を確認
+1. **実 GPU のブラウザで公開 URL を開く**（WebGPU での推論時間、見た目、ドラッグの操作感）。ここまでの確認は全てソフトウェア描画のヘッドレス Chrome
+2. `docs/design.md` に設計図の原本を置く。LICENSE の著作権者名（`southern-star`）を確認
+3. visibility を変えた直後の push では Actions が起動しなかった（`gh workflow run pages` で手動起動した）。以後の push で自動起動するかは未確認
 
 ### Phase 8: 公開準備
 

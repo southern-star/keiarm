@@ -56,7 +56,7 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 - **描画つきの `KeiArmEnv` は必ず `close()` する。** 閉じないまま同一プロセスで大量に作ると、エラーなしで画像が壊れ、方策の成功率が黙って下がる
 - **良すぎる結果は疑う。** 方策の評価では、画像を黒塗りした対照と、同じ評価の再実行での一致を確かめてから報告する
 - **ブラウザ側の方策実行（`web/src/policy.js`）は `keigrasp/policy.py` を写したもの。** 実行ステップ数（10）は書き出し JSON の `policy_execute_steps`。モデルを変えたら `scripts/export_onnx.py` で書き出し直し、`tools/browser_eval.py` で Python の評価と突き合わせる
-- **リモートへの push、リポジトリ作成、Pages の公開は利用者の確認を取ってから。**
+- **公開先**: リポジトリ https://github.com/southern-star/keiarm（public）、デモ https://southern-star.github.io/keiarm/。`main` への push でデモが更新されるので、push は利用者の確認を取ってから。公開後の確認は `uv run python tools/browser_demo_check.py --url https://southern-star.github.io/keiarm/`
 - **WASM のオブジェクトは GC されない。** `MjModel` / `MjData` / 接触ベクタは使い終わったら `.delete()` する
 - 方策は 2,000 万パラメータ以下、行動チャンク回帰（L1）。拡散・VLA・強化学習は使わない
 - 「要確認」の項目は実物（XML、README、パッケージ）で確かめ、結果を `PROGRESS.md` か `docs/` に残す。推測で設計を進めない
