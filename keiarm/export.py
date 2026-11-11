@@ -19,7 +19,15 @@ from keiarm.expert import Expert
 from keiarm.paths import REPO_ROOT, SO101_DIR
 from keiarm.robot import EE_SITE, JOINT_NAMES
 from keiarm.rollout import SUCCESS_HOLD_STEPS, planned_teleport, run_expert
-from keiarm.scene import PLATE_HEIGHT, TABLE_CENTER, TABLE_HALF_SIZE, build_spec
+from keiarm.scene import (
+    AZIMUTH_LIMIT,
+    CUBE_RADIUS_RANGE,
+    PAN_AXIS_XY,
+    PLATE_HEIGHT,
+    TABLE_CENTER,
+    TABLE_HALF_SIZE,
+    build_spec,
+)
 from keiarm.task import REST_SPEED, REST_Z_TOL
 
 WEB_PUBLIC = REPO_ROOT / "web" / "public"
@@ -81,6 +89,9 @@ def scene_bundle(scene_seed: int, episode_seeds: list[int]) -> dict:
             "success_hold_steps": SUCCESS_HOLD_STEPS, "max_episode_steps": config.MAX_EPISODE_STEPS,
             "table_center": list(TABLE_CENTER), "table_half_size": list(TABLE_HALF_SIZE),
             "policy_execute_steps": 10,
+            # Where the cube is spawned in training: the region the policy can be expected to grasp in.
+            "pan_axis_xy": list(PAN_AXIS_XY), "cube_radius_range": list(CUBE_RADIUS_RANGE),
+            "azimuth_limit": float(AZIMUTH_LIMIT),
             "fixed_jaw_bodies": ["gripper", "camera_mount"], "moving_jaw_bodies": ["moving_jaw_so101_v1"],
         },
     }

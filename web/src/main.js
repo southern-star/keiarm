@@ -39,6 +39,41 @@ function resize() {
 window.addEventListener('resize', resize);
 resize();
 
+// Layer 1 holds helpers that only the free-view camera draws. The policy cameras render
+// layer 0 only, so their images stay exactly what the model was trained on.
+const HELPER_LAYER = 1;
+viewCamera.layers.enable(HELPER_LAYER);
+
+// Outline of the region where the cube was placed during training (an annular sector around
+// the shoulder axis): inside it the arm can reach the cube and the policy knows what to do.
+function graspRegion(sim) {
+  const [cx, cy] = sim.c.pan_axis_xy;
+  const [r0, r1] = sim.c.cube_radius_range;
+  const limit = sim.c.azimuth_limit;
+  const group = new THREE.Group();
+  const fill = new THREE.Mesh(
+    new THREE.RingGeometry(r0, r1, 64, 1, -limit, 2 * limit),
+    new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.14, depthWrite: false }),
+  );
+  const points = [];
+  const arc = (r, from, to) => {
+    for (let i = 0; i <= 48; i++) {
+      const a = from + ((to - from) * i) / 48;
+      points.push(new THREE.Vector3(r * Math.cos(a), r * Math.sin(a), 0));
+    }
+  };
+  arc(r1, -limit, limit);
+  arc(r0, limit, -limit);
+  const outline = new THREE.LineLoop(
+    new THREE.BufferGeometry().setFromPoints(points),
+    new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.75 }),
+  );
+  group.add(fill, outline);
+  group.position.set(cx, cy, 0.0006); // just above the table surface
+  group.traverse((o) => o.layers.set(HELPER_LAYER));
+  return group;
+}
+
 const meshCache = new Map();
 async function fetchMesh(name) {
   if (!meshCache.has(name)) {
@@ -74,6 +109,7 @@ async function loadScene(seed) {
   $('episode').replaceChildren(...bundle.episodes.map((e, i) => new Option(String(e.episode_seed), String(i))));
   selectEpisode(0);
   app.view = new SceneView(app.sim);
+  app.view.scene.add(graspRegion(app.sim));
 }
 
 function selectEpisode(index) {
