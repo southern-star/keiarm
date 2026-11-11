@@ -5,14 +5,16 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
+      # Software GL so the rendering tests run (they skip themselves if this is not enough).
+      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libegl1 libgl1-mesa-dri libgles2
       - uses: astral-sh/setup-uv@v6
       - run: uv sync --locked --no-group train
-      - run: uv run ruff check .
-      - run: uv run pytest -q
+      - run: uv run --no-sync ruff check .
+      - run: uv run --no-sync pytest -q
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: uv run python scripts/export_web.py
+      - run: uv run --no-sync python scripts/export_web.py
       - run: npm ci
         working-directory: web
       - run: npm test

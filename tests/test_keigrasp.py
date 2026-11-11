@@ -27,11 +27,8 @@ def test_eval_seeds_are_refused_as_training_data(tmp_path):
         load_dataset([tmp_path])
 
 
-def test_collect_episode_and_reload(tmp_path):
-    try:
-        ep = collect_episode(7, 0, sigma=0.01, label_every=5)
-    except Exception as exc:  # noqa: BLE001 - no GL context available
-        pytest.skip(f"renderer unavailable: {exc}")
+def test_collect_episode_and_reload(tmp_path, gl):
+    ep = collect_episode(7, 0, sigma=0.01, label_every=5)
     n = len(ep["steps"])
     assert n > 5 and ep["success_at"] > 0
     assert ep["images"].shape == (n, 2, config.IMAGE_HEIGHT, config.IMAGE_WIDTH, 3)
@@ -73,16 +70,13 @@ def test_augmentation_keeps_shape_and_range():
     assert not torch.equal(x, y)
 
 
-def test_dagger_collection_lets_the_policy_drive_and_the_expert_label(tmp_path):
+def test_dagger_collection_lets_the_policy_drive_and_the_expert_label(tmp_path, gl):
     from keiarm.env import KeiArmEnv
     from keiarm.expert import Expert
     from keiarm.policies import make_policy
     from keiarm.rollout import expert_chunk
 
-    try:
-        ep = collect_episode(11, 0, label_every=10, max_steps=40, disturb=15, policy=make_policy("hold"))
-    except Exception as exc:  # noqa: BLE001 - no GL context available
-        pytest.skip(f"renderer unavailable: {exc}")
+    ep = collect_episode(11, 0, label_every=10, max_steps=40, disturb=15, policy=make_policy("hold"))
     assert ep["source"] == "dagger" and ep["teleport_step"] == 15 and ep["success_at"] == -1
     # The arm never moved (the idle policy drove) ...
     np.testing.assert_allclose(ep["joints"], ep["joints"][:1].repeat(len(ep["joints"]), 0), atol=0.02)

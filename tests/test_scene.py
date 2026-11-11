@@ -94,11 +94,8 @@ def test_initial_state_is_clean_and_cube_rests(seed):
         np.testing.assert_allclose(env.joints(), hold, atol=0.02)  # arm holds its start pose
 
 
-def test_images_are_deterministic_and_show_the_scene():
-    try:
-        env_a, env_b = KeiArmEnv(5), KeiArmEnv(5)
-    except Exception as exc:  # noqa: BLE001 - no GL context available (e.g. CI without EGL)
-        pytest.skip(f"renderer unavailable: {exc}")
+def test_images_are_deterministic_and_show_the_scene(gl):
+    env_a, env_b = KeiArmEnv(5), KeiArmEnv(5)
     for env in (env_a, env_b):
         env.reset(0)
     a, b = env_a.observe(), env_b.observe()
