@@ -8,6 +8,7 @@ import numpy as np
 from keiarm import config
 from keiarm.openarm.robot import wrist_camera
 from keiarm.openarm.scene import (
+    PLATE_HEIGHT,
     EpisodeParams,
     SceneParams,
     build_model,
@@ -87,6 +88,11 @@ class OpenArmEnv:
     def teleport_bar(self, xy, yaw: float) -> None:
         """Disturbance: put the bar flat on the table at `xy`, at rest."""
         set_bar_pose(self.model, self.data, xy, yaw, self.scene.bar_size[2] / 2 + 1e-3)
+        mujoco.mj_forward(self.model, self.data)
+
+    def move_plate(self, xy) -> None:
+        """Disturbance: move the plate (a mocap body) to `xy` on the table."""
+        self.data.mocap_pos[self.ix.plate_mocap] = [float(xy[0]), float(xy[1]), PLATE_HEIGHT / 2]
         mujoco.mj_forward(self.model, self.data)
 
     def scratch_copy(self) -> mujoco.MjData:

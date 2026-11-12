@@ -1,0 +1,49 @@
+{
+ "episodes": 100,
+ "success": 88,
+ "success_rate": 0.88,
+ "stage_reached": {
+  "reach": 100,
+  "grasp_right": 100,
+  "lift": 100,
+  "handover": 97,
+  "left_carry": 97,
+  "over_plate": 97,
+  "success": 88
+ },
+ "stage_first_step_median": {
+  "reach": 35.0,
+  "grasp_right": 87.0,
+  "lift": 90.0,
+  "handover": 199.0,
+  "left_carry": 200.0,
+  "over_plate": 230.0,
+  "success": 350.5
+ },
+ "disturbance_applied": 100,
+ "infractions_per_episode": {
+  "arms_touch_episodes": 0.04,
+  "table_hits": 0.03,
+  "drops": 0.03,
+  "bar_off_table": 0.06
+ },
+ "arms_touch_steps": 8,
+ "max_table_force": 190.01,
+ "steps_to_success": {
+  "median": 350.5,
+  "p90": 545.9,
+  "max": 703
+ },
+ "failures": {
+  "place_failed": 8,
+  "dropped": 3,
+  "bar_off_table": 1
+ },
+ "failed_expert_could_finish": 0,
+ "failed_stuck": 12,
+ "disturb": "move",
+ "name": "openarm_expert-noisy-0.0065_eval_move",
+ "policy": "expert-noisy:0.0065",
+ "split": "eval",
+ "mujoco": "3.17.0"
+}

@@ -250,3 +250,81 @@ def test_dart_noise_spares_the_grippers():
 
     noise = dart_noise(np.random.default_rng(0), 50, 0.0065)
     assert np.all(noise[:, GRIPPER_COLUMNS] == 0.0) and noise.std() > 0.003
+
+
+# --- Phase 3: evaluation harness -----------------------------------------------------------
+
+
+def test_disturbances_are_pure_functions_of_seeds_and_respect_their_rules():
+    from keiarm.openarm.env import OpenArmEnv
+    from keiarm.openarm.eval import DISTURBANCES, planned_disturbance
+
+    env = OpenArmEnv(7, render=False)
+    for ep in range(20):
+        env.reset(ep)
+        assert planned_disturbance(env, "none") is None
+        for kind in DISTURBANCES[1:]:
+            d1, d2 = planned_disturbance(env, kind), planned_disturbance(env, kind)
+            assert d1 == d2 and d1.step is None
+            if kind == "plate":
+                assert np.linalg.norm(np.array([d1.x, d1.y]) - env.episode.plate_xy) >= 0.05
+                continue
+            grips = grip_points([d1.x, d1.y], d1.yaw)
+            assert in_sector(grips["right"], "right"), (kind, ep)
+            if kind == "move":  # clear of where the right hand was heading
+                old = grip_points(env.episode.bar_xy, env.episode.bar_yaw)["right"]
+                assert np.linalg.norm(grips["right"] - old) > 0.04
+
+
+def test_harness_classifies_baselines_by_stage():
+    from keiarm.openarm.env import OpenArmEnv
+    from keiarm.openarm.eval import run_episode
+    from keiarm.openarm.policies import make_policy
+
+    env = OpenArmEnv(100000, render=False)
+    hold = run_episode(env, make_policy("hold"), 0, max_steps=60, probe=False)
+    assert not hold.success and hold.failure == "grasp_failed" and hold.stage == "none"
+    frozen = run_episode(env, make_policy("freeze"), 0, max_steps=150)
+    assert not frozen.success and frozen.stage == "lift" and frozen.failure == "handover_failed"
+    assert list(frozen.stage_steps) == ["reach", "grasp_right", "lift"]
+    assert frozen.expert_could_finish  # the expert takes over from the frozen state and finishes
+
+
+@pytest.mark.parametrize("kind", ["knock", "drop", "plate"])
+def test_expert_recovers_from_disturbances_and_replay_matches(kind):
+    from keiarm.openarm.env import OpenArmEnv
+    from keiarm.openarm.eval import replay, run_episode
+    from keiarm.openarm.policies import make_policy
+    from keiarm.openarm.task import STAGES
+
+    env = OpenArmEnv(100000, render=False)
+    rec = run_episode(env, make_policy("expert"), 0, disturb=kind)
+    assert rec.disturbance.step is not None
+    assert rec.success and rec.arms_touch_steps == 0 and rec.drops == 0, (rec.stage, rec.failure)
+    assert rec.disturbance.step > rec.stage_steps[STAGES[rec.disturbance.after_stage]] - 1
+    final = env.privileged().bar_pos
+    np.testing.assert_array_equal(replay(env, rec).bar_pos, final)
+
+
+def test_harness_counts_a_real_drop_once():
+    from keiarm.openarm.env import OpenArmEnv
+    from keiarm.openarm.eval import run_episode
+    from keiarm.openarm.policies import ExpertPolicy
+    from keiarm.openarm.robot import GRIPPER_OPEN
+
+    class OpensMidCarry(ExpertPolicy):  # lets go of the bar 20 steps into the carry, once
+        def reset(self, env):
+            super().reset(env)
+            self.carry_start = None
+
+        def act(self, env):
+            action, info = self.expert.act(env.data)
+            if info.phase.endswith("/CARRY") and self.carry_start is None:
+                self.carry_start = env.steps
+            if self.carry_start is not None and 20 <= env.steps - self.carry_start < 35:
+                action[15] = GRIPPER_OPEN["right"]
+            return action
+
+    rec = run_episode(OpenArmEnv(100000, render=False), OpensMidCarry(), 0)
+    assert rec.drops == 1
+    assert rec.success  # the expert picks it up again
