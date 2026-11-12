@@ -23,6 +23,20 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 | 成功判定 | 設計図 10.1 の条件が 10 ステップ連続（`keiarm/task.py`、`keiarm/rollout.py`） |
 | シード分割 | 訓練 scene_seed 0–3999 / 評価 100000–100099 |
 
+### マイルストーン 2: OpenArm v2（両腕、`keiarm/openarm/`、計画は `docs/milestone2.md`）
+
+| 項目 | 値 |
+|---|---|
+| ロボットモデル | `enactic/openarm_mujoco` @ `1daab06` の `v2/openarm_bimanual.xml`、`third_party/openarm_v2/` にベンダリング。**編集禁止** |
+| 物理 | timestep 1/240 × 8（SO-101 と同じ）、implicitfast、elliptic、impratio 10。**アームの全ボディに `gravcomp = 1`（必須。無いと手先が 14 mm 沈む）** |
+| 行動 | 16 個 = アクチュエータ順（左 7 関節、左指、右 7 関節、右指）[rad] |
+| 座標 | 机の上面 z = 0、アームの取り付け高さ 0.297 m（Enactic の台座と机の高さの差） |
+| 開始姿勢 | 指先の中点を (0.25, ±0.20, 0.20) に真下向き。左右は鏡像（`keiarm/openarm/robot.py`） |
+| 最初のタスク | 右手側の**棒**（長さ 15–18 cm）を右手が −y 端で取り、中央 (0.27, 0, 0.15) の空中で左手が +y 端を掴んで受け取り、左手側の皿に置く。両手の掴む点は棒の中心から ±6 cm（`BAR_GRIP_OFFSET`。手の間隔 12 cm、9 cm で手首どうしが当たる） |
+| 出現範囲 | 右手の掴む点（と鏡像で左手の置く点）を肩付近 (0, ∓0.152) 中心の扇形（半径 0.21–0.27 m、方位 −65°〜−10°）に置く。棒の向きは y 軸から −20°〜+45°（`keiarm/openarm/scene.py`、根拠は `docs/openarm/reach_bar.png`） |
+| 把持の向き | 手ごとに「自然な」向きだけを使う: 顎の yaw = `HOME_YAW[side]`（右 +π/2、左 −π/2）+ 棒の角度。180° 反転した把持では棒を y 軸向きに回せない（手首の可動域） |
+| DART ノイズ（OpenArm） | σ = 0.0065 rad を基準にする（SO-101 の 0.01 rad と手先の変位が同じになる値。手先の変位/関節角は SO-101 0.35 m/rad、OpenArm 0.54 m/rad） |
+
 ## コマンド
 
 - 環境構築: `./setup.sh`（= `uv sync`）
@@ -35,7 +49,7 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 - 学習: `uv run python scripts/collect.py --name <データ名> --scenes 0 1200` → `uv run python scripts/train.py --name <run 名> --data <データ名>` → `uv run python scripts/eval.py --policy keigrasp:<run 名> --workers 6 [--disturb] [--episodes 3]`
 - DAgger: `uv run python scripts/collect.py --name <名前> --scenes A B --disturb --policy keigrasp:<run 名> --workers 6` → `scripts/train.py --init <run 名> --data <全部>`。**ラウンドごとに新しいシーン範囲を使う**（使用済み: 0–1899、2000–2599）
 - ブラウザのモデル: `uv run python scripts/export_onnx.py --run r1` → `npm --prefix web run build` → `uv run python tools/browser_eval.py --python-run keigrasp-r1_eval3`（ブラウザ内の閉ループ評価、約 18 分）/ `uv run python tools/browser_demo_check.py`（実時間 + マウスドラッグ）
-- ベンチ: `uv run python scripts/bench.py` / 到達範囲: `uv run python tools/reachability.py`
+- ベンチ: `uv run python scripts/bench.py`（OpenArm は `scripts/bench_openarm.py`。シーン一覧 `scripts/show_scenes_openarm.py`、到達範囲 `tools/openarm_reach.py --object bar`、エキスパート評価 `scripts/eval_expert_openarm.py [--dart 0.0065]`、動画 `scripts/run_expert_openarm.py --video runs/x.mp4`） / 到達範囲: `uv run python tools/reachability.py`
 - モデル調査: `uv run python tools/inspect_so101.py` / IK 確認: `uv run python tools/check_ik.py`
 
 ## 原則
@@ -57,6 +71,7 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 - **良すぎる結果は疑う。** 方策の評価では、画像を黒塗りした対照と、同じ評価の再実行での一致を確かめてから報告する
 - **ブラウザ側の方策実行（`web/src/policy.js`）は `keigrasp/policy.py` を写したもの。** 実行ステップ数（10）は書き出し JSON の `policy_execute_steps`。モデルを変えたら `scripts/export_onnx.py` で書き出し直し、`tools/browser_eval.py` で Python の評価と突き合わせる
 - **公開先**: リポジトリ https://github.com/southern-star/keiarm（public）、デモ https://southern-star.github.io/keiarm/。`main` への push でデモが更新されるので、push は利用者の確認を取ってから。公開後の確認は `uv run python tools/browser_demo_check.py --url https://southern-star.github.io/keiarm/`
+- **OpenArm の重力補償はコンパイル前（XML / MjSpec）に入れる。** WASM ではコンパイル後に `body_gravcomp` を書き換えても効かない
 - **WASM のオブジェクトは GC されない。** `MjModel` / `MjData` / 接触ベクタは使い終わったら `.delete()` する
 - 方策は 2,000 万パラメータ以下、行動チャンク回帰（L1）。拡散・VLA・強化学習は使わない
 - 「要確認」の項目は実物（XML、README、パッケージ）で確かめ、結果を `PROGRESS.md` か `docs/` に残す。推測で設計を進めない
@@ -68,7 +83,8 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 keiarm/      シミュレーター（シーン生成、環境、エキスパート、評価）
 keigrasp/    方策（モデル、学習、DAgger、ONNX 書き出し）
 web/         ブラウザデモ（three.js、MuJoCo WASM、onnxruntime-web）。web/public/scenes/ に事前生成シーン（git 管理）、web/public/assets/ はメッシュのコピー（管理外）
-third_party/ Menagerie 由来（ライセンス同梱、編集禁止）
+keiarm/openarm/  マイルストーン 2（OpenArm v2）。SO-101 側のコードとは独立させ、共通化は必要になってから
+third_party/ Menagerie 由来の SO-101、Enactic 由来の OpenArm v2（ライセンス同梱、編集禁止）
 scripts/     demo.py ほか、利用者が叩く入口
 tools/       調査・検証用（モデル調査、IK 確認、到達範囲、描画一致）
 tests/ docs/ runs/（runs は git 管理外。`runs/eval_summaries/` だけ管理）
