@@ -1,0 +1,21 @@
+{
+ "run": "oa_r1",
+ "parameters": 11782512,
+ "robot": "openarm",
+ "chunk": 30,
+ "cameras": [
+  "cam_front",
+  "camera_wrist_left",
+  "camera_wrist_right"
+ ],
+ "action_dim": 16,
+ "image_height": 120,
+ "image_width": 160,
+ "max_abs_diff_vs_pytorch_rad": 1.704692840576172e-05,
+ "bytes": 47225203,
+ "train_data": [
+  "oa_bc1",
+  "oa_bc1d",
+  "oa_dagger1"
+ ]
+}

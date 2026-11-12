@@ -30,19 +30,24 @@ class KeiGraspPolicy:
 
     needs_images = True
 
-    def __init__(self, checkpoint: str, execute: int = 10, device: str | None = None):
+    def __init__(self, checkpoint: str, execute: int = 10, device: str | None = None,
+                 cameras: tuple[str, ...] = config.CAMERAS, blind: tuple[str, ...] = ()):
         self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.model = _load(str(resolve_checkpoint(checkpoint)), self.device)
         self.execute = execute
+        self.cameras = tuple(cameras)  # image order the model was trained with
+        self.blind = set(blind)  # cameras replaced by black images (control experiments)
+        if self.model.cfg.cameras != len(self.cameras):
+            raise ValueError(f"model expects {self.model.cfg.cameras} cameras, got {self.cameras}")
 
     def reset(self, env: KeiArmEnv) -> None:
-        self.plan = np.zeros((0, 6))
+        self.plan = np.zeros((0, self.model.cfg.action_dim))
         self.cursor = 0
 
     @torch.no_grad()
     def infer(self, env: KeiArmEnv) -> np.ndarray:
         obs = env.observe()
-        images = np.stack([obs.images[c] for c in config.CAMERAS])
+        images = np.stack([obs.images[c] * (c not in self.blind) for c in self.cameras]).astype(np.uint8)
         x = torch.from_numpy(images).to(self.device).permute(0, 3, 1, 2).float()[None] / 255.0
         q = torch.from_numpy(obs.joints).float().to(self.device)[None]
         return self.model(x, q)[0].double().cpu().numpy()

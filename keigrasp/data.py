@@ -95,19 +95,71 @@ def save_episode(directory: Path, ep: dict) -> Path:
     return path
 
 
-def load_dataset(directories: list[Path]) -> dict[str, np.ndarray]:
+IMAGE_CACHE_BYTES = 8e9  # larger image sets are unpacked to a memory-mapped file instead of RAM
+
+
+def _image_cache_path(files: list[tuple[Path, int]]) -> Path:
+    import hashlib
+
+    from keiarm.paths import REPO_ROOT
+
+    key = hashlib.sha1("\n".join(f"{f.resolve()}:{f.stat().st_size}:{f.stat().st_mtime_ns}"
+                                  for f, _ in files).encode()).hexdigest()[:16]
+    return REPO_ROOT / "runs" / "cache" / f"images_{key}.npy"
+
+
+def load_dataset(directories: list[Path], chunk: int = CHUNK,
+                 cache_above: float = IMAGE_CACHE_BYTES) -> dict[str, np.ndarray]:
     """Load every episode under the given directories into memory (and re-check the split)."""
     files = sorted(f for d in directories for f in Path(d).glob("*.npz"))
     if not files:
         raise FileNotFoundError(f"no episodes found in {directories}")
-    parts = {"images": [], "joints": [], "chunks": [], "scene": []}
+    # Two passes: count samples first, then fill preallocated arrays (concatenating a list
+    # would hold every image twice; OpenArm datasets are ~10 GB).
+    keep, total, shapes = [], 0, None
     for f in files:
         with np.load(f) as z:
             require_train_seed(int(z["scene_seed"]))
-            if z["chunks"].shape[1] != CHUNK or len(z["images"]) == 0:
+            n = len(z["steps"])
+            if n == 0:
                 continue
-            parts["images"].append(z["images"])
-            parts["joints"].append(z["joints"])
-            parts["chunks"].append(z["chunks"])
-            parts["scene"].append(np.full(len(z["images"]), int(z["scene_seed"]), dtype=np.int64))
-    return {k: np.concatenate(v) for k, v in parts.items()}
+            c = z["chunks"]
+            if c.shape[1] != chunk:
+                continue
+            if shapes is None:
+                shapes = {"images": (z["images"].shape[1:], np.uint8), "joints": (z["joints"].shape[1:], np.float32),
+                          "chunks": (c.shape[1:], np.float32)}
+            keep.append((f, n))
+            total += n
+    if shapes is None:
+        raise FileNotFoundError(f"no usable episodes in {directories}")
+    out = {k: np.empty((total, *shape), dtype=dt) for k, (shape, dt) in shapes.items() if k != "images"}
+    out["scene"] = np.empty(total, dtype=np.int64)
+    image_shape = (total, *shapes["images"][0])
+    cached = None
+    if total * np.prod(shapes["images"][0]) > cache_above:
+        # Unpack the images once to runs/cache/ (keyed by the episode files) and memory-map
+        # them: the OS page cache keeps what fits, the rest is read from disk per batch.
+        cached = _image_cache_path(keep)
+        if cached.exists():
+            out["images"] = np.load(cached, mmap_mode="r")
+        else:
+            cached.parent.mkdir(parents=True, exist_ok=True)
+            tmp = cached.with_suffix(".tmp.npy")
+            out["images"] = np.lib.format.open_memmap(tmp, mode="w+", dtype=np.uint8, shape=image_shape)
+    else:
+        out["images"] = np.empty(image_shape, dtype=np.uint8)
+    fill_images = cached is None or not cached.exists()
+    i = 0
+    for f, n in keep:
+        with np.load(f) as z:
+            for k in ("joints", "chunks", *(("images",) if fill_images else ())):
+                out[k][i : i + n] = z[k]
+            out["scene"][i : i + n] = int(z["scene_seed"])
+        i += n
+    if cached is not None and fill_images:
+        out["images"].flush()
+        del out["images"]
+        tmp.rename(cached)
+        out["images"] = np.load(cached, mmap_mode="r")
+    return out

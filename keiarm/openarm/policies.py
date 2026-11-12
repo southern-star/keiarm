@@ -74,8 +74,18 @@ class FreezePolicy(ExpertPolicy):
 
 
 def make_policy(spec: str) -> Policy:
-    """'expert', 'expert-noisy:<sigma>', 'hold', 'freeze[:<right phase>]'."""
+    """'expert', 'expert-noisy:<sigma>', 'hold', 'freeze[:<right phase>]',
+    'keigrasp:<run name or .pt>[:<steps executed per inference>]',
+    'keigrasp-blind:<run>[:<cameras, comma-separated; default all>]' (control: black images)."""
     name, _, arg = spec.partition(":")
+    if name in ("keigrasp", "keigrasp-blind"):
+        from keiarm.openarm.env import CAMERAS
+        from keigrasp.policy import KeiGraspPolicy  # deferred: needs torch
+
+        run, _, rest = arg.partition(":")
+        if name == "keigrasp":
+            return KeiGraspPolicy(run, execute=int(rest or 10), cameras=CAMERAS)
+        return KeiGraspPolicy(run, cameras=CAMERAS, blind=tuple(rest.split(",")) if rest else CAMERAS)
     if name == "expert":
         return ExpertPolicy()
     if name == "expert-noisy":

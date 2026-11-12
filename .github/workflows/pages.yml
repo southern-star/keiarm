@@ -1,6 +1,6 @@
 # Build the browser demo and publish it to GitHub Pages.
 # Requires: Settings -> Pages -> Source = "GitHub Actions", and the exported model committed at
-# web/public/models/keigrasp.onnx (+ .json). Scenes and meshes are regenerated here.
+# web/public/models/keigrasp.onnx and openarm.onnx (+ .json). Scenes and meshes are regenerated here.
 name: pages
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
       - run: uv sync --locked --no-group train
       - run: uv run --no-sync python scripts/export_web.py
       - run: uv run --no-sync python scripts/export_web_openarm.py
-      - run: test -f web/public/models/keigrasp.onnx
+      - run: test -f web/public/models/keigrasp.onnx && test -f web/public/models/openarm.onnx
       - run: npm ci
         working-directory: web
       - run: npm run build

@@ -1,4 +1,6 @@
-"""KeiGrasp: a small action-chunking policy (two camera images + joint angles -> K joint targets).
+"""KeiGrasp: a small action-chunking policy (camera images + joint angles -> K joint targets).
+
+SO-101: 2 cameras, 6 joints (the defaults). OpenArm (milestone 2): 3 cameras, 16 joints.
 
 Deterministic regression in the ACT family: per-camera CNN encoders produce feature tokens, a
 transformer encoder mixes them with a joint-state token, and a transformer decoder turns K
@@ -25,6 +27,8 @@ class ModelConfig:
     encoder_layers: int = 3
     decoder_layers: int = 2
     widths: tuple[int, ...] = (32, 64, 128, 256)
+    action_dim: int = 6  # joint angles in = joint targets out
+    absolute: tuple[int, ...] = (5,)  # columns predicted as absolute targets (grippers); the rest relative
 
 
 class Block(nn.Module):
@@ -71,23 +75,26 @@ class KeiGrasp(nn.Module):
             fh, fw = self.encoders[0](torch.zeros(1, 3, cfg.image_height, cfg.image_width)).shape[-2:]
         self.tokens_per_camera = fh * fw
         self.image_pos = nn.Parameter(torch.randn(cfg.cameras, self.tokens_per_camera, d) * 0.02)
-        self.joint_embed = nn.Sequential(nn.Linear(6, d), nn.ReLU(), nn.Linear(d, d))
+        self.joint_embed = nn.Sequential(nn.Linear(cfg.action_dim, d), nn.ReLU(), nn.Linear(d, d))
         enc = nn.TransformerEncoderLayer(d, cfg.heads, 2 * d, dropout=0.0, batch_first=True, norm_first=True)
         self.encoder = nn.TransformerEncoder(enc, cfg.encoder_layers, enable_nested_tensor=False)
         dec = nn.TransformerDecoderLayer(d, cfg.heads, 2 * d, dropout=0.0, batch_first=True, norm_first=True)
         self.decoder = nn.TransformerDecoder(dec, cfg.decoder_layers)
         self.queries = nn.Parameter(torch.randn(cfg.chunk, d) * 0.02)
-        self.head = nn.Sequential(nn.LayerNorm(d), nn.Linear(d, 6))
+        self.head = nn.Sequential(nn.LayerNorm(d), nn.Linear(d, cfg.action_dim))
         # Normalisation constants (set from the model's joint limits and the dataset).
-        self.register_buffer("joint_mid", torch.zeros(6))
-        self.register_buffer("joint_half", torch.ones(6))
-        self.register_buffer("target_mean", torch.zeros(6))
-        self.register_buffer("target_std", torch.ones(6))
-        # 1 for joints predicted relative to the current angle (the arm), 0 for absolute (gripper).
-        self.register_buffer("relative", torch.tensor([1.0, 1.0, 1.0, 1.0, 1.0, 0.0]))
+        n = cfg.action_dim
+        self.register_buffer("joint_mid", torch.zeros(n))
+        self.register_buffer("joint_half", torch.ones(n))
+        self.register_buffer("target_mean", torch.zeros(n))
+        self.register_buffer("target_std", torch.ones(n))
+        # 1 for joints predicted relative to the current angle (the arms), 0 for absolute (grippers).
+        relative = torch.ones(n)
+        relative[list(cfg.absolute)] = 0.0
+        self.register_buffer("relative", relative)
 
     def set_normalization(self, joint_range: torch.Tensor, joints: torch.Tensor, chunks: torch.Tensor) -> None:
-        """joint_range (6, 2); joints (N, 6) and chunks (N, K, 6) from the training data [rad]."""
+        """joint_range (J, 2); joints (N, J) and chunks (N, K, J) from the training data [rad]."""
         self.joint_mid.copy_(joint_range.mean(dim=1))
         self.joint_half.copy_((joint_range[:, 1] - joint_range[:, 0]) / 2)
         raw = chunks - self.relative * joints[:, None, :]
@@ -98,7 +105,7 @@ class KeiGrasp(nn.Module):
         return (chunks - self.relative * joints[:, None, :] - self.target_mean) / self.target_std
 
     def predict_normalized(self, images: torch.Tensor, joints: torch.Tensor) -> torch.Tensor:
-        """images (B, cameras, 3, H, W) in [0, 1]; joints (B, 6) [rad] -> (B, K, 6) normalised."""
+        """images (B, cameras, 3, H, W) in [0, 1]; joints (B, J) [rad] -> (B, K, J) normalised."""
         b = images.shape[0]
         tokens = []
         for i, enc in enumerate(self.encoders):
@@ -110,7 +117,7 @@ class KeiGrasp(nn.Module):
         return self.head(out)
 
     def forward(self, images: torch.Tensor, joints: torch.Tensor) -> torch.Tensor:
-        """Joint position targets [rad] for the next K control steps, (B, K, 6)."""
+        """Joint position targets [rad] for the next K control steps, (B, K, J)."""
         pred = self.predict_normalized(images, joints)
         return pred * self.target_std + self.target_mean + self.relative * joints[:, None, :]
 
@@ -121,7 +128,8 @@ def save_checkpoint(path, model: KeiGrasp, **extra) -> None:
 
 def load_checkpoint(path, device: str = "cpu") -> tuple[KeiGrasp, dict]:
     ckpt = torch.load(path, map_location=device, weights_only=False)
-    cfg = ModelConfig(**{**ckpt["config"], "widths": tuple(ckpt["config"]["widths"])})
+    c = ckpt["config"]
+    cfg = ModelConfig(**{**c, "widths": tuple(c["widths"]), "absolute": tuple(c.get("absolute", (5,)))})
     model = KeiGrasp(cfg)
     model.load_state_dict(ckpt["state_dict"])
     return model.to(device).eval(), ckpt

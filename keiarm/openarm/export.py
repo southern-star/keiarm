@@ -21,13 +21,20 @@ import numpy as np
 
 from keiarm import config
 from keiarm.openarm.env import CAMERAS, MAX_EPISODE_STEPS, OpenArmEnv
-from keiarm.openarm.eval import run_episode
+from keiarm.openarm.eval import DISTURBANCES, planned_disturbance, run_episode
 from keiarm.openarm.expert import Expert
 from keiarm.openarm.policies import ExpertPolicy
-from keiarm.openarm.robot import ACTUATOR_NAMES, SIDES, arm_joints, finger_joints
+from keiarm.openarm.robot import (
+    ACTUATOR_NAMES,
+    PINCH_OFFSET,
+    SIDES,
+    arm_joints,
+    ee_site,
+    finger_joints,
+)
 from keiarm.openarm.rollout import SUCCESS_HOLD_STEPS
 from keiarm.openarm.scene import PLATE_HEIGHT, TABLE_CENTER, TABLE_HALF_SIZE, build_spec
-from keiarm.openarm.task import REST_SPEED, REST_TILT, REST_Z_TOL, STAGES
+from keiarm.openarm.task import REST_SPEED, REST_TILT, REST_Z_TOL, STAGE_LIFT, STAGE_REACH, STAGES
 from keiarm.paths import OPENARM_DIR, REPO_ROOT
 
 WEB_PUBLIC = REPO_ROOT / "web" / "public"
@@ -118,6 +125,10 @@ def export_meshes(spec: mujoco.MjSpec, out: Path, keep: float = VISUAL_KEEP) -> 
 
 
 def record_episode(env: OpenArmEnv, episode_seed: int, disturb: str) -> dict:
+    env.reset(episode_seed)
+    # The evaluation suite's disturbances for this episode (not yet fired), for the browser's
+    # closed-loop evaluation (tools/browser_eval_openarm.py).
+    plans = {k: asdict(planned_disturbance(env, k)) for k in DISTURBANCES[1:]}
     rec = run_episode(env, ExpertPolicy(), episode_seed, disturb=disturb, probe=False)
     actions = list(rec.actions)
     expert = Expert(env.model, env.scene)
@@ -131,6 +142,7 @@ def record_episode(env: OpenArmEnv, episode_seed: int, disturb: str) -> dict:
     return {
         **env.episode.to_dict(),
         "disturbance": None if d is None else asdict(d),
+        "planned_disturbances": plans,
         "expert": {
             "success": rec.success,
             "steps": rec.steps,  # control steps until success was confirmed
@@ -161,6 +173,9 @@ def constants() -> dict:
         # Joints set to each actuator's start target at reset (both finger joints of a gripper).
         "reset_joints": reset_joints(),
         "finger_bodies": {s: [f"openarm_{s}_ee_inner_finger", f"openarm_{s}_ee_outer_finger"] for s in SIDES},
+        "ee_sites": {s: ee_site(s) for s in SIDES}, "pinch_offset": list(PINCH_OFFSET),
+        "lift_height": STAGE_LIFT, "reach_distance": STAGE_REACH,  # task.stage_of
+        "policy_execute_steps": 10,
         "plate_height": PLATE_HEIGHT, "rest_z_tol": REST_Z_TOL, "rest_tilt": float(REST_TILT),
         "rest_speed": REST_SPEED, "success_hold_steps": SUCCESS_HOLD_STEPS,
         "max_episode_steps": MAX_EPISODE_STEPS, "stages": list(STAGES),

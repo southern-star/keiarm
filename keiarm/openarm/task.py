@@ -15,6 +15,8 @@ STAGES = ("none", "reach", "grasp_right", "lift", "handover", "left_carry", "ove
 REST_Z_TOL = 0.004  # bar centre height vs. lying flat on the plate [m]
 REST_TILT = np.radians(5.0)
 REST_SPEED = 0.01  # [m/s]
+STAGE_LIFT = 0.02  # [m] bar centre this far above lying flat counts as lifted (stage_of)
+STAGE_REACH = 0.10  # [m] right pinch point this close to the bar centre counts as "reach"
 
 
 class TaskIndex:
@@ -135,7 +137,7 @@ def stage_of(st: TaskState, scene: SceneParams) -> int:
     """Instantaneous progress stage (index into STAGES). Track the max over an episode."""
     if is_success(st, scene):
         return 7
-    lifted = st.bar_pos[2] > scene.bar_size[2] / 2 + 0.02
+    lifted = st.bar_pos[2] > scene.bar_size[2] / 2 + STAGE_LIFT
     if st.held("left") and not st.touches("right") and over_plate(st, scene):
         return 6
     if st.held("left") and not st.touches("right") and lifted:
@@ -146,6 +148,6 @@ def stage_of(st: TaskState, scene: SceneParams) -> int:
         return 3
     if st.held("right"):
         return 2
-    if np.linalg.norm(st.pinch_pos["right"] - st.bar_pos) < 0.10:
+    if np.linalg.norm(st.pinch_pos["right"] - st.bar_pos) < STAGE_REACH:
         return 1
     return 0

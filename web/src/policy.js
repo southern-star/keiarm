@@ -35,15 +35,16 @@ export class PolicyClient {
 
 // Mirrors keigrasp/policy.py. `observe()` must return { images: [RGBA per camera], joints }.
 export class ChunkRunner {
-  constructor(client, { chunk, execute = 10 }) {
+  constructor(client, { chunk, execute = 10, dim = 6 }) {
     this.client = client;
     this.chunk = chunk;
+    this.dim = dim; // joint targets per step (6 for SO-101, 16 for OpenArm)
     this.execute = execute;
     this.reset();
   }
 
   reset() {
-    this.plan = null; // Float32Array(chunk * 6)
+    this.plan = null; // Float32Array(chunk * dim)
     this.planStep = 0; // sim step at which the plan's observation was taken
     this.inFlight = null;
     this.generation = (this.generation ?? 0) + 1;
@@ -70,7 +71,7 @@ export class ChunkRunner {
 
   _action(step) {
     const k = Math.min(step - this.planStep, this.chunk - 1);
-    return Array.from(this.plan.subarray(6 * k, 6 * k + 6));
+    return Array.from(this.plan.subarray(this.dim * k, this.dim * (k + 1)));
   }
 
   // Synchronous-in-simulation-time mode (evaluation): the simulation waits for each inference,

@@ -40,7 +40,9 @@ def to_batch(data: dict, idx: np.ndarray, device: str):
 
 def train(data_dirs: list[Path], out: Path, joint_range: np.ndarray, epochs: int = 30, batch_size: int = 128,
           lr: float = 3e-4, weight_decay: float = 1e-4, val_fraction: float = 0.05, seed: int = 0,
-          init: KeiGrasp | None = None, device: str = "cuda", log=print) -> Path:
+          init: KeiGrasp | None = None, device: str = "cuda", log=print,
+          absolute: tuple[int, ...] = (5,)) -> Path:
+    """`absolute`: action columns predicted as absolute targets (the grippers)."""
     out.mkdir(parents=True, exist_ok=True)
     data = load_dataset(data_dirs)
     rng = np.random.default_rng(seed)
@@ -52,10 +54,12 @@ def train(data_dirs: list[Path], out: Path, joint_range: np.ndarray, epochs: int
     is_val = np.isin(data["scene"], val_scenes)
     train_idx, val_idx = np.flatnonzero(~is_val), np.flatnonzero(is_val)
     log(f"data: {len(train_idx)} train / {len(val_idx)} val samples from {len(scenes)} scenes, "
-        f"{data['images'].nbytes / 1e9:.1f} GB of images in RAM")
+        f"{data['images'].nbytes / 1e9:.1f} GB of images "
+        f"({'memory-mapped' if isinstance(data['images'], np.memmap) else 'in RAM'})")
 
-    model = init or KeiGrasp(ModelConfig(chunk=data["chunks"].shape[1], image_height=data["images"].shape[2],
-                                         image_width=data["images"].shape[3]))
+    model = init or KeiGrasp(ModelConfig(chunk=data["chunks"].shape[1], cameras=data["images"].shape[1],
+                                         image_height=data["images"].shape[2], image_width=data["images"].shape[3],
+                                         action_dim=data["chunks"].shape[2], absolute=tuple(absolute)))
     model.to(device)
     if init is None:
         model.set_normalization(torch.from_numpy(joint_range).float().to(device),
@@ -104,15 +108,16 @@ def train(data_dirs: list[Path], out: Path, joint_range: np.ndarray, epochs: int
 
 @torch.no_grad()
 def evaluate(model: KeiGrasp, data: dict, idx: np.ndarray, batch_size: int, device: str) -> dict:
-    """Validation error: normalised L1 and, in radians, arm joints and gripper separately."""
+    """Validation error: normalised L1 and, in radians, arm joints and grippers separately."""
     model.eval()
+    is_arm = model.relative.bool()
     norm, arm, grip, n = 0.0, 0.0, 0.0, 0
     for i in range(0, len(idx), batch_size):
         images, joints, chunks = to_batch(data, idx[i : i + batch_size], device)
         pred = model.predict_normalized(images, joints).float()
-        norm += F.l1_loss(pred, model.normalize_target(joints, chunks), reduction="sum").item() / (chunks.shape[1] * 6)
+        norm += F.l1_loss(pred, model.normalize_target(joints, chunks), reduction="sum").item() / chunks[0].numel()
         rad = (pred * model.target_std + model.target_mean + model.relative * joints[:, None, :] - chunks).abs()
-        arm += rad[..., :5].mean(dim=(1, 2)).sum().item()
-        grip += rad[..., 5].mean(dim=1).sum().item()
+        arm += rad[..., is_arm].mean(dim=(1, 2)).sum().item()
+        grip += rad[..., ~is_arm].mean(dim=(1, 2)).sum().item()
         n += len(images)
     return {"val_l1_norm": norm / n, "val_arm_rad": arm / n, "val_gripper_rad": grip / n}

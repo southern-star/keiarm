@@ -1,0 +1,45 @@
+{
+ "episodes": 300,
+ "success": 300,
+ "success_rate": 1.0,
+ "stage_reached": {
+  "reach": 300,
+  "grasp_right": 300,
+  "lift": 300,
+  "handover": 300,
+  "left_carry": 300,
+  "over_plate": 300,
+  "success": 300
+ },
+ "stage_first_step_median": {
+  "reach": 28.0,
+  "grasp_right": 52.0,
+  "lift": 55.0,
+  "handover": 141.0,
+  "left_carry": 142.0,
+  "over_plate": 168.0,
+  "success": 225.0
+ },
+ "disturbance_applied": 0,
+ "infractions_per_episode": {
+  "arms_touch_episodes": 0.0,
+  "table_hits": 0.0033333333333333335,
+  "drops": 0.0,
+  "bar_off_table": 0.0
+ },
+ "arms_touch_steps": 0,
+ "max_table_force": 44.5,
+ "steps_to_success": {
+  "median": 225.0,
+  "p90": 238.0,
+  "max": 249
+ },
+ "failures": {},
+ "failed_expert_could_finish": 0,
+ "failed_stuck": 0,
+ "disturb": "none",
+ "name": "openarm_keigrasp-oa_r1_eval3",
+ "policy": "keigrasp:oa_r1",
+ "split": "eval",
+ "mujoco": "3.17.0"
+}

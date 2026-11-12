@@ -1,0 +1,90 @@
+{
+ "name": "openarm_keigrasp-oa_r1_browser_suite",
+ "model": "oa_r1",
+ "backend": "wasm",
+ "webgl": "ANGLE (NVIDIA Corporation, NVIDIA GeForce RTX 3060/PCIe/SSE2, OpenGL ES 3.2)",
+ "mean_infer_ms": 177.05248190681874,
+ "kinds": {
+  "none": {
+   "episodes": 100,
+   "success": 100,
+   "steps_to_success_median": 225.0,
+   "failed": [],
+   "vs_python": {
+    "run": "openarm_keigrasp-oa_r1_eval3",
+    "paired_episodes": 100,
+    "both": 100,
+    "neither": 0,
+    "a_only": 0,
+    "b_only": 0,
+    "p_value": 1.0
+   }
+  },
+  "move": {
+   "episodes": 100,
+   "success": 100,
+   "steps_to_success_median": 240.5,
+   "failed": [],
+   "vs_python": {
+    "run": "openarm_keigrasp-oa_r1_eval3_move",
+    "paired_episodes": 100,
+    "both": 100,
+    "neither": 0,
+    "a_only": 0,
+    "b_only": 0,
+    "p_value": 1.0
+   }
+  },
+  "knock": {
+   "episodes": 100,
+   "success": 100,
+   "steps_to_success_median": 304.5,
+   "failed": [],
+   "vs_python": {
+    "run": "openarm_keigrasp-oa_r1_eval3_knock",
+    "paired_episodes": 100,
+    "both": 100,
+    "neither": 0,
+    "a_only": 0,
+    "b_only": 0,
+    "p_value": 1.0
+   }
+  },
+  "drop": {
+   "episodes": 100,
+   "success": 99,
+   "steps_to_success_median": 392.0,
+   "failed": [
+    [
+     100005,
+     0,
+     "left_carry"
+    ]
+   ],
+   "vs_python": {
+    "run": "openarm_keigrasp-oa_r1_eval3_drop",
+    "paired_episodes": 100,
+    "both": 99,
+    "neither": 0,
+    "a_only": 1,
+    "b_only": 0,
+    "p_value": 1.0
+   }
+  },
+  "plate": {
+   "episodes": 100,
+   "success": 100,
+   "steps_to_success_median": 227.0,
+   "failed": [],
+   "vs_python": {
+    "run": "openarm_keigrasp-oa_r1_eval3_plate",
+    "paired_episodes": 100,
+    "both": 100,
+    "neither": 0,
+    "a_only": 0,
+    "b_only": 0,
+    "p_value": 1.0
+   }
+  }
+ }
+}

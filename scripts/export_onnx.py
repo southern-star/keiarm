@@ -1,10 +1,13 @@
 """Export a trained KeiGrasp checkpoint to ONNX for onnxruntime-web and check it against PyTorch.
 
 Usage: uv run python scripts/export_onnx.py --run r1 [--out web/public/models/keigrasp.onnx]
+       uv run python scripts/export_onnx.py --robot openarm --run oa_r1   (-> web/public/models/openarm.onnx)
 
 Graph inputs:  images  float32 [1, 2, 3, 120, 160] in [0, 1] (camera order: cam_front, wrist_cam)
                joints  float32 [1, 6] joint angles [rad]
 Graph output:  actions float32 [1, 30, 6] joint position targets [rad]
+OpenArm: images [1, 3, 3, 120, 160] (cam_front, camera_wrist_left, camera_wrist_right),
+         joints [1, 16], actions [1, 30, 16] (actuator order).
 """
 
 import argparse
@@ -26,14 +29,24 @@ from keigrasp.policy import resolve_checkpoint
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", required=True, help="run name under runs/train/ or a .pt path")
-    ap.add_argument("--out", type=Path, default=REPO_ROOT / "web" / "public" / "models" / "keigrasp.onnx")
-    ap.add_argument("--check-data", default="bc1", help="dataset under runs/data/ to compare outputs on")
+    ap.add_argument("--robot", choices=["so101", "openarm"], default="so101")
+    ap.add_argument("--out", type=Path, help="default: web/public/models/keigrasp.onnx (openarm: openarm.onnx)")
+    ap.add_argument("--check-data", help="dataset under runs/data/ to compare outputs on (default: bc1 / oa_bc1)")
     args = ap.parse_args()
+    if args.robot == "openarm":
+        from keiarm.openarm.env import CAMERAS
+        cameras, default_out, default_data = list(CAMERAS), "openarm.onnx", "oa_bc1"
+    else:
+        cameras, default_out, default_data = list(config.CAMERAS), "keigrasp.onnx", "bc1"
+    args.out = args.out or REPO_ROOT / "web" / "public" / "models" / default_out
+    args.check_data = args.check_data or default_data
 
     model, ckpt = load_checkpoint(resolve_checkpoint(args.run))
     cfg = model.cfg
     images = torch.rand(1, cfg.cameras, 3, cfg.image_height, cfg.image_width)
-    joints = torch.zeros(1, 6)
+    if cfg.cameras != len(cameras):
+        raise SystemExit(f"{args.run} has {cfg.cameras} cameras; --robot {args.robot} expects {len(cameras)}")
+    joints = torch.zeros(1, cfg.action_dim)
     args.out.parent.mkdir(parents=True, exist_ok=True)
     torch.onnx.export(model, (images, joints), str(args.out), input_names=["images", "joints"],
                       output_names=["actions"], opset_version=18, dynamo=True, external_data=False)
@@ -56,7 +69,7 @@ def main() -> None:
             worst = max(worst, float(np.abs(out - ref).max()))
     meta = {
         "run": args.run, "parameters": int(sum(p.numel() for p in model.parameters())),
-        "chunk": cfg.chunk, "cameras": list(config.CAMERAS),
+        "robot": args.robot, "chunk": cfg.chunk, "cameras": cameras, "action_dim": cfg.action_dim,
         "image_height": cfg.image_height, "image_width": cfg.image_width,
         "max_abs_diff_vs_pytorch_rad": worst, "bytes": args.out.stat().st_size,
         "train_data": [Path(d).name for d in ckpt.get("data_dirs", [])],

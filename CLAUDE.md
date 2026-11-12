@@ -35,7 +35,8 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 | 最初のタスク | 右手側の**棒**（長さ 15–18 cm）を右手が −y 端で取り、中央 (0.27, 0, 0.15) の空中で左手が +y 端を掴んで受け取り、左手側の皿に置く。両手の掴む点は棒の中心から ±6 cm（`BAR_GRIP_OFFSET`。手の間隔 12 cm、9 cm で手首どうしが当たる） |
 | 出現範囲 | 右手の掴む点（と鏡像で左手の置く点）を肩付近 (0, ∓0.152) 中心の扇形（半径 0.21–0.27 m、方位 −65°〜−10°）に置く。棒の向きは y 軸から −20°〜+45°（`keiarm/openarm/scene.py`、根拠は `docs/openarm/reach_bar.png`） |
 | 把持の向き | 手ごとに「自然な」向きだけを使う: 顎の yaw = `HOME_YAW[side]`（右 +π/2、左 −π/2）+ 棒の角度。180° 反転した把持では棒を y 軸向きに回せない（手首の可動域） |
-| DART ノイズ（OpenArm） | σ = 0.0065 rad を基準にする（SO-101 の 0.01 rad と手先の変位が同じになる値。手先の変位/関節角は SO-101 0.35 m/rad、OpenArm 0.54 m/rad） |
+| DART ノイズ（OpenArm） | σ = 0.0065 rad を基準にする（SO-101 の 0.01 rad と手先の変位が同じになる値。手先の変位/関節角は SO-101 0.35 m/rad、OpenArm 0.54 m/rad）。収集では (0, 0.00325, 0.0065) を回す（0.00975 ではエキスパートが 48%） |
+| 方策（OpenArm） | KeiGrasp をカメラ 3 台（`cam_front`、左手首、右手首）・16 次元で 1178 万パラメータ。指の列 (7, 15) は絶対値で予測。現行の最良は `runs/train/oa_r1/model.pt`（git 管理外。`oa_bc1` に外乱入りデータと DAgger 1 ラウンドを足したもの）。**使用済みの訓練シーン: 0–1199** |
 
 ## コマンド
 
@@ -49,7 +50,7 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 - 学習: `uv run python scripts/collect.py --name <データ名> --scenes 0 1200` → `uv run python scripts/train.py --name <run 名> --data <データ名>` → `uv run python scripts/eval.py --policy keigrasp:<run 名> --workers 6 [--disturb] [--episodes 3]`
 - DAgger: `uv run python scripts/collect.py --name <名前> --scenes A B --disturb --policy keigrasp:<run 名> --workers 6` → `scripts/train.py --init <run 名> --data <全部>`。**ラウンドごとに新しいシーン範囲を使う**（使用済み: 0–1899、2000–2599）
 - ブラウザのモデル: `uv run python scripts/export_onnx.py --run r1` → `npm --prefix web run build` → `uv run python tools/browser_eval.py --python-run keigrasp-r1_eval3`（ブラウザ内の閉ループ評価、約 18 分）/ `uv run python tools/browser_demo_check.py`（実時間 + マウスドラッグ）
-- ベンチ: `uv run python scripts/bench.py`（OpenArm は `scripts/bench_openarm.py`。シーン一覧 `scripts/show_scenes_openarm.py`、到達範囲 `tools/openarm_reach.py --object bar`、評価 `scripts/eval_openarm.py --policy expert [--disturb none|move|knock|drop|plate|suite]`（レポートは `runs/eval_summaries/openarm_*`）、エキスパートの簡易評価 `scripts/eval_expert_openarm.py [--dart 0.0065]`、動画 `scripts/run_expert_openarm.py --video runs/x.mp4`、ブラウザ `scripts/export_web_openarm.py` → `npm --prefix web run build` → `tools/browser_check_openarm.py [--gpu]`、ページは `web/openarm.html`） / 到達範囲: `uv run python tools/reachability.py`
+- ベンチ: `uv run python scripts/bench.py`（OpenArm は `scripts/bench_openarm.py`。シーン一覧 `scripts/show_scenes_openarm.py`、到達範囲 `tools/openarm_reach.py --object bar`、評価 `scripts/eval_openarm.py --policy expert [--disturb none|move|knock|drop|plate|suite]`（レポートは `runs/eval_summaries/openarm_*`）、エキスパートの簡易評価 `scripts/eval_expert_openarm.py [--dart 0.0065]`、動画 `scripts/run_expert_openarm.py --video runs/x.mp4`、ブラウザ `scripts/export_web_openarm.py` → `npm --prefix web run build` → `tools/browser_check_openarm.py [--gpu]`、ページは `web/openarm.html`、モデル `scripts/export_onnx.py --robot openarm --run oa_r1`、ブラウザ内評価 `tools/browser_eval_openarm.py --gpu --python-run openarm_keigrasp-oa_r1_eval3 [--disturb suite]`、実時間 + ドラッグ `tools/browser_demo_check_openarm.py --gpu [--url ...]`、学習 `scripts/collect_openarm.py --name <名前> --scenes A B [--disturb mix] [--policy keigrasp:<run>]` → `scripts/train.py --robot openarm --name <run> --data <名前>` → `scripts/eval_openarm.py --policy keigrasp:<run> --workers 6`、対照は `--policy keigrasp-blind:<run>[:カメラ]`） / 到達範囲: `uv run python tools/reachability.py`
 - モデル調査: `uv run python tools/inspect_so101.py` / IK 確認: `uv run python tools/check_ik.py`
 
 ## 原則
@@ -67,6 +68,7 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 - **フェーズは合格基準を満たしてから次へ。** 特に、エキスパートが基準を満たすまで学習に進まない。ブラウザ描画の検証（Phase 4）は学習より前
 - **見た目は単純に。** 影・反射を使わず単色中心（MuJoCo 描画と three.js 描画の差を小さくするため）。両者の画素は `色 × (環境光 + 拡散光 × max(n·l, 0))` で一致させてある（`web/src/render.js`）。**Python 側の見た目（`keiarm/scene.py`）を変えたら `tools/browser_check.py` で差を測り直す**
 - **`web/src/sim.js` は `keiarm/scene.py` の `reset_data` と `keiarm/task.py` の成功判定を写したもの。** Python 側を変えたら両方直す。定数は書き出し JSON の `constants` で渡す
+- **8 GB を超える画像は `runs/cache/` に展開して memmap で読む**（`keigrasp.data.load_dataset`）。キャッシュは消してもよい（次の学習で作り直す）
 - **描画つきの `KeiArmEnv` は必ず `close()` する。** 閉じないまま同一プロセスで大量に作ると、エラーなしで画像が壊れ、方策の成功率が黙って下がる
 - **良すぎる結果は疑う。** 方策の評価では、画像を黒塗りした対照と、同じ評価の再実行での一致を確かめてから報告する
 - **ブラウザ側の方策実行（`web/src/policy.js`）は `keigrasp/policy.py` を写したもの。** 実行ステップ数（10）は書き出し JSON の `policy_execute_steps`。モデルを変えたら `scripts/export_onnx.py` で書き出し直し、`tools/browser_eval.py` で Python の評価と突き合わせる

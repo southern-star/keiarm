@@ -379,3 +379,31 @@ def test_web_export_decimates_visuals_without_changing_physics(tmp_path):
         data.ctrl[ix.act] = action
         mujoco.mj_step(web, data, nstep=config.SUBSTEPS)
     np.testing.assert_array_equal(data.qpos, env.data.qpos)
+
+
+# --- Phase 5: demonstrations ----------------------------------------------------------------
+
+
+def test_openarm_demonstrations_are_labelled_with_clean_expert_chunks():
+    from keigrasp.openarm import CHUNK, GRIPPER_COLUMNS, collect_episode, expert_chunk
+
+    with pytest.raises(ValueError):
+        collect_episode(config.EVAL_SCENE_SEEDS[0], 0)  # evaluation scenes never become data
+    ep = collect_episode(3, 0, sigma=0.0065, max_steps=24, label_every=3)
+    n = len(ep["steps"])
+    assert n == 8 and ep["images"].shape == (n, 3, config.IMAGE_HEIGHT, config.IMAGE_WIDTH, 3)
+    assert ep["joints"].shape == (n, 16) and ep["chunks"].shape == (n, CHUNK, 16)
+    assert GRIPPER_COLUMNS == (7, 15)
+
+    # The label is the noise-free expert's look-ahead from the stored state, and computing it
+    # leaves the simulator untouched.
+    from keiarm.openarm.env import OpenArmEnv
+    from keiarm.openarm.expert import Expert
+
+    env = OpenArmEnv(3, render=False)
+    env.reset(0)
+    before = env.data.qpos.copy()
+    chunk = expert_chunk(env, Expert(env.model, env.scene))
+    np.testing.assert_array_equal(env.data.qpos, before)
+    if ep["steps"][0] == 0:
+        np.testing.assert_allclose(chunk, ep["chunks"][0], atol=1e-6)

@@ -3,12 +3,12 @@
 import * as ort from 'onnxruntime-web/webgpu';
 
 let session = null;
-let shape = null; // { cameras, height, width, chunk }
+let shape = null; // { cameras, height, width, chunk, dim }
 
-async function init({ modelUrl, ortPath, prefer, cameras, height, width, chunk }) {
+async function init({ modelUrl, ortPath, prefer, cameras, height, width, chunk, dim = 6 }) {
   ort.env.wasm.wasmPaths = ortPath;
   ort.env.wasm.numThreads = self.crossOriginIsolated ? Math.min(4, navigator.hardwareConcurrency || 1) : 1;
-  shape = { cameras, height, width, chunk };
+  shape = { cameras, height, width, chunk, dim };
   const order = prefer === 'wasm' || !('gpu' in navigator) ? ['wasm'] : ['webgpu', 'wasm'];
   const errors = [];
   for (const backend of order) {
@@ -16,7 +16,7 @@ async function init({ modelUrl, ortPath, prefer, cameras, height, width, chunk }
       session = await ort.InferenceSession.create(modelUrl, { executionProviders: [backend] });
       // Warm-up run: the first call compiles shaders / allocates and is much slower.
       const t0 = performance.now();
-      await run(new Array(cameras).fill(new Uint8ClampedArray(height * width * 4)), new Float32Array(6));
+      await run(new Array(cameras).fill(new Uint8ClampedArray(height * width * 4)), new Float32Array(dim));
       return { backend, threads: ort.env.wasm.numThreads, warmupMs: performance.now() - t0 };
     } catch (err) {
       errors.push(`${backend}: ${err.message ?? err}`);
@@ -26,9 +26,9 @@ async function init({ modelUrl, ortPath, prefer, cameras, height, width, chunk }
   throw new Error(`could not create an inference session (${errors.join('; ')})`);
 }
 
-// images: one RGBA byte array per camera, row 0 = top. Returns Float32Array(chunk * 6) [rad].
+// images: one RGBA byte array per camera, row 0 = top. Returns Float32Array(chunk * dim) [rad].
 async function run(images, joints) {
-  const { cameras, height, width } = shape;
+  const { cameras, height, width, dim } = shape;
   const plane = height * width;
   const input = new Float32Array(cameras * 3 * plane);
   for (let c = 0; c < cameras; c++) {
@@ -42,7 +42,7 @@ async function run(images, joints) {
   }
   const out = await session.run({
     images: new ort.Tensor('float32', input, [1, cameras, 3, height, width]),
-    joints: new ort.Tensor('float32', Float32Array.from(joints), [1, 6]),
+    joints: new ort.Tensor('float32', Float32Array.from(joints), [1, dim]),
   });
   return out.actions.data;
 }
