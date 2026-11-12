@@ -109,9 +109,14 @@ export class SceneView {
     this.width = w;
     this.height = h;
     this.target = new THREE.WebGLRenderTarget(w, h, { samples: 4, colorSpace: THREE.NoColorSpace });
+    // Clip planes as mujoco.Renderer sets them: vis.map.znear/zfar times the model extent.
+    // (The OpenArm wrist cameras sit 1-2 cm behind the gripper housing, which MuJoCo clips away.)
+    const extent = model.stat.extent;
+    const near = model.vis.map.znear * extent;
+    const far = model.vis.map.zfar * extent;
     this.cameras = cameras.map((name) => {
       const id = sim.mujoco.mj_name2id(model, sim.mujoco.mjtObj.mjOBJ_CAMERA.value, name);
-      const cam = new THREE.PerspectiveCamera(model.cam_fovy[id], w / h, 0.005, 20);
+      const cam = new THREE.PerspectiveCamera(model.cam_fovy[id], w / h, near, far);
       cam.matrixAutoUpdate = false;
       return { name, id, cam };
     });

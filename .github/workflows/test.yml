@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 20
       - run: uv run --no-sync python scripts/export_web.py
+      - run: uv run --no-sync python scripts/export_web_openarm.py
       - run: npm ci
         working-directory: web
       - run: npm test

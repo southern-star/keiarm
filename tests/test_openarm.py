@@ -328,3 +328,54 @@ def test_harness_counts_a_real_drop_once():
     rec = run_episode(OpenArmEnv(100000, render=False), OpensMidCarry(), 0)
     assert rec.drops == 1
     assert rec.success  # the expert picks it up again
+
+
+# --- Phase 4: browser export ----------------------------------------------------------------
+
+
+def test_web_export_decimates_visuals_without_changing_physics(tmp_path):
+    """The browser model (exported MJCF + decimated visual meshes) steps bit-identically to
+    the Python model, and the bundle's reset recipe matches scene.reset_data."""
+    from pathlib import Path
+
+    from keiarm.openarm import export
+    from keiarm.openarm.env import OpenArmEnv
+    from keiarm.openarm.expert import Expert
+    from keiarm.openarm.task import TaskIndex
+
+    env = OpenArmEnv(100000, render=False)
+    spec = export.web_spec(env.scene)
+    assert all(not Path(m.file).is_absolute() for m in spec.meshes)
+    stats = export.export_meshes(spec, tmp_path / "assets")
+    assert stats["visual_faces_after"] < 0.3 * stats["visual_faces_before"]
+    xml = spec.to_xml()
+    assert 'gravcomp="1"' in xml  # must be in the XML: WASM ignores body_gravcomp written later
+    (tmp_path / "scene.xml").write_text(xml)
+    web = mujoco.MjModel.from_xml_path(str(tmp_path / "scene.xml"))
+    web.opt.timestep = env.model.opt.timestep
+    assert web.nmeshface < env.model.nmeshface
+
+    env.reset(0)
+    data = mujoco.MjData(web)
+    # The browser's reset (web/src/openarm/sim.js): every joint in reset_joints[i] and
+    # actuator i get start_ctrl[i]; bar and plate as in reset_data.
+    mujoco.mj_resetData(web, data)
+    ix = TaskIndex(web)
+    for i, names in enumerate(export.constants()["reset_joints"]):
+        for n in names:
+            data.qpos[web.joint(n).qposadr[0]] = env.episode.start_ctrl[i]
+        data.ctrl[ix.act[i]] = env.episode.start_ctrl[i]
+    a = ix.bar_qadr
+    data.qpos[a : a + 3] = [*env.episode.bar_xy, env.scene.bar_size[2] / 2 + 1e-3]
+    data.qpos[a + 3 : a + 7] = [np.cos(env.episode.bar_yaw / 2), 0, 0, np.sin(env.episode.bar_yaw / 2)]
+    data.mocap_pos[ix.plate_mocap] = [*env.episode.plate_xy, export.PLATE_HEIGHT / 2]
+    mujoco.mj_forward(web, data)
+    np.testing.assert_array_equal(data.qpos, env.data.qpos)
+
+    expert = Expert(env.model, env.scene)
+    for _ in range(90):  # through the grasp and lift
+        action = np.clip(expert.act(env.data)[0], *env.ctrl_range.T)
+        env.step(action)
+        data.ctrl[ix.act] = action
+        mujoco.mj_step(web, data, nstep=config.SUBSTEPS)
+    np.testing.assert_array_equal(data.qpos, env.data.qpos)
