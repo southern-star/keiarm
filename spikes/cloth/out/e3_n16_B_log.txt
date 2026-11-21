@@ -1,0 +1,162 @@
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.26e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 645. Check model. Time = 4.4625.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.06e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 124. Check model. Time = 4.4375.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 3.25e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 703. Check model. Time = 4.4417.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 2.31e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 516. Check model. Time = 4.4583.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.94e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 408. Check model. Time = 4.4458.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.29e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 717. Check model. Time = 4.4500.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 2.98e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 247. Check model. Time = 4.4583.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.18e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 372. Check model. Time = 5.0833.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.15e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 714. Check model. Time = 5.0833.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.18e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 288. Check model. Time = 5.0833.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 2.18e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 175. Check model. Time = 4.4417.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.25e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 234. Check model. Time = 4.4625.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 2.45e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 247. Check model. Time = 4.4583.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 3.45e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 147. Check model. Time = 4.4583.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.03e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 198. Check model. Time = 5.0833.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.06e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 124. Check model. Time = 4.4375.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 3.84e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 439. Check model. Time = 4.4417.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.07e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 124. Check model. Time = 4.4375.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 2.55e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 247. Check model. Time = 4.4583.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 2.01e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 703. Check model. Time = 4.4417.
+
+{'seed': 0, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0087, 0.0032], 'yaw_deg': 4.71, 'lift_ratio': 0.477, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.0, 'left_tip': [0.286, 0.103, 0.01], 'left_target': [0.286, 0.103, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.301, -0.082, 0.01], 'right_target': [0.302, -0.082, 0.024], 'carried_corner_dist_mm': 39.4, 'viol0': 0.0312, 'viol_r': 0.0078, 'area_ratio': 0.4815, 'corner_mm': 42.2, 'strain_p95': 0.0113, 'sim_s': 10.17, 'rtf_physics': 0.617, 'rtf_with_ik': 0.497, 'arm_cloth_contact_steps': 32, 'max_anchor_err_mm': 4.1, 'max_track_mm': 75.8}
+{'seed': 1, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0089, 0.0099], 'yaw_deg': 1.11, 'lift_ratio': 0.61, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.309, 0.105, 0.01], 'left_target': [0.31, 0.105, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.313, -0.081, 0.01], 'right_target': [0.314, -0.081, 0.024], 'carried_corner_dist_mm': 9.0, 'viol0': 0.125, 'viol_r': 0.125, 'area_ratio': 0.5288, 'corner_mm': 26.5, 'strain_p95': 0.0018, 'sim_s': 10.17, 'rtf_physics': 0.462, 'rtf_with_ik': 0.398, 'arm_cloth_contact_steps': 11, 'max_anchor_err_mm': 2.26, 'max_track_mm': 57.1}
+{'seed': 2, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.001, 0.0045], 'yaw_deg': -1.63, 'lift_ratio': 0.505, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.304, 0.095, 0.01], 'left_target': [0.305, 0.095, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.299, -0.091, 0.01], 'right_target': [0.299, -0.091, 0.024], 'carried_corner_dist_mm': 21.2, 'viol0': 0.0625, 'viol_r': 0.0547, 'area_ratio': 0.5351, 'corner_mm': 26.4, 'strain_p95': 0.0045, 'sim_s': 10.17, 'rtf_physics': 0.508, 'rtf_with_ik': 0.433, 'arm_cloth_contact_steps': 30, 'max_anchor_err_mm': 2.32, 'max_track_mm': 64.9}
+{'seed': 3, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0037, -0.0056], 'yaw_deg': 0.84, 'lift_ratio': 0.471, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.0, 'left_tip': [0.297, 0.089, 0.01], 'left_target': [0.298, 0.089, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.3, -0.097, 0.01], 'right_target': [0.301, -0.097, 0.024], 'carried_corner_dist_mm': 22.3, 'viol0': 0.0703, 'viol_r': 0.0547, 'area_ratio': 0.5333, 'corner_mm': 19.9, 'strain_p95': 0.0026, 'sim_s': 10.17, 'rtf_physics': 0.448, 'rtf_with_ik': 0.381, 'arm_cloth_contact_steps': 33, 'max_anchor_err_mm': 2.4, 'max_track_mm': 71.3}
+{'seed': 4, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0066, -0.0059], 'yaw_deg': 3.13, 'lift_ratio': 0.512, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.0, 'left_tip': [0.291, 0.092, 0.01], 'left_target': [0.291, 0.092, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.301, -0.094, 0.01], 'right_target': [0.301, -0.094, 0.024], 'carried_corner_dist_mm': 33.5, 'viol0': 0.125, 'viol_r': 0.0938, 'area_ratio': 0.5557, 'corner_mm': 30.6, 'strain_p95': 0.0093, 'sim_s': 10.17, 'rtf_physics': 0.582, 'rtf_with_ik': 0.476, 'arm_cloth_contact_steps': 32, 'max_anchor_err_mm': 2.99, 'max_track_mm': 74.6}
+{'seed': 5, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0026, 0.008], 'yaw_deg': -1.37, 'lift_ratio': 0.526, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.302, 0.099, 0.01], 'left_target': [0.302, 0.099, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.297, -0.087, 0.01], 'right_target': [0.298, -0.087, 0.024], 'carried_corner_dist_mm': 24.5, 'viol0': 0.0312, 'viol_r': 0.0156, 'area_ratio': 0.5313, 'corner_mm': 18.3, 'strain_p95': 0.0037, 'sim_s': 10.17, 'rtf_physics': 0.62, 'rtf_with_ik': 0.512, 'arm_cloth_contact_steps': 32, 'max_anchor_err_mm': 2.23, 'max_track_mm': 71.8}
+{'seed': 6, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0013, -0.0066], 'yaw_deg': -3.85, 'lift_ratio': 0.657, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.31, 0.08, 0.01], 'left_target': [0.31, 0.08, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.297, -0.106, 0.01], 'right_target': [0.298, -0.106, 0.024], 'carried_corner_dist_mm': 17.8, 'viol0': 0.0781, 'viol_r': 0.0625, 'area_ratio': 0.5355, 'corner_mm': 25.9, 'strain_p95': 0.0035, 'sim_s': 10.17, 'rtf_physics': 0.491, 'rtf_with_ik': 0.413, 'arm_cloth_contact_steps': 26, 'max_anchor_err_mm': 2.41, 'max_track_mm': 67.6}
+{'seed': 7, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0056, -0.0072], 'yaw_deg': -4.71, 'lift_ratio': 0.533, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.315, 0.078, 0.01], 'left_target': [0.316, 0.078, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.3, -0.107, 0.01], 'right_target': [0.301, -0.107, 0.024], 'carried_corner_dist_mm': 15.5, 'viol0': 0.0547, 'viol_r': 0.0469, 'area_ratio': 0.5337, 'corner_mm': 26.5, 'strain_p95': 0.0048, 'sim_s': 10.17, 'rtf_physics': 0.485, 'rtf_with_ik': 0.408, 'arm_cloth_contact_steps': 25, 'max_anchor_err_mm': 2.27, 'max_track_mm': 61.6}
+{'seed': 8, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0064, 0.0077], 'yaw_deg': 1.32, 'lift_ratio': 0.594, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.307, 0.103, 0.01], 'left_target': [0.307, 0.103, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.311, -0.083, 0.01], 'right_target': [0.311, -0.083, 0.024], 'carried_corner_dist_mm': 9.0, 'viol0': 0.125, 'viol_r': 0.125, 'area_ratio': 0.5298, 'corner_mm': 26.8, 'strain_p95': 0.0017, 'sim_s': 10.17, 'rtf_physics': 0.398, 'rtf_with_ik': 0.343, 'arm_cloth_contact_steps': 13, 'max_anchor_err_mm': 2.26, 'max_track_mm': 59.7}
+{'seed': 9, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0023, -0.0016], 'yaw_deg': 0.99, 'lift_ratio': 0.631, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.0, 'left_tip': [0.298, 0.093, 0.01], 'left_target': [0.299, 0.093, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.302, -0.093, 0.01], 'right_target': [0.302, -0.093, 0.024], 'carried_corner_dist_mm': 14.0, 'viol0': 0.0234, 'viol_r': 0.0, 'area_ratio': 0.5314, 'corner_mm': 15.4, 'strain_p95': 0.0025, 'sim_s': 10.17, 'rtf_physics': 0.47, 'rtf_with_ik': 0.397, 'arm_cloth_contact_steps': 15, 'max_anchor_err_mm': 2.49, 'max_track_mm': 64.4}
+{'seed': 10, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0075, 0.0052], 'yaw_deg': -3.82, 'lift_ratio': 0.682, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.2, 'left_tip': [0.316, 0.092, 0.01], 'left_target': [0.316, 0.092, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.303, -0.094, 0.01], 'right_target': [0.304, -0.094, 0.024], 'carried_corner_dist_mm': 19.0, 'viol0': 0.0938, 'viol_r': 0.0781, 'area_ratio': 0.5348, 'corner_mm': 25.8, 'strain_p95': 0.0028, 'sim_s': 10.17, 'rtf_physics': 0.54, 'rtf_with_ik': 0.446, 'arm_cloth_contact_steps': 25, 'max_anchor_err_mm': 2.45, 'max_track_mm': 48.4}
+{'seed': 11, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0031, 0.0037], 'yaw_deg': -1.83, 'lift_ratio': 0.468, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.302, 0.094, 0.01], 'left_target': [0.303, 0.094, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.296, -0.092, 0.01], 'right_target': [0.297, -0.092, 0.024], 'carried_corner_dist_mm': 23.4, 'viol0': 0.0547, 'viol_r': 0.0391, 'area_ratio': 0.5336, 'corner_mm': 21.7, 'strain_p95': 0.0035, 'sim_s': 10.17, 'rtf_physics': 0.728, 'rtf_with_ik': 0.589, 'arm_cloth_contact_steps': 31, 'max_anchor_err_mm': 2.19, 'max_track_mm': 66.9}
+{'seed': 12, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0087, -0.0074], 'yaw_deg': 0.73, 'lift_ratio': 0.622, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.31, 0.087, 0.01], 'left_target': [0.31, 0.087, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.312, -0.099, 0.01], 'right_target': [0.313, -0.099, 0.024], 'carried_corner_dist_mm': 10.6, 'viol0': 0.125, 'viol_r': 0.125, 'area_ratio': 0.525, 'corner_mm': 25.1, 'strain_p95': 0.0017, 'sim_s': 10.17, 'rtf_physics': 0.454, 'rtf_with_ik': 0.386, 'arm_cloth_contact_steps': 8, 'max_anchor_err_mm': 2.4, 'max_track_mm': 53.5}
+{'seed': 13, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0051, -0.0087], 'yaw_deg': 1.16, 'lift_ratio': 0.511, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.305, 0.086, 0.01], 'left_target': [0.306, 0.086, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.309, -0.1, 0.01], 'right_target': [0.31, -0.1, 0.024], 'carried_corner_dist_mm': 16.0, 'viol0': 0.125, 'viol_r': 0.125, 'area_ratio': 0.5294, 'corner_mm': 22.2, 'strain_p95': 0.0032, 'sim_s': 10.17, 'rtf_physics': 0.528, 'rtf_with_ik': 0.437, 'arm_cloth_contact_steps': 25, 'max_anchor_err_mm': 2.33, 'max_track_mm': 59.5}
+{'seed': 14, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0047, 0.01], 'yaw_deg': 1.55, 'lift_ratio': 0.588, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.0, 'left_tip': [0.295, 0.105, 0.01], 'left_target': [0.296, 0.105, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.3, -0.08, 0.01], 'right_target': [0.301, -0.08, 0.024], 'carried_corner_dist_mm': 18.9, 'viol0': 0.0, 'viol_r': 0.0, 'area_ratio': 0.5273, 'corner_mm': 15.3, 'strain_p95': 0.004, 'sim_s': 10.17, 'rtf_physics': 0.696, 'rtf_with_ik': 0.577, 'arm_cloth_contact_steps': 17, 'max_anchor_err_mm': 2.23, 'max_track_mm': 80.2}
+{'seed': 15, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0087, 0.0083], 'yaw_deg': -3.43, 'lift_ratio': 0.582, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.2, 'left_tip': [0.316, 0.095, 0.01], 'left_target': [0.317, 0.095, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.305, -0.09, 0.01], 'right_target': [0.306, -0.09, 0.024], 'carried_corner_dist_mm': 18.7, 'viol0': 0.0781, 'viol_r': 0.0625, 'area_ratio': 0.5353, 'corner_mm': 25.7, 'strain_p95': 0.0034, 'sim_s': 10.17, 'rtf_physics': 0.573, 'rtf_with_ik': 0.474, 'arm_cloth_contact_steps': 23, 'max_anchor_err_mm': 2.34, 'max_track_mm': 49.0}
+{'seed': 16, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0045, 0.0081], 'yaw_deg': -3.79, 'lift_ratio': 0.467, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.304, 0.095, 0.01], 'left_target': [0.304, 0.095, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 12.9, 'right_tip': [0.292, -0.091, 0.01], 'right_target': [0.292, -0.091, 0.024], 'carried_corner_dist_mm': 42.6, 'viol0': 0.1094, 'viol_r': 0.0859, 'area_ratio': 0.5684, 'corner_mm': 47.6, 'strain_p95': 0.0067, 'sim_s': 10.17, 'rtf_physics': 0.629, 'rtf_with_ik': 0.507, 'arm_cloth_contact_steps': 27, 'max_anchor_err_mm': 3.23, 'max_track_mm': 71.4}
+{'seed': 17, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [0.0012, -0.0081], 'yaw_deg': -3.72, 'lift_ratio': 0.613, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.1, 'left_tip': [0.309, 0.079, 0.01], 'left_target': [0.31, 0.079, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.297, -0.107, 0.01], 'right_target': [0.298, -0.107, 0.024], 'carried_corner_dist_mm': 16.7, 'viol0': 0.0703, 'viol_r': 0.0625, 'area_ratio': 0.537, 'corner_mm': 27.2, 'strain_p95': 0.0042, 'sim_s': 10.17, 'rtf_physics': 0.587, 'rtf_with_ik': 0.49, 'arm_cloth_contact_steps': 25, 'max_anchor_err_mm': 2.27, 'max_track_mm': 69.3}
+{'seed': 18, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0026, -0.0084], 'yaw_deg': 1.48, 'lift_ratio': 0.46, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.0, 'left_tip': [0.297, 0.087, 0.01], 'left_target': [0.298, 0.087, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.1, 'right_tip': [0.302, -0.099, 0.01], 'right_target': [0.303, -0.099, 0.024], 'carried_corner_dist_mm': 25.0, 'viol0': 0.0781, 'viol_r': 0.0625, 'area_ratio': 0.5347, 'corner_mm': 23.5, 'strain_p95': 0.003, 'sim_s': 10.17, 'rtf_physics': 0.571, 'rtf_with_ik': 0.471, 'arm_cloth_contact_steps': 26, 'max_anchor_err_mm': 2.69, 'max_track_mm': 72.2}
+{'seed': 19, 'n': 16, 'friction_only': False, 'status': 'ok', 'off': [-0.0064, -0.0002], 'yaw_deg': 2.7, 'lift_ratio': 0.614, 'left_grabbed': 4, 'left_tip_to_corner_mm': 13.0, 'left_tip': [0.292, 0.097, 0.01], 'left_target': [0.292, 0.097, 0.024], 'right_grabbed': 4, 'right_tip_to_corner_mm': 13.0, 'right_tip': [0.3, -0.089, 0.01], 'right_target': [0.301, -0.089, 0.024], 'carried_corner_dist_mm': 21.2, 'viol0': 0.0078, 'viol_r': 0.0, 'area_ratio': 0.5303, 'corner_mm': 14.6, 'strain_p95': 0.0023, 'sim_s': 10.17, 'rtf_physics': 0.647, 'rtf_with_ik': 0.528, 'arm_cloth_contact_steps': 24, 'max_anchor_err_mm': 2.72, 'max_track_mm': 71.1}
+{
+ "trials": 20,
+ "completed": 20,
+ "status": [
+  "ok"
+ ],
+ "viol0": {
+  "mean": 0.0734,
+  "min": 0.0,
+  "max": 0.125
+ },
+ "viol_r": {
+  "mean": 0.0613,
+  "min": 0.0,
+  "max": 0.125
+ },
+ "area_ratio": {
+  "mean": 0.5326,
+  "min": 0.4815,
+  "max": 0.5684
+ },
+ "corner_mm": {
+  "mean": 25.36,
+  "min": 14.6,
+  "max": 47.6
+ },
+ "rtf_physics": {
+  "mean": 0.5517,
+  "min": 0.398,
+  "max": 0.728
+ },
+ "rtf_with_ik": {
+  "mean": 0.4582,
+  "min": 0.343,
+  "max": 0.589
+ },
+ "arm_cloth_contact_steps": {
+  "mean": 24.0,
+  "min": 8.0,
+  "max": 33.0
+ },
+ "max_anchor_err_mm": {
+  "mean": 2.529,
+  "min": 2.19,
+  "max": 4.1
+ },
+ "max_track_mm": {
+  "mean": 65.515,
+  "min": 48.4,
+  "max": 80.2
+ },
+ "right_grabbed": {
+  "mean": 4.0,
+  "min": 4.0,
+  "max": 4.0
+ },
+ "left_grabbed": {
+  "mean": 4.0,
+  "min": 4.0,
+  "max": 4.0
+ }
+}

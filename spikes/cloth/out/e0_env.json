@@ -1,0 +1,36 @@
+{
+  "mujoco_version": "3.17.0",
+  "python": "3.12.11",
+  "mjtEq": [
+    "mjEQ_CONNECT",
+    "mjEQ_DISTANCE",
+    "mjEQ_FLEX",
+    "mjEQ_FLEXSTRAIN",
+    "mjEQ_FLEXVERT",
+    "mjEQ_JOINT",
+    "mjEQ_TENDON",
+    "mjEQ_WELD"
+  ],
+  "mjtFlexSelf": [
+    "mjFLEXSELF_AUTO",
+    "mjFLEXSELF_BVH",
+    "mjFLEXSELF_NARROW",
+    "mjFLEXSELF_NONE",
+    "mjFLEXSELF_SAP"
+  ],
+  "has_flexvert_xpos": true,
+  "poncho_like": {
+    "nbody": 577,
+    "nflexvert": 576,
+    "nv": 1728,
+    "neq": 1,
+    "eq_types": [
+      5
+    ],
+    "timestep": 0.002,
+    "finite": true,
+    "rtf": 0.149,
+    "final_zmin": 0.15151368994866887,
+    "final_zmax": 1.4094790125892258
+  }
+}

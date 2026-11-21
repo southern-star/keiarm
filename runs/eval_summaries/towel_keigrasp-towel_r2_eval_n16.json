@@ -1,0 +1,56 @@
+{
+ "episodes": 100,
+ "mesh": [
+  16
+ ],
+ "success": 100,
+ "success_rate": 1.0,
+ "stage_reached": {
+  "reach": 100,
+  "grasp_one": 100,
+  "grasp_both": 100,
+  "lift": 100,
+  "carry": 100,
+  "placed": 100,
+  "released": 100,
+  "success": 100
+ },
+ "stage_first_step_median": {
+  "reach": 39.0,
+  "grasp_one": 53.0,
+  "grasp_both": 55.0,
+  "lift": 77.0,
+  "carry": 101.0,
+  "placed": 119.5,
+  "released": 145.0,
+  "success": 159.5
+ },
+ "disturbance_applied": 0,
+ "infractions": {
+  "arms_touch_episodes": 0,
+  "arms_touch_steps": 0,
+  "crossing_episodes": 0,
+  "max_crossings": 0,
+  "towel_off_table": 0,
+  "empty_grasps": 0,
+  "early_releases": 0,
+  "sim_broken": 0
+ },
+ "grabs_median": 2.0,
+ "max_gap_after_mm_median": 0.0,
+ "steps_to_success": {
+  "median": 159.5,
+  "p90": 165.0,
+  "max": 170
+ },
+ "success_corner_gap_mm_max": 23.1,
+ "failures": {},
+ "failed_expert_could_finish": 0,
+ "failed_stuck": 0,
+ "disturb": "none",
+ "name": "towel_keigrasp-towel_r2_eval_n16",
+ "policy": "keigrasp:towel_r2",
+ "split": "eval",
+ "mujoco": "3.17.0",
+ "seconds": 296
+}

@@ -8,7 +8,8 @@ export default defineConfig({
   build: {
     target: 'es2022',
     rollupOptions: {
-      input: { main: resolve(import.meta.dirname, 'index.html'), openarm: resolve(import.meta.dirname, 'openarm.html') },
+      input: { main: resolve(import.meta.dirname, 'index.html'), openarm: resolve(import.meta.dirname, 'openarm.html'),
+        towel: resolve(import.meta.dirname, 'towel.html') },
     },
   },
   server: { port: 5173, strictPort: false },

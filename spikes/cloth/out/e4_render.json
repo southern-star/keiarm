@@ -1,0 +1,15 @@
+{
+ "backside_triangles_added": 450,
+ "scene_maxgeom": 10000,
+ "segmentation": {
+  "flex_pixels": 17838,
+  "objtypes_seen": [
+   -1,
+   5,
+   9
+  ],
+  "mjOBJ_FLEX": 9,
+  "mjOBJ_GEOM": 5
+ },
+ "openarm_3cam_160x120_ms_per_control_step": 2.91
+}

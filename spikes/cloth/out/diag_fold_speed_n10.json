@@ -1,0 +1,574 @@
+{
+ "A_n10 base(CG, iter50, tol1e-8)": {
+  "moving": {
+   "rtf": 1.332,
+   "ms_step": 3.13,
+   "ncon": 68,
+   "nefc": 539,
+   "niter_mean": 43.5,
+   "collision_ms": 0.2,
+   "make_ms": 0.07,
+   "solve_ms": 2.57,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.72,
+   "ms_step": 5.78,
+   "ncon": 388,
+   "nefc": 1813,
+   "niter_mean": 23.6,
+   "collision_ms": 1.1,
+   "make_ms": 0.8,
+   "solve_ms": 3.28,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "A_n10 iterations=20": {
+  "moving": {
+   "rtf": 2.288,
+   "ms_step": 1.82,
+   "ncon": 68,
+   "nefc": 539,
+   "niter_mean": 20.0,
+   "collision_ms": 0.2,
+   "make_ms": 0.07,
+   "solve_ms": 1.26,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.78,
+   "ms_step": 5.34,
+   "ncon": 388,
+   "nefc": 1813,
+   "niter_mean": 19.1,
+   "collision_ms": 1.1,
+   "make_ms": 0.8,
+   "solve_ms": 2.84,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "A_n10 iterations=10": {
+  "moving": {
+   "rtf": 3.313,
+   "ms_step": 1.26,
+   "ncon": 68,
+   "nefc": 539,
+   "niter_mean": 10.0,
+   "collision_ms": 0.2,
+   "make_ms": 0.07,
+   "solve_ms": 0.71,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.953,
+   "ms_step": 4.37,
+   "ncon": 388,
+   "nefc": 1813,
+   "niter_mean": 10.0,
+   "collision_ms": 1.1,
+   "make_ms": 0.8,
+   "solve_ms": 1.86,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "A_n10 tolerance=1e-4": {
+  "moving": {
+   "rtf": 2.403,
+   "ms_step": 1.73,
+   "ncon": 68,
+   "nefc": 539,
+   "niter_mean": 18.5,
+   "collision_ms": 0.2,
+   "make_ms": 0.07,
+   "solve_ms": 1.18,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.133,
+   "ms_step": 3.68,
+   "ncon": 384,
+   "nefc": 1797,
+   "niter_mean": 3.9,
+   "collision_ms": 1.1,
+   "make_ms": 0.8,
+   "solve_ms": 1.17,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "A_n10 Newton": {
+  "moving": {
+   "rtf": 2.089,
+   "ms_step": 1.99,
+   "ncon": 68,
+   "nefc": 539,
+   "niter_mean": 1.9,
+   "collision_ms": 0.21,
+   "make_ms": 0.08,
+   "solve_ms": 1.23,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.482,
+   "ms_step": 8.64,
+   "ncon": 390,
+   "nefc": 1821,
+   "niter_mean": 1.8,
+   "collision_ms": 1.14,
+   "make_ms": 0.81,
+   "solve_ms": 5.89,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "A_n10 elliptic": {
+  "moving": {
+   "rtf": 1.308,
+   "ms_step": 3.19,
+   "ncon": 68,
+   "nefc": 471,
+   "niter_mean": 43.4,
+   "collision_ms": 0.2,
+   "make_ms": 0.07,
+   "solve_ms": 2.63,
+   "zmin_mm": 1.71,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.654,
+   "ms_step": 6.37,
+   "ncon": 439,
+   "nefc": 1578,
+   "niter_mean": 24.1,
+   "collision_ms": 1.25,
+   "make_ms": 0.85,
+   "solve_ms": 3.67,
+   "zmin_mm": 1.54,
+   "finite": true
+  }
+ },
+ "A_n10 self condim=1": {
+  "moving": {
+   "rtf": 1.328,
+   "ms_step": 3.14,
+   "ncon": 68,
+   "nefc": 536,
+   "niter_mean": 43.4,
+   "collision_ms": 0.21,
+   "make_ms": 0.07,
+   "solve_ms": 2.57,
+   "zmin_mm": 1.92,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.035,
+   "ms_step": 4.02,
+   "ncon": 414,
+   "nefc": 855,
+   "niter_mean": 26.0,
+   "collision_ms": 1.09,
+   "make_ms": 0.63,
+   "solve_ms": 1.92,
+   "zmin_mm": 1.87,
+   "finite": true
+  }
+ },
+ "A_n10 self condim=1 iter=10": {
+  "moving": {
+   "rtf": 5.351,
+   "ms_step": 0.78,
+   "ncon": 68,
+   "nefc": 536,
+   "niter_mean": 10.0,
+   "collision_ms": 0.13,
+   "make_ms": 0.04,
+   "solve_ms": 0.45,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.843,
+   "ms_step": 2.26,
+   "ncon": 414,
+   "nefc": 855,
+   "niter_mean": 10.0,
+   "collision_ms": 0.88,
+   "make_ms": 0.44,
+   "solve_ms": 0.64,
+   "zmin_mm": 1.87,
+   "finite": true
+  }
+ },
+ "A_n10 passive contact": {
+  "moving": {
+   "rtf": 3.663,
+   "ms_step": 1.14,
+   "ncon": 70,
+   "nefc": 267,
+   "niter_mean": 50.0,
+   "collision_ms": 0.14,
+   "make_ms": 0.03,
+   "solve_ms": 0.65,
+   "zmin_mm": 2.0,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.356,
+   "ms_step": 3.07,
+   "ncon": 257,
+   "nefc": 261,
+   "niter_mean": 50.0,
+   "collision_ms": 0.69,
+   "make_ms": 0.04,
+   "solve_ms": 1.08,
+   "zmin_mm": 1.8,
+   "finite": true
+  }
+ },
+ "A_n10 dt=1/120": {
+  "moving": {
+   "rtf": 3.428,
+   "ms_step": 2.43,
+   "ncon": 68,
+   "nefc": 539,
+   "niter_mean": 49.7,
+   "collision_ms": 0.14,
+   "make_ms": 0.05,
+   "solve_ms": 1.99,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 2.041,
+   "ms_step": 4.08,
+   "ncon": 400,
+   "nefc": 1861,
+   "niter_mean": 29.5,
+   "collision_ms": 0.79,
+   "make_ms": 0.48,
+   "solve_ms": 2.42,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "A_n10 dt=1/120 iter=10": {
+  "moving": {
+   "rtf": 9.728,
+   "ms_step": 0.86,
+   "ncon": 70,
+   "nefc": 547,
+   "niter_mean": 10.0,
+   "collision_ms": 0.14,
+   "make_ms": 0.04,
+   "solve_ms": 0.47,
+   "zmin_mm": 1.66,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 2.915,
+   "ms_step": 2.86,
+   "ncon": 394,
+   "nefc": 1837,
+   "niter_mean": 10.0,
+   "collision_ms": 0.8,
+   "make_ms": 0.49,
+   "solve_ms": 1.14,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "B_n10 base(CG, iter50, tol1e-8)": {
+  "moving": {
+   "rtf": 3.076,
+   "ms_step": 1.35,
+   "ncon": 62,
+   "nefc": 254,
+   "niter_mean": 41.4,
+   "collision_ms": 0.12,
+   "make_ms": 0.03,
+   "solve_ms": 0.55,
+   "zmin_mm": 1.92,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.24,
+   "ms_step": 3.36,
+   "ncon": 359,
+   "nefc": 1436,
+   "niter_mean": 30.8,
+   "collision_ms": 0.73,
+   "make_ms": 0.41,
+   "solve_ms": 1.47,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ },
+ "B_n10 iterations=20": {
+  "moving": {
+   "rtf": 5.143,
+   "ms_step": 0.81,
+   "ncon": 62,
+   "nefc": 254,
+   "niter_mean": 20.0,
+   "collision_ms": 0.11,
+   "make_ms": 0.02,
+   "solve_ms": 0.26,
+   "zmin_mm": 1.92,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.495,
+   "ms_step": 2.79,
+   "ncon": 359,
+   "nefc": 1436,
+   "niter_mean": 20.0,
+   "collision_ms": 0.72,
+   "make_ms": 0.4,
+   "solve_ms": 1.05,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ },
+ "B_n10 iterations=10": {
+  "moving": {
+   "rtf": 6.321,
+   "ms_step": 0.66,
+   "ncon": 47,
+   "nefc": 194,
+   "niter_mean": 10.0,
+   "collision_ms": 0.11,
+   "make_ms": 0.02,
+   "solve_ms": 0.17,
+   "zmin_mm": 1.74,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.743,
+   "ms_step": 2.39,
+   "ncon": 335,
+   "nefc": 1340,
+   "niter_mean": 10.0,
+   "collision_ms": 0.72,
+   "make_ms": 0.39,
+   "solve_ms": 0.71,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ },
+ "B_n10 tolerance=1e-4": {
+  "moving": {
+   "rtf": 5.335,
+   "ms_step": 0.78,
+   "ncon": 62,
+   "nefc": 254,
+   "niter_mean": 16.7,
+   "collision_ms": 0.1,
+   "make_ms": 0.02,
+   "solve_ms": 0.22,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.714,
+   "ms_step": 2.43,
+   "ncon": 359,
+   "nefc": 1436,
+   "niter_mean": 10.2,
+   "collision_ms": 0.72,
+   "make_ms": 0.4,
+   "solve_ms": 0.69,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ },
+ "B_n10 Newton": {
+  "moving": {
+   "rtf": 2.913,
+   "ms_step": 1.43,
+   "ncon": 62,
+   "nefc": 254,
+   "niter_mean": 1.5,
+   "collision_ms": 0.11,
+   "make_ms": 0.03,
+   "solve_ms": 0.68,
+   "zmin_mm": 1.92,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.853,
+   "ms_step": 4.88,
+   "ncon": 359,
+   "nefc": 1436,
+   "niter_mean": 1.3,
+   "collision_ms": 0.75,
+   "make_ms": 0.41,
+   "solve_ms": 2.96,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ },
+ "B_n10 elliptic": {
+  "moving": {
+   "rtf": 3.568,
+   "ms_step": 1.17,
+   "ncon": 62,
+   "nefc": 192,
+   "niter_mean": 36.5,
+   "collision_ms": 0.11,
+   "make_ms": 0.02,
+   "solve_ms": 0.46,
+   "zmin_mm": 1.73,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.194,
+   "ms_step": 3.49,
+   "ncon": 394,
+   "nefc": 1182,
+   "niter_mean": 27.0,
+   "collision_ms": 0.82,
+   "make_ms": 0.44,
+   "solve_ms": 1.47,
+   "zmin_mm": 1.55,
+   "finite": true
+  }
+ },
+ "B_n10 self condim=1": {
+  "moving": {
+   "rtf": 3.302,
+   "ms_step": 1.26,
+   "ncon": 62,
+   "nefc": 254,
+   "niter_mean": 41.4,
+   "collision_ms": 0.11,
+   "make_ms": 0.03,
+   "solve_ms": 0.52,
+   "zmin_mm": 1.92,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 1.495,
+   "ms_step": 2.79,
+   "ncon": 392,
+   "nefc": 572,
+   "niter_mean": 36.1,
+   "collision_ms": 0.81,
+   "make_ms": 0.41,
+   "solve_ms": 0.85,
+   "zmin_mm": 1.85,
+   "finite": true
+  }
+ },
+ "B_n10 self condim=1 iter=10": {
+  "moving": {
+   "rtf": 6.326,
+   "ms_step": 0.66,
+   "ncon": 47,
+   "nefc": 194,
+   "niter_mean": 10.0,
+   "collision_ms": 0.11,
+   "make_ms": 0.02,
+   "solve_ms": 0.17,
+   "zmin_mm": 1.74,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 2.118,
+   "ms_step": 1.97,
+   "ncon": 332,
+   "nefc": 446,
+   "niter_mean": 10.0,
+   "collision_ms": 0.8,
+   "make_ms": 0.33,
+   "solve_ms": 0.34,
+   "zmin_mm": 1.64,
+   "finite": true
+  }
+ },
+ "B_n10 passive contact": {
+  "moving": {
+   "rtf": 3.537,
+   "ms_step": 1.18,
+   "ncon": 70,
+   "nefc": 6,
+   "niter_mean": 46.9,
+   "collision_ms": 0.12,
+   "make_ms": 0.01,
+   "solve_ms": 0.42,
+   "zmin_mm": 2.0,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 2.343,
+   "ms_step": 1.78,
+   "ncon": 231,
+   "nefc": 0,
+   "niter_mean": 0.0,
+   "collision_ms": 0.61,
+   "make_ms": 0.01,
+   "solve_ms": 0.0,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ },
+ "B_n10 dt=1/120": {
+  "moving": {
+   "rtf": 6.442,
+   "ms_step": 1.29,
+   "ncon": 62,
+   "nefc": 254,
+   "niter_mean": 44.3,
+   "collision_ms": 0.11,
+   "make_ms": 0.03,
+   "solve_ms": 0.54,
+   "zmin_mm": 1.91,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 2.38,
+   "ms_step": 3.5,
+   "ncon": 352,
+   "nefc": 1408,
+   "niter_mean": 34.4,
+   "collision_ms": 0.72,
+   "make_ms": 0.41,
+   "solve_ms": 1.59,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ },
+ "B_n10 dt=1/120 iter=10": {
+  "moving": {
+   "rtf": 12.615,
+   "ms_step": 0.66,
+   "ncon": 34,
+   "nefc": 142,
+   "niter_mean": 10.0,
+   "collision_ms": 0.12,
+   "make_ms": 0.02,
+   "solve_ms": 0.16,
+   "zmin_mm": 0.04,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 3.517,
+   "ms_step": 2.37,
+   "ncon": 323,
+   "nefc": 1292,
+   "niter_mean": 10.0,
+   "collision_ms": 0.71,
+   "make_ms": 0.39,
+   "solve_ms": 0.71,
+   "zmin_mm": 1.84,
+   "finite": true
+  }
+ }
+}

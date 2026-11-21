@@ -1,0 +1,163 @@
+{
+ "webgl": "ANGLE (NVIDIA Corporation, NVIDIA GeForce RTX 3060/PCIe/SSE2, OpenGL ES 3.2)",
+ "n": 9,
+ "replay": [
+  {
+   "scene": 100000,
+   "episode": 0,
+   "disturb": "none",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 177,
+   "python_step": 166,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 0.38,
+   "realtime": 1.23
+  },
+  {
+   "scene": 100000,
+   "episode": 0,
+   "disturb": "shift",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 183,
+   "python_step": 179,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 0.31,
+   "realtime": 1.19
+  },
+  {
+   "scene": 100001,
+   "episode": 0,
+   "disturb": "none",
+   "browser_success": false,
+   "python_success": false,
+   "browser_step": null,
+   "python_step": 600,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 4.97,
+   "realtime": 0.83
+  },
+  {
+   "scene": 100001,
+   "episode": 0,
+   "disturb": "slip",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 270,
+   "python_step": 270,
+   "browser_grabs": 4,
+   "python_grabs": 4,
+   "vert_err_mm": 28.56,
+   "realtime": 1.26
+  },
+  {
+   "scene": 100002,
+   "episode": 0,
+   "disturb": "none",
+   "browser_success": false,
+   "python_success": false,
+   "browser_step": null,
+   "python_step": 600,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 4.69,
+   "realtime": 0.7
+  },
+  {
+   "scene": 100002,
+   "episode": 0,
+   "disturb": "drop",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 201,
+   "python_step": 187,
+   "browser_grabs": 4,
+   "python_grabs": 4,
+   "vert_err_mm": 3.26,
+   "realtime": 1.32
+  },
+  {
+   "scene": 100003,
+   "episode": 0,
+   "disturb": "none",
+   "browser_success": false,
+   "python_success": false,
+   "browser_step": null,
+   "python_step": 600,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 5.66,
+   "realtime": 0.73
+  },
+  {
+   "scene": 100003,
+   "episode": 0,
+   "disturb": "nudge",
+   "browser_success": false,
+   "python_success": false,
+   "browser_step": null,
+   "python_step": 600,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 1.35,
+   "realtime": 0.72
+  }
+ ],
+ "timing_ms": {
+  "physicsMs": 19.359999997417134,
+  "camerasMs": 1.6073333324988681,
+  "mainViewMs": 0.13500000059604644
+ },
+ "bench": [
+  {
+   "steps": 150,
+   "physicsMs": 18.60133333245913,
+   "camerasMs": 1.5926666673024494,
+   "mainViewMs": 0.13933333317438762
+  },
+  {
+   "steps": 150,
+   "physicsMs": 19.663999996582668,
+   "camerasMs": 1.6233333337306977,
+   "mainViewMs": 0.1453333361943563
+  },
+  {
+   "steps": 150,
+   "physicsMs": 19.814000000953673,
+   "camerasMs": 1.621999997695287,
+   "mainViewMs": 0.1306666680177053
+  },
+  {
+   "steps": 150,
+   "physicsMs": 19.055999998251597,
+   "camerasMs": 1.4466666666666668,
+   "mainViewMs": 0.12733333508173625
+  }
+ ],
+ "realtime": [
+  {
+   "scene": 100000,
+   "fps": 60.20282927450194,
+   "wall": 7.740500000011922,
+   "simulated": 6.533333333333333,
+   "realtime": 0.8440453889701274,
+   "steps": 196,
+   "worker": true,
+   "meanStepMs": 31.955612243134148
+  },
+  {
+   "scene": 100001,
+   "fps": 60.241716764034706,
+   "wall": 8.00109999998808,
+   "simulated": 6.733333333333333,
+   "realtime": 0.8415509534118265,
+   "steps": 202,
+   "worker": true,
+   "meanStepMs": 31.806930693069308
+  }
+ ]
+}

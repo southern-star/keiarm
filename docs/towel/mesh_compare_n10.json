@@ -1,0 +1,4224 @@
+{
+ "summary": {
+  "n": 10,
+  "scenes": 100,
+  "fine_success": 100,
+  "coarse_replay_success": 70,
+  "corner_gap_diff_mm": {
+   "median": 2.075,
+   "p90": 3.201999999999999,
+   "max": 4.35
+  },
+  "area_ratio_diff": {
+   "median": 0.05075000000000002,
+   "max": 0.05940000000000001
+  },
+  "initial_image_mean_abs": {
+   "cam_front": 0.003505902777777778,
+   "camera_wrist_left": 0.0005317708333333333,
+   "camera_wrist_right": 0.0005005208333333333
+  }
+ },
+ "rows": [
+  {
+   "scene": 100000,
+   "fine_success": true,
+   "fine_steps": 167,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.34,
+      10.21
+     ],
+     "right": [
+      19.51,
+      7.47
+     ]
+    },
+    "area": 0.502,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 165,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.81,
+      9.41
+     ],
+     "right": [
+      17.07,
+      7.53
+     ]
+    },
+    "area": 0.4513,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0059375,
+    "camera_wrist_left": 0.001857638888888889,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100001,
+   "fine_success": true,
+   "fine_steps": 154,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.99,
+      10.25
+     ],
+     "right": [
+      16.36,
+      7.52
+     ]
+    },
+    "area": 0.4913,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.31,
+      9.68
+     ],
+     "right": [
+      16.41,
+      7.59
+     ]
+    },
+    "area": 0.4519,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.00453125,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100002,
+   "fine_success": true,
+   "fine_steps": 159,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.22,
+      9.71
+     ],
+     "right": [
+      17.88,
+      7.47
+     ]
+    },
+    "area": 0.503,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 158,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.15,
+      9.7
+     ],
+     "right": [
+      16.18,
+      7.55
+     ]
+    },
+    "area": 0.45,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005520833333333333,
+    "camera_wrist_left": 0.0021180555555555558,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100003,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.12,
+      10.12
+     ],
+     "right": [
+      17.99,
+      7.47
+     ]
+    },
+    "area": 0.4987,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 160,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.12,
+      9.51
+     ],
+     "right": [
+      16.61,
+      7.55
+     ]
+    },
+    "area": 0.4518,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0022395833333333334,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.002777777777777778
+   }
+  },
+  {
+   "scene": 100004,
+   "fine_success": true,
+   "fine_steps": 156,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.03,
+      10.19
+     ],
+     "right": [
+      17.89,
+      7.51
+     ]
+    },
+    "area": 0.5047,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 154,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.06,
+      9.5
+     ],
+     "right": [
+      15.91,
+      7.55
+     ]
+    },
+    "area": 0.4502,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0021527777777777778,
+    "camera_wrist_left": 0.0018402777777777777,
+    "camera_wrist_right": 0.0003298611111111111
+   }
+  },
+  {
+   "scene": 100005,
+   "fine_success": true,
+   "fine_steps": 154,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.47,
+      10.02
+     ],
+     "right": [
+      16.56,
+      7.49
+     ]
+    },
+    "area": 0.4982,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 153,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.79,
+      9.79
+     ],
+     "right": [
+      15.85,
+      7.56
+     ]
+    },
+    "area": 0.4507,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.002395833333333333,
+    "camera_wrist_left": 0.0009722222222222222,
+    "camera_wrist_right": 6.944444444444444e-05
+   }
+  },
+  {
+   "scene": 100006,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.31,
+      9.36
+     ],
+     "right": [
+      17.65,
+      7.43
+     ]
+    },
+    "area": 0.5056,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 153,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.86,
+      9.4
+     ],
+     "right": [
+      15.6,
+      7.52
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0022395833333333334,
+    "camera_wrist_left": 0.0003125,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100007,
+   "fine_success": true,
+   "fine_steps": 154,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.47,
+      9.99
+     ],
+     "right": [
+      17.85,
+      7.45
+     ]
+    },
+    "area": 0.4998,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 151,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.1,
+      9.62
+     ],
+     "right": [
+      16.22,
+      7.58
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0019965277777777776,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0005555555555555556
+   }
+  },
+  {
+   "scene": 100008,
+   "fine_success": true,
+   "fine_steps": 149,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.25,
+      9.72
+     ],
+     "right": [
+      17.43,
+      7.47
+     ]
+    },
+    "area": 0.5039,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 146,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.41,
+      9.59
+     ],
+     "right": [
+      15.66,
+      7.59
+     ]
+    },
+    "area": 0.4495,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.00578125,
+    "camera_wrist_left": 0.0011979166666666666,
+    "camera_wrist_right": 0.0021180555555555558
+   }
+  },
+  {
+   "scene": 100009,
+   "fine_success": true,
+   "fine_steps": 156,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.21,
+      10.17
+     ],
+     "right": [
+      18.62,
+      7.45
+     ]
+    },
+    "area": 0.5032,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 156,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.98,
+      9.37
+     ],
+     "right": [
+      16.47,
+      7.55
+     ]
+    },
+    "area": 0.4518,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003420138888888889,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 1.736111111111111e-05
+   }
+  },
+  {
+   "scene": 100010,
+   "fine_success": true,
+   "fine_steps": 154,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.57,
+      9.97
+     ],
+     "right": [
+      17.33,
+      7.51
+     ]
+    },
+    "area": 0.5024,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 151,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.74,
+      9.82
+     ],
+     "right": [
+      15.76,
+      7.57
+     ]
+    },
+    "area": 0.4495,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003003472222222222,
+    "camera_wrist_left": 0.0018229166666666667,
+    "camera_wrist_right": 0.00024305555555555555
+   }
+  },
+  {
+   "scene": 100011,
+   "fine_success": true,
+   "fine_steps": 156,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.03,
+      9.58
+     ],
+     "right": [
+      16.32,
+      7.44
+     ]
+    },
+    "area": 0.495,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.48,
+      9.68
+     ],
+     "right": [
+      16.33,
+      7.55
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005138888888888889,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.00017361111111111112
+   }
+  },
+  {
+   "scene": 100012,
+   "fine_success": true,
+   "fine_steps": 152,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.12,
+      9.54
+     ],
+     "right": [
+      17.97,
+      7.44
+     ]
+    },
+    "area": 0.5035,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.49,
+      9.53
+     ],
+     "right": [
+      15.93,
+      7.56
+     ]
+    },
+    "area": 0.4499,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0028819444444444444,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0008159722222222223
+   }
+  },
+  {
+   "scene": 100013,
+   "fine_success": true,
+   "fine_steps": 159,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.3,
+      10.25
+     ],
+     "right": [
+      18.5,
+      7.49
+     ]
+    },
+    "area": 0.5039,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 156,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.85,
+      9.45
+     ],
+     "right": [
+      16.26,
+      7.56
+     ]
+    },
+    "area": 0.4504,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0022743055555555555,
+    "camera_wrist_left": 6.944444444444444e-05,
+    "camera_wrist_right": 0.0005208333333333333
+   }
+  },
+  {
+   "scene": 100014,
+   "fine_success": true,
+   "fine_steps": 149,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.88,
+      10.23
+     ],
+     "right": [
+      16.8,
+      7.49
+     ]
+    },
+    "area": 0.4991,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 149,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.8,
+      9.94
+     ],
+     "right": [
+      15.88,
+      7.59
+     ]
+    },
+    "area": 0.4496,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.00296875,
+    "camera_wrist_left": 0.0011458333333333333,
+    "camera_wrist_right": 8.680555555555556e-05
+   }
+  },
+  {
+   "scene": 100015,
+   "fine_success": true,
+   "fine_steps": 161,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.56,
+      9.87
+     ],
+     "right": [
+      16.91,
+      7.52
+     ]
+    },
+    "area": 0.4889,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 161,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.71,
+      9.65
+     ],
+     "right": [
+      16.89,
+      7.56
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0031770833333333334,
+    "camera_wrist_left": 0.00038194444444444446,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100016,
+   "fine_success": true,
+   "fine_steps": 165,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      15.07,
+      9.81
+     ],
+     "right": [
+      19.07,
+      7.43
+     ]
+    },
+    "area": 0.5029,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 163,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      17.03,
+      9.32
+     ],
+     "right": [
+      16.91,
+      7.52
+     ]
+    },
+    "area": 0.451,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0022743055555555555,
+    "camera_wrist_left": 6.944444444444444e-05,
+    "camera_wrist_right": 0.003263888888888889
+   }
+  },
+  {
+   "scene": 100017,
+   "fine_success": true,
+   "fine_steps": 151,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.12,
+      9.81
+     ],
+     "right": [
+      17.72,
+      7.43
+     ]
+    },
+    "area": 0.5049,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 148,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.49,
+      9.41
+     ],
+     "right": [
+      15.83,
+      7.59
+     ]
+    },
+    "area": 0.4491,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.002482638888888889,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0003993055555555556
+   }
+  },
+  {
+   "scene": 100018,
+   "fine_success": true,
+   "fine_steps": 156,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.27,
+      10.2
+     ],
+     "right": [
+      17.49,
+      7.48
+     ]
+    },
+    "area": 0.4986,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.68,
+      9.63
+     ],
+     "right": [
+      16.12,
+      7.56
+     ]
+    },
+    "area": 0.4501,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.00265625,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100019,
+   "fine_success": true,
+   "fine_steps": 162,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.21,
+      9.56
+     ],
+     "right": [
+      19.18,
+      7.44
+     ]
+    },
+    "area": 0.5044,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 158,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.11,
+      9.43
+     ],
+     "right": [
+      16.55,
+      7.54
+     ]
+    },
+    "area": 0.4502,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005364583333333333,
+    "camera_wrist_left": 0.0008159722222222223,
+    "camera_wrist_right": 0.0015972222222222223
+   }
+  },
+  {
+   "scene": 100020,
+   "fine_success": true,
+   "fine_steps": 163,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.88,
+      9.61
+     ],
+     "right": [
+      17.72,
+      7.44
+     ]
+    },
+    "area": 0.4972,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.08,
+      9.84
+     ],
+     "right": [
+      16.5,
+      7.57
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0028125,
+    "camera_wrist_left": 0.0014930555555555556,
+    "camera_wrist_right": 0.0002777777777777778
+   }
+  },
+  {
+   "scene": 100021,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.88,
+      9.71
+     ],
+     "right": [
+      18.77,
+      7.46
+     ]
+    },
+    "area": 0.5017,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.13,
+      9.65
+     ],
+     "right": [
+      16.67,
+      7.57
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0051736111111111115,
+    "camera_wrist_left": 0.00019097222222222223,
+    "camera_wrist_right": 0.0002777777777777778
+   }
+  },
+  {
+   "scene": 100022,
+   "fine_success": true,
+   "fine_steps": 157,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.57,
+      9.42
+     ],
+     "right": [
+      17.72,
+      7.44
+     ]
+    },
+    "area": 0.5004,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.58,
+      9.48
+     ],
+     "right": [
+      16.48,
+      7.56
+     ]
+    },
+    "area": 0.4512,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0018923611111111112,
+    "camera_wrist_left": 0.0019965277777777776,
+    "camera_wrist_right": 1.736111111111111e-05
+   }
+  },
+  {
+   "scene": 100023,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.14,
+      10.22
+     ],
+     "right": [
+      15.87,
+      7.52
+     ]
+    },
+    "area": 0.4866,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.7,
+      9.72
+     ],
+     "right": [
+      16.71,
+      7.58
+     ]
+    },
+    "area": 0.452,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004045138888888889,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.00020833333333333335
+   }
+  },
+  {
+   "scene": 100024,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.3,
+      9.6
+     ],
+     "right": [
+      19.23,
+      7.41
+     ]
+    },
+    "area": 0.5036,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 160,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.33,
+      9.46
+     ],
+     "right": [
+      16.71,
+      7.55
+     ]
+    },
+    "area": 0.4503,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0018229166666666667,
+    "camera_wrist_left": 0.0010069444444444444,
+    "camera_wrist_right": 0.0005208333333333333
+   }
+  },
+  {
+   "scene": 100025,
+   "fine_success": true,
+   "fine_steps": 157,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.95,
+      10.06
+     ],
+     "right": [
+      17.6,
+      7.47
+     ]
+    },
+    "area": 0.4981,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 157,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.99,
+      9.6
+     ],
+     "right": [
+      16.43,
+      7.57
+     ]
+    },
+    "area": 0.451,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004045138888888889,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.00022569444444444443
+   }
+  },
+  {
+   "scene": 100026,
+   "fine_success": true,
+   "fine_steps": 158,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.72,
+      9.87
+     ],
+     "right": [
+      17.85,
+      7.47
+     ]
+    },
+    "area": 0.4994,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.08,
+      9.56
+     ],
+     "right": [
+      16.45,
+      7.57
+     ]
+    },
+    "area": 0.4509,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0018229166666666667,
+    "camera_wrist_left": 1.736111111111111e-05,
+    "camera_wrist_right": 0.00026041666666666666
+   }
+  },
+  {
+   "scene": 100027,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.2,
+      9.51
+     ],
+     "right": [
+      17.58,
+      7.47
+     ]
+    },
+    "area": 0.4984,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.43,
+      9.59
+     ],
+     "right": [
+      16.69,
+      7.57
+     ]
+    },
+    "area": 0.4505,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004496527777777778,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0005381944444444444
+   }
+  },
+  {
+   "scene": 100028,
+   "fine_success": true,
+   "fine_steps": 161,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.86,
+      9.72
+     ],
+     "right": [
+      18.93,
+      7.41
+     ]
+    },
+    "area": 0.5035,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 161,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.22,
+      9.18
+     ],
+     "right": [
+      16.84,
+      7.53
+     ]
+    },
+    "area": 0.4518,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003611111111111111,
+    "camera_wrist_left": 0.00125,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100029,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.85,
+      9.52
+     ],
+     "right": [
+      18.6,
+      7.43
+     ]
+    },
+    "area": 0.5042,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 153,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.77,
+      9.55
+     ],
+     "right": [
+      16.12,
+      7.55
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004184027777777778,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.00015625
+   }
+  },
+  {
+   "scene": 100030,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.05,
+      10.65
+     ],
+     "right": [
+      17.3,
+      7.58
+     ]
+    },
+    "area": 0.4916,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 160,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.18,
+      9.75
+     ],
+     "right": [
+      16.67,
+      7.55
+     ]
+    },
+    "area": 0.4505,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003298611111111111,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0005381944444444444
+   }
+  },
+  {
+   "scene": 100031,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.21,
+      9.75
+     ],
+     "right": [
+      16.85,
+      7.44
+     ]
+    },
+    "area": 0.4952,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.33,
+      9.43
+     ],
+     "right": [
+      16.48,
+      7.57
+     ]
+    },
+    "area": 0.4516,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0065625,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.00026041666666666666
+   }
+  },
+  {
+   "scene": 100032,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      11.8,
+      10.67
+     ],
+     "right": [
+      17.71,
+      7.55
+     ]
+    },
+    "area": 0.5016,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 151,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.2,
+      9.78
+     ],
+     "right": [
+      15.94,
+      7.6
+     ]
+    },
+    "area": 0.4494,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0017881944444444445,
+    "camera_wrist_left": 5.208333333333334e-05,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100033,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.67,
+      9.81
+     ],
+     "right": [
+      18.16,
+      7.42
+     ]
+    },
+    "area": 0.5046,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.42,
+      9.43
+     ],
+     "right": [
+      16.15,
+      7.5
+     ]
+    },
+    "area": 0.451,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0014236111111111112,
+    "camera_wrist_left": 0.00043402777777777775,
+    "camera_wrist_right": 0.00019097222222222223
+   }
+  },
+  {
+   "scene": 100034,
+   "fine_success": true,
+   "fine_steps": 163,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.7,
+      10.11
+     ],
+     "right": [
+      19.4,
+      7.47
+     ]
+    },
+    "area": 0.5038,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 160,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.17,
+      9.51
+     ],
+     "right": [
+      16.66,
+      7.53
+     ]
+    },
+    "area": 0.4506,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.00453125,
+    "camera_wrist_left": 0.0013715277777777777,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100035,
+   "fine_success": true,
+   "fine_steps": 152,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.86,
+      10.38
+     ],
+     "right": [
+      17.9,
+      7.49
+     ]
+    },
+    "area": 0.5065,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 150,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.99,
+      9.56
+     ],
+     "right": [
+      15.72,
+      7.55
+     ]
+    },
+    "area": 0.4495,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0039409722222222224,
+    "camera_wrist_left": 0.001579861111111111,
+    "camera_wrist_right": 0.003472222222222222
+   }
+  },
+  {
+   "scene": 100036,
+   "fine_success": true,
+   "fine_steps": 158,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.82,
+      10.06
+     ],
+     "right": [
+      18.48,
+      7.46
+     ]
+    },
+    "area": 0.502,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 155,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.23,
+      9.59
+     ],
+     "right": [
+      16.22,
+      7.54
+     ]
+    },
+    "area": 0.4512,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0033333333333333335,
+    "camera_wrist_left": 0.0023784722222222224,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100037,
+   "fine_success": true,
+   "fine_steps": 161,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      11.77,
+      10.86
+     ],
+     "right": [
+      17.92,
+      7.59
+     ]
+    },
+    "area": 0.4995,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.68,
+      9.88
+     ],
+     "right": [
+      16.19,
+      7.61
+     ]
+    },
+    "area": 0.449,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0027083333333333334,
+    "camera_wrist_left": 1.736111111111111e-05,
+    "camera_wrist_right": 0.0005208333333333333
+   }
+  },
+  {
+   "scene": 100038,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.98,
+      9.51
+     ],
+     "right": [
+      19.22,
+      7.47
+     ]
+    },
+    "area": 0.5053,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 157,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.96,
+      9.4
+     ],
+     "right": [
+      16.45,
+      7.57
+     ]
+    },
+    "area": 0.4493,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0022916666666666667,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0009201388888888889
+   }
+  },
+  {
+   "scene": 100039,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.79,
+      9.91
+     ],
+     "right": [
+      17.33,
+      7.48
+     ]
+    },
+    "area": 0.498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 155,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.89,
+      9.41
+     ],
+     "right": [
+      16.35,
+      7.57
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0026215277777777777,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100040,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.53,
+      9.76
+     ],
+     "right": [
+      18.17,
+      7.44
+     ]
+    },
+    "area": 0.5031,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 155,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.57,
+      9.36
+     ],
+     "right": [
+      16.44,
+      7.53
+     ]
+    },
+    "area": 0.4512,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0036805555555555554,
+    "camera_wrist_left": 0.0016666666666666668,
+    "camera_wrist_right": 0.0004861111111111111
+   }
+  },
+  {
+   "scene": 100041,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.57,
+      10.26
+     ],
+     "right": [
+      19.15,
+      7.48
+     ]
+    },
+    "area": 0.5053,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 158,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.18,
+      9.44
+     ],
+     "right": [
+      16.44,
+      7.54
+     ]
+    },
+    "area": 0.45,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0018229166666666667,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0011284722222222221
+   }
+  },
+  {
+   "scene": 100042,
+   "fine_success": true,
+   "fine_steps": 158,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.97,
+      9.73
+     ],
+     "right": [
+      18.6,
+      7.42
+     ]
+    },
+    "area": 0.5028,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 158,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.25,
+      9.39
+     ],
+     "right": [
+      16.63,
+      7.55
+     ]
+    },
+    "area": 0.4507,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005017361111111111,
+    "camera_wrist_left": 0.0011979166666666666,
+    "camera_wrist_right": 0.00015625
+   }
+  },
+  {
+   "scene": 100043,
+   "fine_success": true,
+   "fine_steps": 162,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.44,
+      10.37
+     ],
+     "right": [
+      16.46,
+      7.51
+     ]
+    },
+    "area": 0.49,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.74,
+      9.91
+     ],
+     "right": [
+      16.57,
+      7.55
+     ]
+    },
+    "area": 0.4505,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0032291666666666666,
+    "camera_wrist_left": 0.001388888888888889,
+    "camera_wrist_right": 0.00026041666666666666
+   }
+  },
+  {
+   "scene": 100044,
+   "fine_success": true,
+   "fine_steps": 157,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.18,
+      9.98
+     ],
+     "right": [
+      16.57,
+      7.44
+     ]
+    },
+    "area": 0.491,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.53,
+      9.51
+     ],
+     "right": [
+      16.7,
+      7.54
+     ]
+    },
+    "area": 0.4528,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0027083333333333334,
+    "camera_wrist_left": 1.736111111111111e-05,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100045,
+   "fine_success": true,
+   "fine_steps": 163,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.26,
+      10.36
+     ],
+     "right": [
+      19.21,
+      7.46
+     ]
+    },
+    "area": 0.503,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 161,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.73,
+      9.46
+     ],
+     "right": [
+      16.84,
+      7.54
+     ]
+    },
+    "area": 0.4514,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.00453125,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100046,
+   "fine_success": true,
+   "fine_steps": 159,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.51,
+      10.18
+     ],
+     "right": [
+      16.88,
+      7.52
+     ]
+    },
+    "area": 0.4944,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.91,
+      9.68
+     ],
+     "right": [
+      16.33,
+      7.55
+     ]
+    },
+    "area": 0.4504,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0033159722222222223,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100047,
+   "fine_success": true,
+   "fine_steps": 150,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.84,
+      9.78
+     ],
+     "right": [
+      18.23,
+      7.47
+     ]
+    },
+    "area": 0.5069,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 149,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.39,
+      9.49
+     ],
+     "right": [
+      15.97,
+      7.61
+     ]
+    },
+    "area": 0.4491,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003732638888888889,
+    "camera_wrist_left": 0.0016493055555555556,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100048,
+   "fine_success": true,
+   "fine_steps": 165,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.13,
+      10.3
+     ],
+     "right": [
+      17.83,
+      7.51
+     ]
+    },
+    "area": 0.4966,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 163,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.89,
+      9.71
+     ],
+     "right": [
+      16.97,
+      7.58
+     ]
+    },
+    "area": 0.4505,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0035590277777777777,
+    "camera_wrist_left": 6.944444444444444e-05,
+    "camera_wrist_right": 0.0001388888888888889
+   }
+  },
+  {
+   "scene": 100049,
+   "fine_success": true,
+   "fine_steps": 148,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      11.94,
+      10.01
+     ],
+     "right": [
+      16.5,
+      7.43
+     ]
+    },
+    "area": 0.5002,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.28,
+      9.71
+     ],
+     "right": [
+      15.54,
+      7.55
+     ]
+    },
+    "area": 0.4499,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0029340277777777776,
+    "camera_wrist_left": 6.944444444444444e-05,
+    "camera_wrist_right": 0.00010416666666666667
+   }
+  },
+  {
+   "scene": 100050,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.15,
+      9.45
+     ],
+     "right": [
+      17.45,
+      7.42
+     ]
+    },
+    "area": 0.5022,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 152,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.11,
+      9.52
+     ],
+     "right": [
+      16.0,
+      7.55
+     ]
+    },
+    "area": 0.4508,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0038368055555555555,
+    "camera_wrist_left": 0.0018055555555555555,
+    "camera_wrist_right": 0.0003298611111111111
+   }
+  },
+  {
+   "scene": 100051,
+   "fine_success": true,
+   "fine_steps": 165,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.56,
+      9.63
+     ],
+     "right": [
+      17.04,
+      7.45
+     ]
+    },
+    "area": 0.4914,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.52,
+      9.63
+     ],
+     "right": [
+      16.86,
+      7.54
+     ]
+    },
+    "area": 0.4508,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0022222222222222222,
+    "camera_wrist_left": 3.472222222222222e-05,
+    "camera_wrist_right": 0.00020833333333333335
+   }
+  },
+  {
+   "scene": 100052,
+   "fine_success": true,
+   "fine_steps": 154,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.6,
+      10.16
+     ],
+     "right": [
+      15.79,
+      7.56
+     ]
+    },
+    "area": 0.486,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 152,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.51,
+      9.56
+     ],
+     "right": [
+      16.5,
+      7.58
+     ]
+    },
+    "area": 0.4503,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0036458333333333334,
+    "camera_wrist_left": 0.0002777777777777778,
+    "camera_wrist_right": 0.0008680555555555555
+   }
+  },
+  {
+   "scene": 100053,
+   "fine_success": true,
+   "fine_steps": 162,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.56,
+      9.94
+     ],
+     "right": [
+      17.84,
+      7.48
+     ]
+    },
+    "area": 0.4979,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.05,
+      9.78
+     ],
+     "right": [
+      16.66,
+      7.57
+     ]
+    },
+    "area": 0.4499,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005902777777777778,
+    "camera_wrist_left": 0.0019270833333333334,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100054,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.45,
+      9.47
+     ],
+     "right": [
+      18.16,
+      7.45
+     ]
+    },
+    "area": 0.5042,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 151,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.97,
+      9.59
+     ],
+     "right": [
+      15.78,
+      7.52
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004861111111111111,
+    "camera_wrist_left": 0.00038194444444444446,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100055,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.59,
+      9.88
+     ],
+     "right": [
+      18.21,
+      7.46
+     ]
+    },
+    "area": 0.5014,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 157,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.72,
+      9.35
+     ],
+     "right": [
+      16.39,
+      7.53
+     ]
+    },
+    "area": 0.4513,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003298611111111111,
+    "camera_wrist_left": 0.0003298611111111111,
+    "camera_wrist_right": 0.0001388888888888889
+   }
+  },
+  {
+   "scene": 100056,
+   "fine_success": true,
+   "fine_steps": 156,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.95,
+      9.32
+     ],
+     "right": [
+      18.62,
+      7.37
+     ]
+    },
+    "area": 0.5074,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 155,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.51,
+      9.47
+     ],
+     "right": [
+      16.06,
+      7.55
+     ]
+    },
+    "area": 0.45,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0018923611111111112,
+    "camera_wrist_left": 5.208333333333334e-05,
+    "camera_wrist_right": 0.0005555555555555556
+   }
+  },
+  {
+   "scene": 100057,
+   "fine_success": true,
+   "fine_steps": 152,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.31,
+      10.4
+     ],
+     "right": [
+      16.61,
+      7.55
+     ]
+    },
+    "area": 0.494,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.9,
+      9.93
+     ],
+     "right": [
+      16.06,
+      7.59
+     ]
+    },
+    "area": 0.4492,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0037847222222222223,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0006423611111111111
+   }
+  },
+  {
+   "scene": 100058,
+   "fine_success": true,
+   "fine_steps": 147,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.93,
+      9.97
+     ],
+     "right": [
+      17.1,
+      7.48
+     ]
+    },
+    "area": 0.5007,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.58,
+      9.81
+     ],
+     "right": [
+      15.81,
+      7.55
+     ]
+    },
+    "area": 0.4503,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0019618055555555556,
+    "camera_wrist_left": 0.0003125,
+    "camera_wrist_right": 1.736111111111111e-05
+   }
+  },
+  {
+   "scene": 100059,
+   "fine_success": true,
+   "fine_steps": 156,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.75,
+      9.57
+     ],
+     "right": [
+      17.61,
+      7.42
+     ]
+    },
+    "area": 0.5007,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 153,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.98,
+      9.58
+     ],
+     "right": [
+      16.1,
+      7.57
+     ]
+    },
+    "area": 0.4505,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0016840277777777778,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0017534722222222222
+   }
+  },
+  {
+   "scene": 100060,
+   "fine_success": true,
+   "fine_steps": 162,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.19,
+      9.86
+     ],
+     "right": [
+      18.23,
+      7.47
+     ]
+    },
+    "area": 0.4981,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 160,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.85,
+      9.47
+     ],
+     "right": [
+      16.91,
+      7.57
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003263888888888889,
+    "camera_wrist_left": 0.000625,
+    "camera_wrist_right": 0.00026041666666666666
+   }
+  },
+  {
+   "scene": 100061,
+   "fine_success": true,
+   "fine_steps": 162,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.57,
+      9.4
+     ],
+     "right": [
+      18.49,
+      7.38
+     ]
+    },
+    "area": 0.5005,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 162,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.44,
+      9.52
+     ],
+     "right": [
+      16.72,
+      7.53
+     ]
+    },
+    "area": 0.4518,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005086805555555555,
+    "camera_wrist_left": 0.0008854166666666666,
+    "camera_wrist_right": 0.00020833333333333335
+   }
+  },
+  {
+   "scene": 100062,
+   "fine_success": true,
+   "fine_steps": 151,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.31,
+      9.55
+     ],
+     "right": [
+      18.87,
+      7.36
+     ]
+    },
+    "area": 0.5047,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.26,
+      9.35
+     ],
+     "right": [
+      16.61,
+      7.54
+     ]
+    },
+    "area": 0.451,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0016145833333333333,
+    "camera_wrist_left": 0.00010416666666666667,
+    "camera_wrist_right": 0.00024305555555555555
+   }
+  },
+  {
+   "scene": 100063,
+   "fine_success": true,
+   "fine_steps": 164,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.37,
+      10.21
+     ],
+     "right": [
+      16.32,
+      7.53
+     ]
+    },
+    "area": 0.4835,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 162,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.72,
+      9.52
+     ],
+     "right": [
+      16.87,
+      7.56
+     ]
+    },
+    "area": 0.4509,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.002829861111111111,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0011284722222222221
+   }
+  },
+  {
+   "scene": 100064,
+   "fine_success": true,
+   "fine_steps": 164,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.73,
+      10.21
+     ],
+     "right": [
+      19.17,
+      7.49
+     ]
+    },
+    "area": 0.5025,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 162,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.38,
+      9.67
+     ],
+     "right": [
+      16.88,
+      7.56
+     ]
+    },
+    "area": 0.4503,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003472222222222222,
+    "camera_wrist_left": 1.736111111111111e-05,
+    "camera_wrist_right": 1.736111111111111e-05
+   }
+  },
+  {
+   "scene": 100065,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.49,
+      10.19
+     ],
+     "right": [
+      18.67,
+      7.48
+     ]
+    },
+    "area": 0.5042,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 157,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.01,
+      9.23
+     ],
+     "right": [
+      16.41,
+      7.55
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.002534722222222222,
+    "camera_wrist_left": 0.0016319444444444445,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100066,
+   "fine_success": true,
+   "fine_steps": 149,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.58,
+      9.45
+     ],
+     "right": [
+      17.37,
+      7.43
+     ]
+    },
+    "area": 0.5048,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 149,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.32,
+      9.44
+     ],
+     "right": [
+      15.59,
+      7.56
+     ]
+    },
+    "area": 0.4494,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005989583333333334,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0015104166666666666
+   }
+  },
+  {
+   "scene": 100067,
+   "fine_success": true,
+   "fine_steps": 156,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.14,
+      9.99
+     ],
+     "right": [
+      17.13,
+      7.48
+     ]
+    },
+    "area": 0.4928,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.46,
+      9.51
+     ],
+     "right": [
+      16.68,
+      7.54
+     ]
+    },
+    "area": 0.4526,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004409722222222222,
+    "camera_wrist_left": 0.0012847222222222223,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100068,
+   "fine_success": true,
+   "fine_steps": 161,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      15.07,
+      9.51
+     ],
+     "right": [
+      18.86,
+      7.42
+     ]
+    },
+    "area": 0.505,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 158,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.3,
+      9.6
+     ],
+     "right": [
+      16.39,
+      7.51
+     ]
+    },
+    "area": 0.4508,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0021006944444444445,
+    "camera_wrist_left": 1.736111111111111e-05,
+    "camera_wrist_right": 0.00019097222222222223
+   }
+  },
+  {
+   "scene": 100069,
+   "fine_success": true,
+   "fine_steps": 152,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.31,
+      10.09
+     ],
+     "right": [
+      18.49,
+      7.44
+     ]
+    },
+    "area": 0.5048,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 152,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.71,
+      9.85
+     ],
+     "right": [
+      16.18,
+      7.58
+     ]
+    },
+    "area": 0.4492,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003003472222222222,
+    "camera_wrist_left": 0.00022569444444444443,
+    "camera_wrist_right": 0.0016840277777777778
+   }
+  },
+  {
+   "scene": 100070,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.16,
+      9.42
+     ],
+     "right": [
+      18.82,
+      7.36
+     ]
+    },
+    "area": 0.5053,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 154,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.94,
+      9.5
+     ],
+     "right": [
+      16.32,
+      7.54
+     ]
+    },
+    "area": 0.45,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0033159722222222223,
+    "camera_wrist_left": 0.0007986111111111112,
+    "camera_wrist_right": 0.0004166666666666667
+   }
+  },
+  {
+   "scene": 100071,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.74,
+      9.83
+     ],
+     "right": [
+      16.22,
+      7.48
+     ]
+    },
+    "area": 0.4955,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.22,
+      9.89
+     ],
+     "right": [
+      16.14,
+      7.56
+     ]
+    },
+    "area": 0.4501,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.003871527777777778,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.00010416666666666667
+   }
+  },
+  {
+   "scene": 100072,
+   "fine_success": true,
+   "fine_steps": 169,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.84,
+      9.75
+     ],
+     "right": [
+      17.07,
+      7.53
+     ]
+    },
+    "area": 0.483,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.89,
+      9.85
+     ],
+     "right": [
+      17.16,
+      7.54
+     ]
+    },
+    "area": 0.4504,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.00546875,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 6.944444444444444e-05
+   }
+  },
+  {
+   "scene": 100073,
+   "fine_success": true,
+   "fine_steps": 164,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.39,
+      9.88
+     ],
+     "right": [
+      17.0,
+      7.48
+     ]
+    },
+    "area": 0.4895,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 164,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.59,
+      9.69
+     ],
+     "right": [
+      17.09,
+      7.58
+     ]
+    },
+    "area": 0.4501,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.002395833333333333,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100074,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.87,
+      10.2
+     ],
+     "right": [
+      17.92,
+      7.48
+     ]
+    },
+    "area": 0.5039,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 150,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.67,
+      9.36
+     ],
+     "right": [
+      15.79,
+      7.56
+     ]
+    },
+    "area": 0.4507,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0030729166666666665,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0002777777777777778
+   }
+  },
+  {
+   "scene": 100075,
+   "fine_success": true,
+   "fine_steps": 158,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.77,
+      10.64
+     ],
+     "right": [
+      19.24,
+      7.48
+     ]
+    },
+    "area": 0.5062,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 155,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.22,
+      9.61
+     ],
+     "right": [
+      16.64,
+      7.56
+     ]
+    },
+    "area": 0.45,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0053125,
+    "camera_wrist_left": 0.0003125,
+    "camera_wrist_right": 0.0003298611111111111
+   }
+  },
+  {
+   "scene": 100076,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.8,
+      10.08
+     ],
+     "right": [
+      16.51,
+      7.51
+     ]
+    },
+    "area": 0.4937,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 151,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.11,
+      9.58
+     ],
+     "right": [
+      16.3,
+      7.56
+     ]
+    },
+    "area": 0.4513,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0030902777777777777,
+    "camera_wrist_left": 0.0006423611111111111,
+    "camera_wrist_right": 0.00012152777777777777
+   }
+  },
+  {
+   "scene": 100077,
+   "fine_success": true,
+   "fine_steps": 166,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.72,
+      9.63
+     ],
+     "right": [
+      17.67,
+      7.41
+     ]
+    },
+    "area": 0.4975,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 164,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.78,
+      9.7
+     ],
+     "right": [
+      16.73,
+      7.56
+     ]
+    },
+    "area": 0.4507,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0028993055555555556,
+    "camera_wrist_left": 3.472222222222222e-05,
+    "camera_wrist_right": 0.0010243055555555556
+   }
+  },
+  {
+   "scene": 100078,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.69,
+      9.56
+     ],
+     "right": [
+      19.01,
+      7.44
+     ]
+    },
+    "area": 0.509,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 156,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.72,
+      9.48
+     ],
+     "right": [
+      16.4,
+      7.6
+     ]
+    },
+    "area": 0.4496,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0030729166666666665,
+    "camera_wrist_left": 6.944444444444444e-05,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100079,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.46,
+      9.5
+     ],
+     "right": [
+      18.02,
+      7.42
+     ]
+    },
+    "area": 0.5032,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 153,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.11,
+      9.48
+     ],
+     "right": [
+      16.03,
+      7.53
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0025,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0017881944444444445
+   }
+  },
+  {
+   "scene": 100080,
+   "fine_success": true,
+   "fine_steps": 147,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.32,
+      10.57
+     ],
+     "right": [
+      17.63,
+      7.48
+     ]
+    },
+    "area": 0.5035,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 147,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.47,
+      9.79
+     ],
+     "right": [
+      15.81,
+      7.59
+     ]
+    },
+    "area": 0.4499,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.005399305555555556,
+    "camera_wrist_left": 3.472222222222222e-05,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100081,
+   "fine_success": true,
+   "fine_steps": 159,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.8,
+      9.42
+     ],
+     "right": [
+      18.31,
+      7.37
+     ]
+    },
+    "area": 0.5031,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 159,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.74,
+      9.21
+     ],
+     "right": [
+      16.58,
+      7.53
+     ]
+    },
+    "area": 0.4513,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0018402777777777777,
+    "camera_wrist_left": 0.0009201388888888889,
+    "camera_wrist_right": 0.00125
+   }
+  },
+  {
+   "scene": 100082,
+   "fine_success": true,
+   "fine_steps": 159,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.49,
+      9.8
+     ],
+     "right": [
+      17.98,
+      7.37
+     ]
+    },
+    "area": 0.502,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 157,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.75,
+      9.19
+     ],
+     "right": [
+      16.55,
+      7.55
+     ]
+    },
+    "area": 0.4514,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0053125,
+    "camera_wrist_left": 0.0005208333333333333,
+    "camera_wrist_right": 0.0022916666666666667
+   }
+  },
+  {
+   "scene": 100083,
+   "fine_success": true,
+   "fine_steps": 168,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.51,
+      10.27
+     ],
+     "right": [
+      16.88,
+      7.56
+     ]
+    },
+    "area": 0.4874,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 166,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.66,
+      9.51
+     ],
+     "right": [
+      17.07,
+      7.55
+     ]
+    },
+    "area": 0.4513,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.001267361111111111,
+    "camera_wrist_left": 0.00043402777777777775,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100084,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.72,
+      9.15
+     ],
+     "right": [
+      17.81,
+      7.46
+     ]
+    },
+    "area": 0.501,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 160,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.26,
+      9.81
+     ],
+     "right": [
+      16.22,
+      7.55
+     ]
+    },
+    "area": 0.4499,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004253472222222222,
+    "camera_wrist_left": 0.0005034722222222222,
+    "camera_wrist_right": 0.00010416666666666667
+   }
+  },
+  {
+   "scene": 100085,
+   "fine_success": true,
+   "fine_steps": 150,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.24,
+      9.67
+     ],
+     "right": [
+      17.43,
+      7.41
+     ]
+    },
+    "area": 0.5002,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.89,
+      9.53
+     ],
+     "right": [
+      16.3,
+      7.56
+     ]
+    },
+    "area": 0.4509,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0034375,
+    "camera_wrist_left": 3.472222222222222e-05,
+    "camera_wrist_right": 0.0001388888888888889
+   }
+  },
+  {
+   "scene": 100086,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.24,
+      9.76
+     ],
+     "right": [
+      17.59,
+      7.5
+     ]
+    },
+    "area": 0.5041,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 153,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.74,
+      9.64
+     ],
+     "right": [
+      15.54,
+      7.56
+     ]
+    },
+    "area": 0.4495,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0040625,
+    "camera_wrist_left": 0.00546875,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100087,
+   "fine_success": true,
+   "fine_steps": 157,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.64,
+      9.53
+     ],
+     "right": [
+      17.83,
+      7.4
+     ]
+    },
+    "area": 0.5013,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 157,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.46,
+      9.62
+     ],
+     "right": [
+      16.31,
+      7.57
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0027256944444444446,
+    "camera_wrist_left": 5.208333333333334e-05,
+    "camera_wrist_right": 5.208333333333334e-05
+   }
+  },
+  {
+   "scene": 100088,
+   "fine_success": true,
+   "fine_steps": 158,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      14.5,
+      9.76
+     ],
+     "right": [
+      19.05,
+      7.46
+     ]
+    },
+    "area": 0.5044,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 158,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.41,
+      9.48
+     ],
+     "right": [
+      16.72,
+      7.57
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.006875,
+    "camera_wrist_left": 0.00026041666666666666,
+    "camera_wrist_right": 0.0006597222222222222
+   }
+  },
+  {
+   "scene": 100089,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.98,
+      10.29
+     ],
+     "right": [
+      18.7,
+      7.49
+     ]
+    },
+    "area": 0.5029,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 153,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.05,
+      9.4
+     ],
+     "right": [
+      16.43,
+      7.55
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004045138888888889,
+    "camera_wrist_left": 0.0006597222222222222,
+    "camera_wrist_right": 0.0005902777777777778
+   }
+  },
+  {
+   "scene": 100090,
+   "fine_success": true,
+   "fine_steps": 166,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      15.42,
+      9.5
+     ],
+     "right": [
+      19.38,
+      7.45
+     ]
+    },
+    "area": 0.5036,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 164,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.79,
+      9.64
+     ],
+     "right": [
+      16.73,
+      7.56
+     ]
+    },
+    "area": 0.4509,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0026215277777777777,
+    "camera_wrist_left": 0.0003298611111111111,
+    "camera_wrist_right": 1.736111111111111e-05
+   }
+  },
+  {
+   "scene": 100091,
+   "fine_success": true,
+   "fine_steps": 153,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.71,
+      9.96
+     ],
+     "right": [
+      16.14,
+      7.5
+     ]
+    },
+    "area": 0.4834,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.49,
+      9.68
+     ],
+     "right": [
+      16.62,
+      7.54
+     ]
+    },
+    "area": 0.451,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.006927083333333334,
+    "camera_wrist_left": 3.472222222222222e-05,
+    "camera_wrist_right": 0.0010763888888888889
+   }
+  },
+  {
+   "scene": 100092,
+   "fine_success": true,
+   "fine_steps": 150,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.63,
+      9.72
+     ],
+     "right": [
+      16.72,
+      7.45
+     ]
+    },
+    "area": 0.4999,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.94,
+      9.72
+     ],
+     "right": [
+      15.9,
+      7.58
+     ]
+    },
+    "area": 0.4499,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.002170138888888889,
+    "camera_wrist_left": 0.00017361111111111112,
+    "camera_wrist_right": 0.00036458333333333335
+   }
+  },
+  {
+   "scene": 100093,
+   "fine_success": true,
+   "fine_steps": 149,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.59,
+      10.02
+     ],
+     "right": [
+      15.79,
+      7.48
+     ]
+    },
+    "area": 0.4877,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.1,
+      9.75
+     ],
+     "right": [
+      16.43,
+      7.61
+     ]
+    },
+    "area": 0.4508,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0038368055555555555,
+    "camera_wrist_left": 0.0006944444444444445,
+    "camera_wrist_right": 0.00171875
+   }
+  },
+  {
+   "scene": 100094,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.95,
+      10.34
+     ],
+     "right": [
+      19.02,
+      7.46
+     ]
+    },
+    "area": 0.5084,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 157,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.95,
+      9.5
+     ],
+     "right": [
+      16.48,
+      7.56
+     ]
+    },
+    "area": 0.4498,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0036631944444444446,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0006770833333333334
+   }
+  },
+  {
+   "scene": 100095,
+   "fine_success": true,
+   "fine_steps": 154,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.91,
+      9.17
+     ],
+     "right": [
+      18.41,
+      7.36
+     ]
+    },
+    "area": 0.5055,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 154,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      15.63,
+      9.51
+     ],
+     "right": [
+      16.19,
+      7.57
+     ]
+    },
+    "area": 0.4494,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004375,
+    "camera_wrist_left": 5.208333333333334e-05,
+    "camera_wrist_right": 0.001388888888888889
+   }
+  },
+  {
+   "scene": 100096,
+   "fine_success": true,
+   "fine_steps": 160,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.39,
+      10.23
+     ],
+     "right": [
+      18.59,
+      7.48
+     ]
+    },
+    "area": 0.5027,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 158,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.18,
+      9.43
+     ],
+     "right": [
+      16.56,
+      7.55
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004722222222222222,
+    "camera_wrist_left": 0.0006944444444444445,
+    "camera_wrist_right": 0.0
+   }
+  },
+  {
+   "scene": 100097,
+   "fine_success": true,
+   "fine_steps": 155,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      13.21,
+      10.43
+     ],
+     "right": [
+      18.14,
+      7.52
+     ]
+    },
+    "area": 0.501,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 152,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.43,
+      9.35
+     ],
+     "right": [
+      16.45,
+      7.55
+     ]
+    },
+    "area": 0.4516,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004600694444444445,
+    "camera_wrist_left": 0.0,
+    "camera_wrist_right": 0.0017534722222222222
+   }
+  },
+  {
+   "scene": 100098,
+   "fine_success": true,
+   "fine_steps": 165,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      12.53,
+      10.56
+     ],
+     "right": [
+      17.42,
+      7.54
+     ]
+    },
+    "area": 0.4926,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": false,
+   "coarse_replay_step": null,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.49,
+      9.66
+     ],
+     "right": [
+      17.12,
+      7.57
+     ]
+    },
+    "area": 0.4514,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.004253472222222222,
+    "camera_wrist_left": 6.944444444444444e-05,
+    "camera_wrist_right": 0.00034722222222222224
+   }
+  },
+  {
+   "scene": 100099,
+   "fine_success": true,
+   "fine_steps": 171,
+   "fine": {
+    "gap_mm": {
+     "left": [
+      15.12,
+      9.38
+     ],
+     "right": [
+      17.56,
+      7.45
+     ]
+    },
+    "area": 0.4972,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "coarse_replay_success": true,
+   "coarse_replay_step": 169,
+   "coarse": {
+    "gap_mm": {
+     "left": [
+      16.91,
+      9.57
+     ],
+     "right": [
+      16.8,
+      7.56
+     ]
+    },
+    "area": 0.4511,
+    "violation": 0.0,
+    "success_now": true
+   },
+   "image_mean_abs": {
+    "cam_front": 0.0024305555555555556,
+    "camera_wrist_left": 1.736111111111111e-05,
+    "camera_wrist_right": 0.00010416666666666667
+   }
+  }
+ ]
+}

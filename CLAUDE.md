@@ -38,6 +38,21 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 | DART ノイズ（OpenArm） | σ = 0.0065 rad を基準にする（SO-101 の 0.01 rad と手先の変位が同じになる値。手先の変位/関節角は SO-101 0.35 m/rad、OpenArm 0.54 m/rad）。収集では (0, 0.00325, 0.0065) を回す（0.00975 ではエキスパートが 48%） |
 | 方策（OpenArm） | KeiGrasp をカメラ 3 台（`cam_front`、左手首、右手首）・16 次元で 1178 万パラメータ。指の列 (7, 15) は絶対値で予測。現行の最良は `runs/train/oa_r1/model.pt`（git 管理外。`oa_bc1` に外乱入りデータと DAgger 1 ラウンドを足したもの）。**使用済みの訓練シーン: 0–1199** |
 
+### マイルストーン 3: タオルの二つ折り（OpenArm v2、`keiarm/towel/`、計画は `docs/milestone3.md`）
+
+| 項目 | 値 |
+|---|---|
+| 物理 | timestep 1/240 × 8、**discrete**、**CG**、iterations 50、elliptic、impratio 10（pyramidal では掴んだ布が机を突き抜ける）。アームは M2 と同じ（`openarm_spec()`） |
+| 布 | `flexcomp` grid、学習用 **N = 16**（頂点 256）、**ブラウザ用 N = 10**（N = 8・9 はエキスパートが 69%・53%）。radius 2 mm、edge 拘束 + 曲げ、selfcollide sap |
+| タオル | 長方形、奥行き（折る向き x）15–16.5 cm × 幅 18.5–20 cm。質量・摩擦・曲げ・色はシードで振る（`keiarm/towel/scene.py`） |
+| 出現範囲 | 中心 (0.239 ± 0.008, ±0.010)、向き ±5°、広げて平らに置く（根拠 `tools/towel_reach.py`） |
+| タスク | 右手が −y、左手が +y の奥の角（角から 6 mm 内側）を真上から掴み、手前の角の上へ運んで離す |
+| 掴みの規則 | 指令が開の 25% 未満かつ指の開度が 35% 未満で、指先の中点から 2 cm 以内の頂点を近い順に最大 4 個 `connect`（`<side>_grab<k>`）で拘束、指令が 50% を超えたら離す（`keiarm/towel/grasp.py`）。**Python と `web/src/towel/sim.js` の両方に書く**。mjNEQDATA は 3.17 で 12 |
+| 成功判定 | 奥の角が手前の角から水平 3 cm・垂直 2.5 cm 以内、真上から見た面積 0.40–0.60、層の順序の違反 10% 以下（**折り目をまたぐ 1 組は数えない**）、両手が離して指が触れていない、全頂点 5 cm/s 未満、が 10 ステップ連続（`keiarm/towel/task.py`） |
+| エキスパート | `Expert.act(data, commanded=None)`。**DART では前回のノイズなしラベルを `commanded` に渡す**（運搬の起点。`data.ctrl` を起点にするとノイズを積分する）。実行するのはノイズ入りの行動（`keiarm/towel/policies.py` の `ExpertPolicy`） |
+| DART ノイズ（タオル） | 収集では σ = (0, 0.00325, 0.0065) を回す（エキスパート 100% / 91%。0.00975 は 10%） |
+| ブラウザの速度 | N = 10 の物理は実時間の 0.76〜0.84 倍。0.8 倍速前後で見せる（利用者の決定 2026-11-14）。推論込みの速度は Phase 7 で見直す |
+
 ## コマンド
 
 - 環境構築: `./setup.sh`（= `uv sync`）
@@ -51,6 +66,7 @@ SO-101 を題材にした軽量クローズドループ・マニピュレーシ�
 - DAgger: `uv run python scripts/collect.py --name <名前> --scenes A B --disturb --policy keigrasp:<run 名> --workers 6` → `scripts/train.py --init <run 名> --data <全部>`。**ラウンドごとに新しいシーン範囲を使う**（使用済み: 0–1899、2000–2599）
 - ブラウザのモデル: `uv run python scripts/export_onnx.py --run r1` → `npm --prefix web run build` → `uv run python tools/browser_eval.py --python-run keigrasp-r1_eval3`（ブラウザ内の閉ループ評価、約 18 分）/ `uv run python tools/browser_demo_check.py`（実時間 + マウスドラッグ）
 - ベンチ: `uv run python scripts/bench.py`（OpenArm は `scripts/bench_openarm.py`。シーン一覧 `scripts/show_scenes_openarm.py`、到達範囲 `tools/openarm_reach.py --object bar`、評価 `scripts/eval_openarm.py --policy expert [--disturb none|move|knock|drop|plate|suite]`（レポートは `runs/eval_summaries/openarm_*`）、エキスパートの簡易評価 `scripts/eval_expert_openarm.py [--dart 0.0065]`、動画 `scripts/run_expert_openarm.py --video runs/x.mp4`、ブラウザ `scripts/export_web_openarm.py` → `npm --prefix web run build` → `tools/browser_check_openarm.py [--gpu]`、ページは `web/openarm.html`、モデル `scripts/export_onnx.py --robot openarm --run oa_r1`、ブラウザ内評価 `tools/browser_eval_openarm.py --gpu --python-run openarm_keigrasp-oa_r1_eval3 [--disturb suite]`、実時間 + ドラッグ `tools/browser_demo_check_openarm.py --gpu [--url ...]`、学習 `scripts/collect_openarm.py --name <名前> --scenes A B [--disturb mix] [--policy keigrasp:<run>]` → `scripts/train.py --robot openarm --name <run> --data <名前>` → `scripts/eval_openarm.py --policy keigrasp:<run> --workers 6`、対照は `--policy keigrasp-blind:<run>[:カメラ]`） / 到達範囲: `uv run python tools/reachability.py`
+- タオル（M3）: ベンチ `scripts/bench_towel.py`、シーン一覧 `scripts/show_scenes_towel.py`、到達範囲 `tools/towel_reach.py`、エキスパートの簡易評価 `scripts/eval_expert_towel.py [--mesh 16] [--dart 0.0065]`、評価 `scripts/eval_towel.py --policy expert [--disturb none|shift|slip|drop|nudge|suite] [--mesh 10]`（レポートは `runs/eval_summaries/towel_*`）、粗いメッシュの比較 `tools/towel_mesh_compare.py --n 10`、ブラウザ `scripts/export_web_towel.py` + `scripts/export_towel_records.py` → `npm --prefix web run build` → `tools/browser_check_towel.py [--gpu]`、ページは `web/towel.html`、学習 `scripts/collect_towel.py --name <名前> --scenes A B --label-every 6 --workers 6 [--disturb mix|slip,drop,nudge] [--mesh 10] [--policy keigrasp:<run>]`（`--disturb` のカンマ区切りはシーンごとに順に回す）→ `scripts/train_towel.py --name <run> --data <名前…> [--init <run>]` → `scripts/eval_towel.py --policy keigrasp:<run> --workers 6 --disturb suite [--mesh 10]`、対照は `--policy keigrasp-blind:<run>[:カメラ]`。**使用済みの訓練シーン（M3）: 0–1799**。現行の最良は `runs/train/towel_r2/model.pt`（git 管理外）
 - モデル調査: `uv run python tools/inspect_so101.py` / IK 確認: `uv run python tools/check_ik.py`
 
 ## 原則
@@ -86,6 +102,8 @@ keiarm/      シミュレーター（シーン生成、環境、エキスパー�
 keigrasp/    方策（モデル、学習、DAgger、ONNX 書き出し）
 web/         ブラウザデモ（three.js、MuJoCo WASM、onnxruntime-web）。web/public/scenes/ に事前生成シーン（git 管理）、web/public/assets/ はメッシュのコピー（管理外）
 keiarm/openarm/  マイルストーン 2（OpenArm v2）。SO-101 側のコードとは独立させ、共通化は必要になってから
+keiarm/towel/    マイルストーン 3（タオルの二つ折り）。シーン、掴みの規則、成功判定、エキスパート、評価、ブラウザ書き出し
+web/src/towel/   タオルのページ（物理は Web Worker、記録の再生）
 third_party/ Menagerie 由来の SO-101、Enactic 由来の OpenArm v2（ライセンス同梱、編集禁止）
 scripts/     demo.py ほか、利用者が叩く入口
 tools/       調査・検証用（モデル調査、IK 確認、到達範囲、描画一致）

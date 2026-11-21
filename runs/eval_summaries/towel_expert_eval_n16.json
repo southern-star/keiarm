@@ -1,0 +1,56 @@
+{
+ "episodes": 100,
+ "mesh": [
+  16
+ ],
+ "success": 100,
+ "success_rate": 1.0,
+ "stage_reached": {
+  "reach": 100,
+  "grasp_one": 100,
+  "grasp_both": 100,
+  "lift": 100,
+  "carry": 100,
+  "placed": 100,
+  "released": 100,
+  "success": 100
+ },
+ "stage_first_step_median": {
+  "reach": 39.0,
+  "grasp_one": 52.0,
+  "grasp_both": 54.0,
+  "lift": 75.0,
+  "carry": 99.0,
+  "placed": 117.0,
+  "released": 144.0,
+  "success": 157.0
+ },
+ "disturbance_applied": 0,
+ "infractions": {
+  "arms_touch_episodes": 0,
+  "arms_touch_steps": 0,
+  "crossing_episodes": 0,
+  "max_crossings": 0,
+  "towel_off_table": 0,
+  "empty_grasps": 0,
+  "early_releases": 0,
+  "sim_broken": 0
+ },
+ "grabs_median": 2.0,
+ "max_gap_after_mm_median": 0.0,
+ "steps_to_success": {
+  "median": 157.0,
+  "p90": 164.10000000000002,
+  "max": 171
+ },
+ "success_corner_gap_mm_max": 19.5,
+ "failures": {},
+ "failed_expert_could_finish": 0,
+ "failed_stuck": 0,
+ "disturb": "none",
+ "name": "towel_expert_eval_n16",
+ "policy": "expert",
+ "split": "eval",
+ "mujoco": "3.17.0",
+ "seconds": 443
+}

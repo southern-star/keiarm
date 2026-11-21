@@ -1,0 +1,74 @@
+[
+ {
+  "integrator": "implicitfast",
+  "scene": 100000,
+  "lift_mm": 146.9,
+  "max_track_mm": 11.8,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 15.65,
+  "rtf_physics_hold": 48.2
+ },
+ {
+  "integrator": "discrete",
+  "scene": 100000,
+  "lift_mm": 147.4,
+  "max_track_mm": 11.1,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 19.13,
+  "rtf_physics_hold": 43.2
+ },
+ {
+  "integrator": "implicitfast",
+  "scene": 100001,
+  "lift_mm": 146.7,
+  "max_track_mm": 11.8,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 17.62,
+  "rtf_physics_hold": 47.6
+ },
+ {
+  "integrator": "discrete",
+  "scene": 100001,
+  "lift_mm": 147.3,
+  "max_track_mm": 11.5,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 15.39,
+  "rtf_physics_hold": 42.2
+ },
+ {
+  "integrator": "implicitfast",
+  "scene": 100002,
+  "lift_mm": 146.7,
+  "max_track_mm": 9.8,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 16.78,
+  "rtf_physics_hold": 48.1
+ },
+ {
+  "integrator": "discrete",
+  "scene": 100002,
+  "lift_mm": 147.2,
+  "max_track_mm": 9.4,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 17.65,
+  "rtf_physics_hold": 45.0
+ },
+ {
+  "integrator": "implicitfast",
+  "scene": 100003,
+  "lift_mm": 146.6,
+  "max_track_mm": 11.2,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 18.85,
+  "rtf_physics_hold": 49.3
+ },
+ {
+  "integrator": "discrete",
+  "scene": 100003,
+  "lift_mm": 147.2,
+  "max_track_mm": 10.4,
+  "table_contact_steps": 0,
+  "rtf_grasp_incl_ik": 18.59,
+  "rtf_physics_hold": 44.0
+ }
+]

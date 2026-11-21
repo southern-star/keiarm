@@ -1,0 +1,47 @@
+cloth A_n10 {'status': 'ok', 'rtf_fold': 1.281, 'rtf_rest': 1.223, 'sim_s': 9.45, 'wall_s': 7.73, 'ncon_max': 415}
+cloth A_n16 {'status': 'ok', 'rtf_fold': 0.374, 'rtf_rest': 0.297, 'sim_s': 9.45, 'wall_s': 28.99, 'ncon_max': 1118}
+cloth A_n24 {'status': 'ok', 'rtf_fold': 0.125, 'rtf_rest': 0.105, 'sim_s': 9.45, 'wall_s': 84.0, 'ncon_max': 3240}
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.25e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 165. Check model. Time = 0.5083.
+
+cloth B_n16 {'status': 'ok', 'rtf_fold': 0.577, 'rtf_rest': 0.468, 'sim_s': 9.45, 'wall_s': 18.65, 'ncon_max': 1095}
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.06e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 45. Check model. Time = 0.3417.
+
+cloth Bfast_n10 {'status': 'ok', 'rtf_fold': 3.941, 'rtf_rest': 2.718, 'sim_s': 9.45, 'wall_s': 3.09, 'ncon_max': 391}
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.06e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 45. Check model. Time = 0.3417.
+
+cloth Bfast_c1_n10 {'status': 'ok', 'rtf_fold': 4.058, 'rtf_rest': 2.908, 'sim_s': 9.45, 'wall_s': 2.94, 'ncon_max': 475}
+robot A_n10 {'status': 'ok', 'rtf_physics': 1.818, 'rtf_with_ik': 1.348, 'sim_s': 10.17, 'viol0': 0.0, 'corner_mm': 26.7}
+robot A_n16 {'status': 'ok', 'rtf_physics': 0.572, 'rtf_with_ik': 0.507, 'sim_s': 10.17, 'viol0': 0.0078, 'corner_mm': 19.5}
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.18e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 288. Check model. Time = 5.0833.
+
+robot B_n16 {'status': 'ok', 'rtf_physics': 1.164, 'rtf_with_ik': 0.933, 'sim_s': 10.17, 'viol0': 0.0312, 'corner_mm': 42.2}
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.03e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 231. Check model. Time = 0.6000.
+
+robot Bfast_n10 {'status': 'through_table', 'rtf_physics': 6.509, 'rtf_with_ik': 2.941, 'sim_s': 5.77, 'viol0': None, 'corner_mm': None}
+determinism cloth_A_n16 {'identical': True, 'differing_keys': []}
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.54e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 165. Check model. Time = 0.5083.
+
+WARNING: Flex stiffness is too ill-conditioned for the effective-metric block preconditioner: the M+K solve ran out of iterations at a relative residual of 1.54e-08 and qacc_smooth is under-converged. Reported as a singular inertia below, because M+K is the effective inertia.
+
+WARNING: Inertia matrix is too close to singular, or the effective-metric solve failed to converge, at DOF 165. Check model. Time = 0.5083.
+
+determinism cloth_B_n16 {'identical': True, 'differing_keys': []}
+determinism robot_A_n16 {'identical': True, 'differing_keys': []}
+MuJoCo 3.17.0, 600 control steps, nmeshface=261692
+| 測定 | 実時間比 | 制御ステップ/秒 |
+|---|---|---|
+| 物理のみ | 67.8× | 2033 |
+| 物理 + 描画（3 台、160×120） | 24.2× | 725 |
+| シーン構築（MjSpec → MjModel） | 0.10 秒 | |

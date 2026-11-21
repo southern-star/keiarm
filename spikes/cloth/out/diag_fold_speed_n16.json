@@ -1,0 +1,574 @@
+{
+ "A_n16 base(CG, iter50, tol1e-8)": {
+  "moving": {
+   "rtf": 0.218,
+   "ms_step": 19.08,
+   "ncon": 195,
+   "nefc": 1503,
+   "niter_mean": 49.5,
+   "collision_ms": 0.76,
+   "make_ms": 0.27,
+   "solve_ms": 16.37,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.044,
+   "ms_step": 95.6,
+   "ncon": 1048,
+   "nefc": 4897,
+   "niter_mean": 50.0,
+   "collision_ms": 3.87,
+   "make_ms": 3.03,
+   "solve_ms": 85.78,
+   "zmin_mm": 1.81,
+   "finite": true
+  }
+ },
+ "A_n16 iterations=20": {
+  "moving": {
+   "rtf": 0.44,
+   "ms_step": 9.48,
+   "ncon": 187,
+   "nefc": 1471,
+   "niter_mean": 20.0,
+   "collision_ms": 0.72,
+   "make_ms": 0.22,
+   "solve_ms": 7.22,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.112,
+   "ms_step": 37.2,
+   "ncon": 1046,
+   "nefc": 4889,
+   "niter_mean": 20.0,
+   "collision_ms": 3.48,
+   "make_ms": 2.63,
+   "solve_ms": 28.9,
+   "zmin_mm": 1.81,
+   "finite": true
+  }
+ },
+ "A_n16 iterations=10": {
+  "moving": {
+   "rtf": 0.598,
+   "ms_step": 6.97,
+   "ncon": 184,
+   "nefc": 1459,
+   "niter_mean": 10.0,
+   "collision_ms": 0.71,
+   "make_ms": 0.23,
+   "solve_ms": 4.7,
+   "zmin_mm": 1.84,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.154,
+   "ms_step": 26.98,
+   "ncon": 807,
+   "nefc": 3933,
+   "niter_mean": 10.0,
+   "collision_ms": 3.72,
+   "make_ms": 2.51,
+   "solve_ms": 18.1,
+   "zmin_mm": 1.74,
+   "finite": true
+  }
+ },
+ "A_n16 tolerance=1e-4": {
+  "moving": {
+   "rtf": 0.44,
+   "ms_step": 9.46,
+   "ncon": 187,
+   "nefc": 1471,
+   "niter_mean": 24.0,
+   "collision_ms": 0.69,
+   "make_ms": 0.23,
+   "solve_ms": 7.19,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.055,
+   "ms_step": 75.52,
+   "ncon": 1061,
+   "nefc": 4949,
+   "niter_mean": 40.3,
+   "collision_ms": 3.79,
+   "make_ms": 2.85,
+   "solve_ms": 66.03,
+   "zmin_mm": 1.81,
+   "finite": true
+  }
+ },
+ "A_n16 Newton": {
+  "moving": {
+   "rtf": 0.27,
+   "ms_step": 15.42,
+   "ncon": 187,
+   "nefc": 1471,
+   "niter_mean": 3.5,
+   "collision_ms": 0.81,
+   "make_ms": 0.25,
+   "solve_ms": 12.81,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.005,
+   "ms_step": 835.07,
+   "ncon": 1053,
+   "nefc": 4917,
+   "niter_mean": 5.5,
+   "collision_ms": 3.78,
+   "make_ms": 2.97,
+   "solve_ms": 825.36,
+   "zmin_mm": 1.81,
+   "finite": true
+  }
+ },
+ "A_n16 elliptic": {
+  "moving": {
+   "rtf": 0.276,
+   "ms_step": 15.12,
+   "ncon": 195,
+   "nefc": 1308,
+   "niter_mean": 48.2,
+   "collision_ms": 0.72,
+   "make_ms": 0.21,
+   "solve_ms": 12.89,
+   "zmin_mm": 1.54,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.045,
+   "ms_step": 91.94,
+   "ncon": 1140,
+   "nefc": 4125,
+   "niter_mean": 48.6,
+   "collision_ms": 3.98,
+   "make_ms": 2.86,
+   "solve_ms": 82.8,
+   "zmin_mm": 1.46,
+   "finite": true
+  }
+ },
+ "A_n16 self condim=1": {
+  "moving": {
+   "rtf": 0.285,
+   "ms_step": 14.6,
+   "ncon": 195,
+   "nefc": 1398,
+   "niter_mean": 47.5,
+   "collision_ms": 0.72,
+   "make_ms": 0.23,
+   "solve_ms": 12.28,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.106,
+   "ms_step": 39.16,
+   "ncon": 1281,
+   "nefc": 2370,
+   "niter_mean": 49.9,
+   "collision_ms": 4.52,
+   "make_ms": 2.88,
+   "solve_ms": 29.68,
+   "zmin_mm": 1.82,
+   "finite": true
+  }
+ },
+ "A_n16 self condim=1 iter=10": {
+  "moving": {
+   "rtf": 0.732,
+   "ms_step": 5.69,
+   "ncon": 203,
+   "nefc": 1406,
+   "niter_mean": 10.0,
+   "collision_ms": 0.73,
+   "make_ms": 0.24,
+   "solve_ms": 3.39,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.193,
+   "ms_step": 21.57,
+   "ncon": 1276,
+   "nefc": 2365,
+   "niter_mean": 10.0,
+   "collision_ms": 4.93,
+   "make_ms": 3.13,
+   "solve_ms": 11.23,
+   "zmin_mm": 1.81,
+   "finite": true
+  }
+ },
+ "A_n16 passive contact": {
+  "moving": {
+   "rtf": 0.749,
+   "ms_step": 5.56,
+   "ncon": 160,
+   "nefc": 723,
+   "niter_mean": 50.0,
+   "collision_ms": 0.66,
+   "make_ms": 0.13,
+   "solve_ms": 2.76,
+   "zmin_mm": 1.99,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.326,
+   "ms_step": 12.78,
+   "ncon": 551,
+   "nefc": 705,
+   "niter_mean": 50.0,
+   "collision_ms": 2.97,
+   "make_ms": 0.2,
+   "solve_ms": 4.26,
+   "zmin_mm": 1.8,
+   "finite": true
+  }
+ },
+ "A_n16 dt=1/120": {
+  "moving": {
+   "rtf": 0.423,
+   "ms_step": 19.72,
+   "ncon": 195,
+   "nefc": 1503,
+   "niter_mean": 50.0,
+   "collision_ms": 0.75,
+   "make_ms": 0.29,
+   "solve_ms": 16.34,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.094,
+   "ms_step": 88.65,
+   "ncon": 1070,
+   "nefc": 4985,
+   "niter_mean": 50.0,
+   "collision_ms": 3.6,
+   "make_ms": 2.8,
+   "solve_ms": 78.56,
+   "zmin_mm": 1.81,
+   "finite": true
+  }
+ },
+ "A_n16 dt=1/120 iter=10": {
+  "moving": {
+   "rtf": 0.93,
+   "ms_step": 8.96,
+   "ncon": 220,
+   "nefc": 1603,
+   "niter_mean": 10.0,
+   "collision_ms": 0.89,
+   "make_ms": 0.29,
+   "solve_ms": 5.05,
+   "zmin_mm": 0.68,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.332,
+   "ms_step": 25.13,
+   "ncon": 644,
+   "nefc": 3281,
+   "niter_mean": 10.0,
+   "collision_ms": 3.2,
+   "make_ms": 1.98,
+   "solve_ms": 16.44,
+   "zmin_mm": 0.51,
+   "finite": true
+  }
+ },
+ "B_n16 base(CG, iter50, tol1e-8)": {
+  "moving": {
+   "rtf": 0.696,
+   "ms_step": 5.98,
+   "ncon": 151,
+   "nefc": 622,
+   "niter_mean": 48.9,
+   "collision_ms": 0.54,
+   "make_ms": 0.1,
+   "solve_ms": 2.48,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.1,
+   "ms_step": 41.76,
+   "ncon": 1031,
+   "nefc": 4124,
+   "niter_mean": 49.4,
+   "collision_ms": 3.4,
+   "make_ms": 2.48,
+   "solve_ms": 31.72,
+   "zmin_mm": 1.78,
+   "finite": true
+  }
+ },
+ "B_n16 iterations=20": {
+  "moving": {
+   "rtf": 1.068,
+   "ms_step": 3.9,
+   "ncon": 152,
+   "nefc": 626,
+   "niter_mean": 20.0,
+   "collision_ms": 0.54,
+   "make_ms": 0.1,
+   "solve_ms": 1.18,
+   "zmin_mm": 1.83,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.175,
+   "ms_step": 23.87,
+   "ncon": 813,
+   "nefc": 3252,
+   "niter_mean": 20.0,
+   "collision_ms": 3.42,
+   "make_ms": 2.44,
+   "solve_ms": 14.71,
+   "zmin_mm": 1.79,
+   "finite": true
+  }
+ },
+ "B_n16 iterations=10": {
+  "moving": {
+   "rtf": 1.276,
+   "ms_step": 3.27,
+   "ncon": 99,
+   "nefc": 414,
+   "niter_mean": 10.0,
+   "collision_ms": 0.57,
+   "make_ms": 0.09,
+   "solve_ms": 0.72,
+   "zmin_mm": 0.33,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.253,
+   "ms_step": 16.45,
+   "ncon": 844,
+   "nefc": 3376,
+   "niter_mean": 10.0,
+   "collision_ms": 3.45,
+   "make_ms": 2.14,
+   "solve_ms": 7.77,
+   "zmin_mm": 1.25,
+   "finite": true
+  }
+ },
+ "B_n16 tolerance=1e-4": {
+  "moving": {
+   "rtf": 0.829,
+   "ms_step": 5.02,
+   "ncon": 151,
+   "nefc": 622,
+   "niter_mean": 23.7,
+   "collision_ms": 0.6,
+   "make_ms": 0.12,
+   "solve_ms": 1.43,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.143,
+   "ms_step": 29.05,
+   "ncon": 1029,
+   "nefc": 4116,
+   "niter_mean": 22.8,
+   "collision_ms": 3.67,
+   "make_ms": 2.69,
+   "solve_ms": 18.61,
+   "zmin_mm": 1.78,
+   "finite": true
+  }
+ },
+ "B_n16 Newton": {
+  "moving": {
+   "rtf": 0.413,
+   "ms_step": 10.09,
+   "ncon": 151,
+   "nefc": 622,
+   "niter_mean": 1.8,
+   "collision_ms": 0.56,
+   "make_ms": 0.1,
+   "solve_ms": 6.6,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.039,
+   "ms_step": 105.62,
+   "ncon": 1031,
+   "nefc": 4124,
+   "niter_mean": 2.0,
+   "collision_ms": 3.46,
+   "make_ms": 2.54,
+   "solve_ms": 95.43,
+   "zmin_mm": 1.78,
+   "finite": true
+  }
+ },
+ "B_n16 elliptic": {
+  "moving": {
+   "rtf": 0.671,
+   "ms_step": 6.21,
+   "ncon": 151,
+   "nefc": 471,
+   "niter_mean": 47.0,
+   "collision_ms": 0.54,
+   "make_ms": 0.09,
+   "solve_ms": 2.6,
+   "zmin_mm": 1.57,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.12,
+   "ms_step": 34.71,
+   "ncon": 1154,
+   "nefc": 3462,
+   "niter_mean": 43.7,
+   "collision_ms": 3.84,
+   "make_ms": 2.7,
+   "solve_ms": 24.15,
+   "zmin_mm": 1.42,
+   "finite": true
+  }
+ },
+ "B_n16 self condim=1": {
+  "moving": {
+   "rtf": 0.574,
+   "ms_step": 7.26,
+   "ncon": 151,
+   "nefc": 622,
+   "niter_mean": 48.9,
+   "collision_ms": 0.78,
+   "make_ms": 0.1,
+   "solve_ms": 2.94,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.207,
+   "ms_step": 20.17,
+   "ncon": 1270,
+   "nefc": 1651,
+   "niter_mean": 50.0,
+   "collision_ms": 4.82,
+   "make_ms": 3.06,
+   "solve_ms": 7.78,
+   "zmin_mm": 1.8,
+   "finite": true
+  }
+ },
+ "B_n16 self condim=1 iter=10": {
+  "moving": {
+   "rtf": 1.244,
+   "ms_step": 3.35,
+   "ncon": 66,
+   "nefc": 282,
+   "niter_mean": 10.0,
+   "collision_ms": 0.6,
+   "make_ms": 0.09,
+   "solve_ms": 0.73,
+   "zmin_mm": 0.77,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.413,
+   "ms_step": 10.08,
+   "ncon": 1108,
+   "nefc": 1414,
+   "niter_mean": 10.0,
+   "collision_ms": 3.78,
+   "make_ms": 2.03,
+   "solve_ms": 1.81,
+   "zmin_mm": 1.3,
+   "finite": true
+  }
+ },
+ "B_n16 passive contact": {
+  "moving": {
+   "rtf": 0.795,
+   "ms_step": 5.24,
+   "ncon": 122,
+   "nefc": 18,
+   "niter_mean": 50.0,
+   "collision_ms": 0.54,
+   "make_ms": 0.04,
+   "solve_ms": 1.86,
+   "zmin_mm": 1.78,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.436,
+   "ms_step": 9.56,
+   "ncon": 396,
+   "nefc": 0,
+   "niter_mean": 0.0,
+   "collision_ms": 3.12,
+   "make_ms": 0.07,
+   "solve_ms": 0.01,
+   "zmin_mm": 1.88,
+   "finite": true
+  }
+ },
+ "B_n16 dt=1/120": {
+  "moving": {
+   "rtf": 1.424,
+   "ms_step": 5.85,
+   "ncon": 151,
+   "nefc": 622,
+   "niter_mean": 49.6,
+   "collision_ms": 0.52,
+   "make_ms": 0.1,
+   "solve_ms": 2.48,
+   "zmin_mm": 1.85,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.258,
+   "ms_step": 32.29,
+   "ncon": 1031,
+   "nefc": 4124,
+   "niter_mean": 50.0,
+   "collision_ms": 3.36,
+   "make_ms": 2.44,
+   "solve_ms": 22.48,
+   "zmin_mm": 1.78,
+   "finite": true
+  }
+ },
+ "B_n16 dt=1/120 iter=10": {
+  "moving": {
+   "rtf": 2.722,
+   "ms_step": 3.06,
+   "ncon": 82,
+   "nefc": 346,
+   "niter_mean": 10.0,
+   "collision_ms": 0.55,
+   "make_ms": 0.09,
+   "solve_ms": 0.67,
+   "zmin_mm": 0.78,
+   "finite": true
+  },
+  "rest": {
+   "rtf": 0.448,
+   "ms_step": 18.61,
+   "ncon": 1066,
+   "nefc": 4264,
+   "niter_mean": 10.0,
+   "collision_ms": 3.59,
+   "make_ms": 2.57,
+   "solve_ms": 9.15,
+   "zmin_mm": -1.49,
+   "finite": true
+  }
+ }
+}

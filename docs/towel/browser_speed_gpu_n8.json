@@ -1,0 +1,127 @@
+{
+ "webgl": "ANGLE (NVIDIA Corporation, NVIDIA GeForce RTX 3060/PCIe/SSE2, OpenGL ES 3.2)",
+ "n": 8,
+ "replay": [
+  {
+   "scene": 100000,
+   "episode": 0,
+   "disturb": "none",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 168,
+   "python_step": 168,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 0.04,
+   "realtime": 1.64
+  },
+  {
+   "scene": 100000,
+   "episode": 0,
+   "disturb": "shift",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 175,
+   "python_step": 175,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 0.91,
+   "realtime": 1.82
+  },
+  {
+   "scene": 100001,
+   "episode": 0,
+   "disturb": "none",
+   "browser_success": false,
+   "python_success": false,
+   "browser_step": null,
+   "python_step": 600,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 4.03,
+   "realtime": 0.87
+  },
+  {
+   "scene": 100001,
+   "episode": 0,
+   "disturb": "slip",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 190,
+   "python_step": 204,
+   "browser_grabs": 4,
+   "python_grabs": 3,
+   "vert_err_mm": 7.72,
+   "realtime": 1.84
+  },
+  {
+   "scene": 100002,
+   "episode": 0,
+   "disturb": "none",
+   "browser_success": true,
+   "python_success": true,
+   "browser_step": 164,
+   "python_step": 164,
+   "browser_grabs": 2,
+   "python_grabs": 2,
+   "vert_err_mm": 0.78,
+   "realtime": 1.81
+  },
+  {
+   "scene": 100002,
+   "episode": 0,
+   "disturb": "drop",
+   "browser_success": false,
+   "python_success": false,
+   "browser_step": null,
+   "python_step": 600,
+   "browser_grabs": 4,
+   "python_grabs": 4,
+   "vert_err_mm": 46.86,
+   "realtime": 1.39
+  }
+ ],
+ "timing_ms": {
+  "physicsMs": 14.50333333214124,
+  "camerasMs": 1.6053333338101705,
+  "mainViewMs": 0.13133333126703897
+ },
+ "bench": [
+  {
+   "steps": 150,
+   "physicsMs": 14.50333333214124,
+   "camerasMs": 1.635333334604899,
+   "mainViewMs": 0.14133333365122477
+  },
+  {
+   "steps": 150,
+   "physicsMs": 14.822666667699814,
+   "camerasMs": 1.6053333338101705,
+   "mainViewMs": 0.13133333126703897
+  },
+  {
+   "steps": 150,
+   "physicsMs": 14.414666667381923,
+   "camerasMs": 1.5693333315849305,
+   "mainViewMs": 0.11733333468437195
+  }
+ ],
+ "realtime": [
+  {
+   "scene": 100000,
+   "fps": 47.64680168997466,
+   "wall": 6.863000000035761,
+   "simulated": 6.6,
+   "realtime": 0.961678566219672,
+   "steps": 198
+  },
+  {
+   "scene": 100001,
+   "fps": 40.780694643454716,
+   "wall": 8.018500000035761,
+   "simulated": 7.366666666666666,
+   "realtime": 0.9187088191848616,
+   "steps": 221
+  }
+ ]
+}
