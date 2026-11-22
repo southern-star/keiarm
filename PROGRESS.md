@@ -1,6 +1,6 @@
 # PROGRESS
 
-最終更新: 2026-11-22（マイルストーン 3 Phase 7 完了、ブランチ towel-m3。N_web = 11）
+最終更新: 2026-11-22（マイルストーン 3 Phase 8 完了。main に統合して公開、N_web = 11）
 
 ## 現在地
 
@@ -19,7 +19,7 @@
 | 5 | BC | 完了（`towel_bc1`: 600 本・ラベル間隔 6 で 97/100、3 本ずつで 283/300。黒塗りは全カメラ・各カメラ単独とも 0/100。再実行で 100 本すべて一致） |
 | 6 | DAgger、粗いメッシュでの Python 閉ループ評価 | 3 ラウンド完了（`towel_r3`: none・shift 100、slip 90、drop 71、nudge 81。V3 は N = 10 で 86/100、p = 0.00012 で不合格のまま。利用者の決定により Phase 7 へ進む予定） |
 | 7 | ブラウザ推論（粗いメッシュ） | 完了（N_web = 11。推論込みの実時間比 0.62 倍（N = 10 は 0.69 倍）。V5 は 5 種とも Python の N = 11 と差なし（none 100/100、shift 99/100、slip 85/92、drop 66/68、nudge 95/97）。実時間 + ドラッグ: 最初の二つ折り 8/8、ドラッグ後 7/8） |
-| 8 | 公開 | 未着手 |
+| 8 | 公開 | 完了（2026-11-22、`main` = `towel-m3` を push。https://southern-star.github.io/keiarm/towel.html で実時間 + ドラッグの確認: 1 回目の二つ折り 8/8、ドラッグ後 5/8 → 再実行 8/8（実時間の非決定性。手元のビルドは 8/8）。Pages のワークフローでタオルのシーンと記録を書き出す） |
 
 ### マイルストーン 2
 
@@ -71,6 +71,14 @@
 - 速度の扱いは (a): 並列収集を前提に、MuJoCo flex の候補 A（edge 拘束 + 曲げ）・N = 16 で、二つ折りから始める
 - ブラウザのデモは、ブラウザだけメッシュを粗くして実時間で動かす。別に、Python（N = 16）で記録したエピソードの再生も用意する
 - 計画: `docs/milestone3.md`（Phase 0〜8、粗いメッシュによる挙動のずれの検証を含む）。利用者が承認（「GO!」）、Phase 0 完了
+
+## マイルストーン 3 Phase 8（2026-11-22）でやったこと
+
+- `towel-m3` を `main` に早送りで統合して push（`95e028a`）。`web/public/models/towel.onnx`（47 MB、`towel_r3`）をコミットした（M1・M2 のモデルと同じ扱い）
+- `.github/workflows/pages.yml` に `scripts/export_web_towel.py` と `scripts/export_towel_records.py`（どちらも 4 並列、手元の 2 並列で 1 分 10 秒・1 分 50 秒）と `towel.onnx` の存在確認を足した。CI の `test` は今まで通りタオルの書き出しを含まない（`npm test` のタオルの再生は書き出しが無いと飛ばす）
+- ページ間のリンク: `index.html` と `openarm.html` から `towel.html` へ
+- 公開後の確認 `uv run python tools/browser_demo_check_towel.py --gpu --url https://southern-star.github.io/keiarm/`: 1 回目の二つ折り 8/8、ドラッグ後の二つ折り 5/8。もう一度回すと 8/8 / 8/8。手元のビルドでも 8/8 / 8/8。実時間で推論の届く時刻がずれるための非決定性（M2 Phase 7 の公開後の確認と同じ）で、方策の失敗の扱いはドラッグ後の 1 回目の確認値として記録する
+- 残り: nudge の取りこぼし（角がずれたまま戻らない 15 本、離さない 4 本）は手を離した後に nudge だけの DAgger で伸ばせる見込み。ブラウザの速度（0.62 倍、折った後 0.4〜0.5 倍）を上げるならマルチスレッド WASM（Service Worker）
 
 ## マイルストーン 3 Phase 7（2026-11-22）でやったこと
 
