@@ -270,6 +270,20 @@ export class TowelSim {
     this.successRun = 0;
   }
 
+  // The page's drag (no Python counterpart; a UI interaction): both hands let go and the towel
+  // lies flat at (xy, yaw), at rest, as the shift disturbance but at any time. A hand that had
+  // closed stays latched until it opens, as after a slip.
+  dragTowel(xy, yaw) {
+    for (const s of SIDES) {
+      if (this.grasp[s].latched) this.grasp[s] = { latched: true, verts: [], anchors: [] };
+    }
+    this.applyGrasp();
+    this.placeVerts(xy, yaw);
+    this.mujoco.mj_forward(this.model, this.data);
+    this.lastState = this.state();
+    this.successRun = 0;
+  }
+
   // Arm one planned disturbance (step unset): it fires `delay` steps after the episode first
   // reaches `after_stage`, as in the Python harness.
   armDisturbance(plan) {

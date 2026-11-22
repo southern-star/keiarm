@@ -1,0 +1,59 @@
+{
+ "episodes": 100,
+ "mesh": [
+  16
+ ],
+ "success": 81,
+ "success_rate": 0.81,
+ "stage_reached": {
+  "reach": 100,
+  "grasp_one": 100,
+  "grasp_both": 100,
+  "lift": 100,
+  "carry": 100,
+  "placed": 100,
+  "released": 100,
+  "success": 81
+ },
+ "stage_first_step_median": {
+  "reach": 39.0,
+  "grasp_one": 53.0,
+  "grasp_both": 55.0,
+  "lift": 78.0,
+  "carry": 101.5,
+  "placed": 120.0,
+  "released": 146.0,
+  "success": 256.0
+ },
+ "disturbance_applied": 100,
+ "infractions": {
+  "arms_touch_episodes": 0,
+  "arms_touch_steps": 0,
+  "crossing_episodes": 0,
+  "max_crossings": 0,
+  "towel_off_table": 0,
+  "empty_grasps": 94,
+  "early_releases": 22,
+  "sim_broken": 0
+ },
+ "grabs_median": 3.0,
+ "max_gap_after_mm_median": 42.55,
+ "steps_to_success": {
+  "median": 256.0,
+  "p90": 381.0,
+  "max": 539
+ },
+ "success_corner_gap_mm_max": 29.9,
+ "failures": {
+  "release_failed": 4,
+  "shape_failed": 15
+ },
+ "failed_expert_could_finish": 19,
+ "failed_stuck": 0,
+ "disturb": "nudge",
+ "name": "towel_keigrasp-towel_r3_eval_n16_nudge",
+ "policy": "keigrasp:towel_r3",
+ "split": "eval",
+ "mujoco": "3.17.0",
+ "seconds": 1003
+}

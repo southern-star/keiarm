@@ -1,0 +1,64 @@
+{
+ "episodes": 100,
+ "mesh": [
+  16
+ ],
+ "success": 71,
+ "success_rate": 0.71,
+ "stage_reached": {
+  "reach": 100,
+  "grasp_one": 100,
+  "grasp_both": 100,
+  "lift": 100,
+  "carry": 79,
+  "placed": 75,
+  "released": 75,
+  "success": 71
+ },
+ "stage_first_step_median": {
+  "reach": 39.0,
+  "grasp_one": 53.0,
+  "grasp_both": 55.0,
+  "lift": 78.0,
+  "carry": 174.0,
+  "placed": 207.0,
+  "released": 227.0,
+  "success": 246.0
+ },
+ "disturbance_applied": 100,
+ "infractions": {
+  "arms_touch_episodes": 0,
+  "arms_touch_steps": 0,
+  "crossing_episodes": 18,
+  "max_crossings": 5,
+  "towel_off_table": 1,
+  "empty_grasps": 161,
+  "early_releases": 439,
+  "sim_broken": 1
+ },
+ "grabs_median": 7.0,
+ "max_gap_after_mm_median": 102.9,
+ "steps_to_success": {
+  "median": 246.0,
+  "p90": 392.0,
+  "max": 542
+ },
+ "success_corner_gap_mm_max": 28.6,
+ "failures": {
+  "sim_broken": 1,
+  "layers_crossed": 1,
+  "grasp_failed": 2,
+  "lift_failed": 12,
+  "carry_failed": 5,
+  "place_failed": 4,
+  "shape_failed": 4
+ },
+ "failed_expert_could_finish": 23,
+ "failed_stuck": 5,
+ "disturb": "drop",
+ "name": "towel_keigrasp-towel_r3_eval_n16_drop",
+ "policy": "keigrasp:towel_r3",
+ "split": "eval",
+ "mujoco": "3.17.0",
+ "seconds": 845
+}

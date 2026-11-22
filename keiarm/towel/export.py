@@ -47,7 +47,15 @@ from keiarm.towel.eval import (
 from keiarm.towel.expert import Expert
 from keiarm.towel.policies import ExpertPolicy
 from keiarm.towel.render import BACK_OFFSET
-from keiarm.towel.scene import GRAB_SLOTS, TOWEL, TOWEL_N, build_xml
+from keiarm.towel.scene import (
+    GRAB_SLOTS,
+    TOWEL,
+    TOWEL_CENTER,
+    TOWEL_CENTER_JITTER,
+    TOWEL_N,
+    TOWEL_YAW_RANGE,
+    build_xml,
+)
 
 WEB_PUBLIC = REPO_ROOT / "web" / "public"
 SCENES_DIR = "towel_scenes"  # under web/public (generated, not in git)
@@ -113,6 +121,9 @@ def constants(env: TowelEnv) -> dict:
         "table_center": list(TABLE_CENTER), "table_half_size": list(TABLE_HALF_SIZE), "off_table_z": OFF_TABLE_Z,
         # towel
         "towel": TOWEL, "towel_n": ix.n,
+        # spawn region (keiarm/towel/scene.py): the page's drag keeps the towel inside it
+        "towel_center": list(TOWEL_CENTER), "towel_center_jitter": list(TOWEL_CENTER_JITTER),
+        "towel_yaw_range": float(TOWEL_YAW_RANGE),
         "far": {s: int(ix.far[s]) for s in SIDES}, "near": {s: int(ix.near[s]) for s in SIDES},
         "layers": [[int(v) for v in lo], [int(v) for v in hi]],
         # grasp rule (keiarm/towel/grasp.py)

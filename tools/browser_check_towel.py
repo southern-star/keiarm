@@ -14,7 +14,7 @@
 5. Size: bytes the page downloads (raw and gzip).
 
 Usage:
-  uv run python scripts/export_web_towel.py --meshes 10 && uv run python scripts/export_towel_records.py
+  uv run python scripts/export_web_towel.py --meshes 11 && uv run python scripts/export_towel_records.py
   npm --prefix web run build && uv run python tools/browser_check_towel.py [--gpu]
   (writes docs/towel/render_compare.{png,json} unless --gpu)
 """

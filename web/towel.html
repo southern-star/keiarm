@@ -43,6 +43,12 @@
         <label id="episode-label">エピソード <select id="episode"></select></label>
         <label id="record-label" hidden>記録 <select id="record"></select></label>
       </div>
+      <div class="row" id="live-label">
+        <span class="seg" role="group" aria-label="動かすもの">
+          <button id="live-model" aria-pressed="true">学習した方策</button>
+          <button id="live-expert" aria-pressed="false">エキスパートの記録</button>
+        </span>
+      </div>
       <div class="row">
         <button id="play">開始</button>
         <button id="reset">リセット</button>

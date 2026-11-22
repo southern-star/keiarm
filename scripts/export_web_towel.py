@@ -2,7 +2,7 @@
 (generated, not in git). The robot meshes are milestone 2's (web/public/assets/openarm/);
 they are written if missing.
 
-Usage: uv run python scripts/export_web_towel.py [--scenes 100000 ...] [--meshes 8 10 12] [--episodes 0]
+Usage: uv run python scripts/export_web_towel.py [--scenes 100000 ...] [--meshes 11 10] [--episodes 0]
 Each scene and mesh N gets the clean expert for every --episodes seed, plus one disturbed
 episode (shift / slip / drop / nudge in turn), whose disturbance the browser replays.
 """
@@ -19,7 +19,8 @@ from keiarm.towel import export
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--scenes", type=int, nargs="+", default=list(config.EVAL_SCENE_SEEDS)[:8])
-    ap.add_argument("--meshes", type=int, nargs="+", default=[10])
+    ap.add_argument("--meshes", type=int, nargs="+", default=[11],
+                    help="the first is the page's default (N_web = 11, docs/milestone3.md Phase 7)")
     ap.add_argument("--episodes", type=int, nargs="+", default=[0])
     ap.add_argument("--workers", type=int, default=10)
     args = ap.parse_args()

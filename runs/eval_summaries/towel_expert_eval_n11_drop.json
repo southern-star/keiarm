@@ -1,0 +1,59 @@
+{
+ "episodes": 100,
+ "mesh": [
+  11
+ ],
+ "success": 93,
+ "success_rate": 0.93,
+ "stage_reached": {
+  "reach": 100,
+  "grasp_one": 100,
+  "grasp_both": 100,
+  "lift": 100,
+  "carry": 100,
+  "placed": 100,
+  "released": 100,
+  "success": 93
+ },
+ "stage_first_step_median": {
+  "reach": 39.0,
+  "grasp_one": 52.0,
+  "grasp_both": 54.0,
+  "lift": 75.0,
+  "carry": 127.0,
+  "placed": 144.0,
+  "released": 173.0,
+  "success": 190.0
+ },
+ "disturbance_applied": 100,
+ "infractions": {
+  "arms_touch_episodes": 0,
+  "arms_touch_steps": 0,
+  "crossing_episodes": 30,
+  "max_crossings": 6,
+  "towel_off_table": 0,
+  "empty_grasps": 0,
+  "early_releases": 17,
+  "sim_broken": 0
+ },
+ "grabs_median": 4.0,
+ "max_gap_after_mm_median": 102.75,
+ "steps_to_success": {
+  "median": 190.0,
+  "p90": 272.4,
+  "max": 428
+ },
+ "success_corner_gap_mm_max": 29.7,
+ "failures": {
+  "layers_crossed": 1,
+  "shape_failed": 6
+ },
+ "failed_expert_could_finish": 0,
+ "failed_stuck": 7,
+ "disturb": "drop",
+ "name": "towel_expert_eval_n11_drop",
+ "policy": "expert",
+ "split": "eval",
+ "mujoco": "3.17.0",
+ "seconds": 215
+}

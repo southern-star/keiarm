@@ -52,5 +52,5 @@
  "policy": "expert",
  "split": "eval",
  "mujoco": "3.17.0",
- "seconds": 83
+ "seconds": 92
 }
